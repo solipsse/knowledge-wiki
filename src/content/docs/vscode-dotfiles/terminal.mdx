@@ -1,3 +1,7 @@
+---
+title: terminal
+description: just a test
+---
 
 ```json
 
@@ -47,9 +51,9 @@
 // The terminal profile to use for automation-related terminal usage like tasks and debug. This setting will currently be ignored if `terminal.integrated.automationShell.windows` (now deprecated) is set.
 "terminal.integrated.automationProfile.windows": null,
 // A set of messages that, when encountered in the terminal, will be automatically responded to. Provided the message is specific enough, this can help automate away common responses.
-// 
+//
 // Remarks:
-// 
+//
 // - Use `"Terminate batch job (Y/N)": "Y\r"` to automatically respond to the terminate batch job prompt on Windows.
 // - The message includes escape sequences so the reply might not happen with styled text.
 // - Each reply can only happen once every second.
@@ -60,19 +64,19 @@
 // The number of milliseconds to show the bell within a terminal tab when triggered.
 "terminal.integrated.bellDuration": 1000,
 // A set of command IDs whose keybindings will not be sent to the shell but instead always be handled by VSCodium. This allows keybindings that would normally be consumed by the shell to act instead the same as when the terminal is not focused, for example `Ctrl+P` to launch Quick Open.
-// 
+//
 // &nbsp;
-// 
+//
 // Many commands are skipped by default. To override a default and pass that command's keybinding to the shell instead, add the command prefixed with the `-` character. For example add `-workbench.action.quickOpen` to allow `Ctrl+P` to reach the shell.
-// 
+//
 // &nbsp;
-// 
+//
 // The following list of default skipped commands is truncated when viewed in Settings Editor. To see the full list, [open the default settings JSON](command:workbench.action.openRawDefaultSettings 'Open Default Settings (JSON)') and search for the first command from the list below.
-// 
+//
 // &nbsp;
-// 
+//
 // Default Skipped Commands:
-// 
+//
 // - editor.action.accessibilityHelp
 // - editor.action.toggleTabFocusMode
 // - notification.acceptPrimaryAction
@@ -295,7 +299,7 @@
 // Controls whether bold text in the terminal will always use the "bright" ANSI color variant.
 "terminal.integrated.drawBoldTextInBrightColors": true,
 // This is now deprecated. Instead use the `terminal.integrated.enableVisualBell` and `accessibility.signals.terminalBell` settings.
-// 
+//
 "terminal.integrated.enableBell": false,
 // Whether to enable file links in terminals. Links can be slow when working on a network drive in particular because each file link is verified against the file system. Changing this will take effect only in new terminals.
 //  - off: Always off.
@@ -306,7 +310,7 @@
 "terminal.integrated.enableImages": false,
 // Controls whether to show a warning dialog when pasting multiple lines into the terminal.
 //  - auto: Enable the warning but do not show it when:
-// 
+//
 // - Bracketed paste mode is enabled (the shell supports multi-line paste natively)
 // - The paste is handled by the shell's readline (in the case of pwsh)
 //  - always: Always show the warning if the text contains a new line.
@@ -398,7 +402,7 @@
 //  - paste: Paste on middle click.
 "terminal.integrated.middleClickBehavior": "default",
 // When set, the foreground color of each cell will change to try meet the contrast ratio specified. Note that this will not apply to `powerline` characters per #146406. Example values:
-// 
+//
 // - 1: Do nothing and use the standard theme colors.
 // - 4.5: [WCAG AA compliance (minimum)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (default).
 // - 7: [WCAG AAA compliance (enhanced)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html).
@@ -409,9 +413,9 @@
 // Zoom the font of the terminal when using mouse wheel and holding `Ctrl`.
 "terminal.integrated.mouseWheelZoom": false,
 // When the terminal process must be shut down (for example on window or application close), this determines when the previous terminal session contents/history should be restored and processes be recreated when the workspace is next opened.
-// 
+//
 // Caveats:
-// 
+//
 // - Restoring of the process current working directory depends on whether it is supported by the shell.
 // - Time to persist the session during shutdown is limited, so it may be aborted when using high-latency remote connections.
 //  - onExit: Revive the processes after the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu).
@@ -421,15 +425,15 @@
 // Controls the maximum amount of lines that will be restored when reconnecting to a persistent terminal session. Increasing this will restore more lines of scrollback at the cost of more memory and increase the time it takes to connect to terminals on start up. This setting requires a restart to take effect and should be set to a value less than or equal to `terminal.integrated.scrollback`.
 "terminal.integrated.persistentSessionScrollback": 100,
 // A set of terminal profile customizations for Linux which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
-// 
+//
 // To override an existing profile use its profile name as the key, for example:
-// 
+//
 // ```json
 // "terminal.integrated.profile.linux": {
 //   "bash": null
 // }
 // ```
-// 
+//
 // [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
 "terminal.integrated.profiles.linux": {
     "bash": {
@@ -452,15 +456,15 @@
     }
 },
 // A set of terminal profile customizations for Mac which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
-// 
+//
 // To override an existing profile use its profile name as the key, for example:
-// 
+//
 // ```json
 // "terminal.integrated.profile.osx": {
 //   "bash": null
 // }
 // ```
-// 
+//
 // [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
 "terminal.integrated.profiles.osx": {
     "bash": {
@@ -492,15 +496,15 @@
     }
 },
 // A set of terminal profile customizations for Windows which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
-// 
+//
 // To override an existing profile use its profile name as the key, for example:
-// 
+//
 // ```json
 // "terminal.integrated.profile.windows": {
 //   "bash": null
 // }
 // ```
-// 
+//
 // [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
 "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -538,17 +542,17 @@
 //  - overviewRuler: Show overview ruler decorations to the right of the terminal
 //  - never: Do not show decorations
 "terminal.integrated.shellIntegration.decorationsEnabled": "both",
-// Determines whether or not shell integration is auto-injected to support features like enhanced command tracking and current working directory detection. 
-// 
+// Determines whether or not shell integration is auto-injected to support features like enhanced command tracking and current working directory detection.
+//
 // Shell integration works by injecting the shell with a startup script. The script gives VSCodium insight into what is happening within the terminal.
-// 
+//
 // Supported shells:
-// 
+//
 // - Linux/macOS: bash, fish, pwsh, zsh
 //  - Windows: pwsh, git bash
-// 
+//
 // This setting applies only when terminals are created, so you will need to restart your terminals for it to take effect.
-// 
+//
 //  Note that the script injection may not work if you have custom arguments defined in the terminal profile, have enabled `editor.accessibilitySupport#`, have a [complex bash `PROMPT_COMMAND`](https://code.visualstudio.com/docs/editor/integrated-terminal#_complex-bash-promptcommand), or other unsupported setup. To disable decorations, see `#terminal.integrated.shellIntegrations.decorationsEnabled`
 "terminal.integrated.shellIntegration.enabled": true,
 // Controls the number of recently used commands to keep in the terminal command history. Set to 0 to disable terminal command history.
@@ -576,7 +580,7 @@
     "pwshGit": true
 },
 // Enables experimental terminal Intellisense suggestions for supported shells (PowerShell v7+) when `terminal.integrated.shellIntegration.enabled` is set to `true`.
-// 
+//
 // If shell integration is installed manually, `VSCODE_SUGGEST` needs to be set to `1` before calling the shell integration script.
 "terminal.integrated.suggest.enabled": false,
 // Controls whether suggestions should automatically show up while typing. Also be aware of the `terminal.integrated.suggest.suggestOnTriggerCharacters`-setting which controls if suggestions are triggered by special characters.

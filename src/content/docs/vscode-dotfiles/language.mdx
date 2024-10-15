@@ -1,3 +1,7 @@
+---
+title: language
+description: just a test
+---
 # language
 
 ## json
@@ -27,9 +31,9 @@
 ## md
 ```json
 // Configures the path and file name of files created by copy/paste or drag and drop. This is a map of globs that match against a Markdown document path to the destination path where the new file should be created.
-// 
+//
 // The destination path may use the following variables:
-// 
+//
 // - `${documentDirName}` — Absolute parent directory path of the Markdown document, e.g. `/Users/me/myProject/docs`.
 // - `${documentRelativeDirName}` — Relative parent directory path of the Markdown document, e.g. `docs`. This is the same as `${documentDirName}` if the file is not part of a workspace.
 // - `${documentFileName}` — The full filename of the Markdown document, e.g. `README.md`.
@@ -46,7 +50,7 @@
 //  - overwrite: If a file with the same name already exists, overwrite it.
 "markdown.copyFiles.overwriteBehavior": "nameIncrementally",
 // Controls if files outside of the workspace that are dropped into a Markdown editor should be copied into the workspace.
-// 
+//
 // Use `markdown.copyFiles.destination` to configure where copied dropped files should be created
 //  - mediaFiles: Try to copy external image and video files into the workspace.
 //  - never: Do not copy external files into the workspace.
@@ -61,7 +65,7 @@
 // - `${title}` — The title used for the audio. A snippet placeholder will automatically be created for this variable.
 "markdown.editor.filePaste.audioSnippet": "<audio controls src=\"${src}\" title=\"${title}\"></audio>",
 // Controls if files outside of the workspace that are pasted into a Markdown editor should be copied into the workspace.
-// 
+//
 // Use `markdown.copyFiles.destination` to configure where copied files should be created.
 //  - mediaFiles: Try to copy external image and video files into the workspace.
 //  - never: Do not copy external files into the workspace.
@@ -82,7 +86,7 @@
 //  - never: Never create Markdown links.
 "markdown.editor.pasteUrlAsFormattedLink.enabled": "smartWithSelection",
 // Enable/disable a paste option that updates links and reference in text that is copied and pasted between Markdown editors.
-// 
+//
 // To use this feature, after pasting text that contains updatable links, just click on the Paste Widget and select `Paste and update pasted links`.
 "markdown.editor.updateLinksOnPaste.enabled": true,
 // Controls where links in Markdown files should be opened.
@@ -184,9 +188,9 @@
 //  - empty: Attribute value is not set.
 "html.completion.attributeDefaultValue": "doublequotes",
 // A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-html-languageservice/blob/master/docs/customData.md).
-// 
+//
 // VSCodium loads custom data on startup to enhance its HTML support for the custom HTML tags, attributes and attribute values you specify in the JSON files.
-// 
+//
 // The file paths are relative to workspace and only workspace folder settings are considered.
 "html.customData": [],
 // List of tags, comma separated, where the content shouldn't be reformatted. `null` defaults to the `pre` tag.
@@ -291,28 +295,28 @@
 "javascript.implicitProjectConfig.experimentalDecorators": false,
 // Enable/disable inlay hints for member values in enum declarations:
 // ```typescript
-// 
+//
 // enum MyValue {
 // 	A /* = 0 */;
 // 	B /* = 1 */;
 // }
-//  
+//
 // ```
 "javascript.inlayHints.enumMemberValues.enabled": false,
 // Enable/disable inlay hints for implicit return types on function signatures:
 // ```typescript
-// 
+//
 // function foo() /* :number */ {
 // 	return Date.now();
-// } 
-//  
+// }
+//
 // ```
 "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
 // Enable/disable inlay hints for parameter names:
 // ```typescript
-// 
+//
 // parseInt(/* str: */ '123', /* radix: */ 8)
-//  
+//
 // ```
 //  - none: Disable parameter name hints.
 //  - literals: Enable parameter name hints only for literal arguments.
@@ -322,25 +326,25 @@
 "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
 // Enable/disable inlay hints for implicit parameter types:
 // ```typescript
-// 
+//
 // el.addEventListener('click', e /* :MouseEvent */ => ...)
-//  
+//
 // ```
 "javascript.inlayHints.parameterTypes.enabled": false,
 // Enable/disable inlay hints for implicit types on property declarations:
 // ```typescript
-// 
+//
 // class Foo {
 // 	prop /* :number */ = Date.now();
 // }
-//  
+//
 // ```
 "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
 // Enable/disable inlay hints for implicit variable types:
 // ```typescript
-// 
+//
 // const foo /* :number */ = Date.now();
-//  
+//
 // ```
 "javascript.inlayHints.variableTypes.enabled": false,
 // Suppress type hints on variables whose name is identical to the type name.
@@ -348,7 +352,7 @@
 // Specify glob patterns of files to exclude from auto imports. Relative paths are resolved relative to the workspace root. Patterns are evaluated using tsconfig.json [`exclude`](https://www.typescriptlang.org/tsconfig#exclude) semantics.
 "javascript.preferences.autoImportFileExcludePatterns": [],
 // Specify regular expressions to exclude auto imports with matching import specifiers. Examples:
-// 
+//
 // - `^node:`
 // - `lib/internal` (slashes don't need to be escaped...)
 // - `/lib\/internal/i` (...unless including surrounding slashes for `i` or `u` flags)
@@ -501,28 +505,28 @@
 "typescript.implementationsCodeLens.showOnInterfaceMethods": false,
 // Enable/disable inlay hints for member values in enum declarations:
 // ```typescript
-// 
+//
 // enum MyValue {
 // 	A /* = 0 */;
 // 	B /* = 1 */;
 // }
-//  
+//
 // ```
 "typescript.inlayHints.enumMemberValues.enabled": false,
 // Enable/disable inlay hints for implicit return types on function signatures:
 // ```typescript
-// 
+//
 // function foo() /* :number */ {
 // 	return Date.now();
-// } 
-//  
+// }
+//
 // ```
 "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
 // Enable/disable inlay hints for parameter names:
 // ```typescript
-// 
+//
 // parseInt(/* str: */ '123', /* radix: */ 8)
-//  
+//
 // ```
 //  - none: Disable parameter name hints.
 //  - literals: Enable parameter name hints only for literal arguments.
@@ -532,25 +536,25 @@
 "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
 // Enable/disable inlay hints for implicit parameter types:
 // ```typescript
-// 
+//
 // el.addEventListener('click', e /* :MouseEvent */ => ...)
-//  
+//
 // ```
 "typescript.inlayHints.parameterTypes.enabled": false,
 // Enable/disable inlay hints for implicit types on property declarations:
 // ```typescript
-// 
+//
 // class Foo {
 // 	prop /* :number */ = Date.now();
 // }
-//  
+//
 // ```
 "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
 // Enable/disable inlay hints for implicit variable types:
 // ```typescript
-// 
+//
 // const foo /* :number */ = Date.now();
-//  
+//
 // ```
 "typescript.inlayHints.variableTypes.enabled": false,
 // Suppress type hints on variables whose name is identical to the type name.
@@ -573,7 +577,7 @@
 // Specify glob patterns of files to exclude from auto imports. Relative paths are resolved relative to the workspace root. Patterns are evaluated using tsconfig.json [`exclude`](https://www.typescriptlang.org/tsconfig#exclude) semantics.
 "typescript.preferences.autoImportFileExcludePatterns": [],
 // Specify regular expressions to exclude auto imports with matching import specifiers. Examples:
-// 
+//
 // - `^node:`
 // - `lib/internal` (slashes don't need to be escaped...)
 // - `/lib\/internal/i` (...unless including surrounding slashes for `i` or `u` flags)
@@ -656,10 +660,10 @@
 //  - watch: Only create compile and watch tasks.
 "typescript.tsc.autoDetect": "on",
 // Specifies the folder path to the tsserver and `lib*.d.ts` files under a TypeScript install to use for IntelliSense, for example: `./node_modules/typescript/lib`.
-// 
+//
 // - When specified as a user setting, the TypeScript version from `typescript.tsdk` automatically replaces the built-in TypeScript version.
 // - When specified as a workspace setting, `typescript.tsdk` allows you to switch to use that workspace version of TypeScript for IntelliSense with the `TypeScript: Select TypeScript version` command.
-// 
+//
 // See the [TypeScript documentation](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-newer-typescript-versions) for more detail about managing TypeScript versions.
 "typescript.tsdk": "",
 // Enables region-based diagnostics in TypeScript. Requires using TypeScript 5.6+ in the workspace.
@@ -717,9 +721,9 @@
 // By default, VSCodium triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.
 "css.completion.triggerPropertyValueCompletion": true,
 // A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-css-languageservice/blob/master/docs/customData.md).
-// 
+//
 // VSCodium loads custom data on startup to enhance its CSS support for CSS custom properties (variables), at-rules, pseudo-classes, and pseudo-elements you specify in the JSON files.
-// 
+//
 // The file paths are relative to workspace and only workspace folder settings are considered.
 "css.customData": [],
 // Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).

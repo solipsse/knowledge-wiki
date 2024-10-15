@@ -1,0 +1,1260 @@
+
+```json
+
+// When enabled, available entitlements for the account will be show in the accounts menu.
+"workbench.accounts.experimental.showEntitlements": false,
+// When enabled, shows a getting started experiments in the chat panel.
+"workbench.panel.chat.view.experimental.showGettingStarted": "",
+// When opening a file from the Explorer in a terminal, determines what kind of terminal will be launched
+//  - integrated: Use VSCodium's integrated terminal.
+//  - external: Use the configured external terminal.
+//  - both: Use the other two together.
+"terminal.explorerKind": "integrated",
+// Customizes which terminal to run on Linux.
+"terminal.external.linuxExec": "linux",
+// Customizes which terminal application to run on macOS.
+"terminal.external.osxExec": "Terminal.app",
+// Customizes which terminal to run on Windows.
+"terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+// When opening a repository from the Source Control Repositories view in a terminal, determines what kind of terminal will be launched
+//  - integrated: Use VSCodium's integrated terminal.
+//  - external: Use the configured external terminal.
+//  - both: Use the other two together.
+"terminal.sourceControlRepositoriesKind": "integrated",
+// Focus the terminal accessible view when a command is executed.
+"terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+// Preserve the cursor position on reopen of the terminal's accessible view rather than setting it to the bottom of the buffer.
+"terminal.integrated.accessibleViewPreserveCursorPosition": false,
+// Whether or not to allow chord keybindings in the terminal. Note that when this is true and the keystroke results in a chord it will bypass `terminal.integrated.commandsToSkipShell`, setting this to false is particularly useful when you want ctrl+k to go to your shell (not VSCodium).
+"terminal.integrated.allowChords": true,
+// An array of strings containing the URI schemes that the terminal is allowed to open links for. By default, only a small subset of possible schemes are allowed for security reasons.
+"terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders"
+],
+// Whether to allow menubar mnemonics (for example Alt+F) to trigger the open of the menubar. Note that this will cause all alt keystrokes to skip the shell when true. This does nothing on macOS.
+"terminal.integrated.allowMnemonics": false,
+// If enabled, alt/option + click will reposition the prompt cursor to underneath the mouse when `editor.multiCursorModifier` is set to `'alt'` (the default value). This may not work reliably depending on your shell.
+"terminal.integrated.altClickMovesCursor": true,
+// The terminal profile to use on Linux for automation-related terminal usage like tasks and debug.
+"terminal.integrated.automationProfile.linux": null,
+// The terminal profile to use on macOS for automation-related terminal usage like tasks and debug.
+"terminal.integrated.automationProfile.osx": null,
+// The terminal profile to use for automation-related terminal usage like tasks and debug. This setting will currently be ignored if `terminal.integrated.automationShell.windows` (now deprecated) is set.
+"terminal.integrated.automationProfile.windows": null,
+// A set of messages that, when encountered in the terminal, will be automatically responded to. Provided the message is specific enough, this can help automate away common responses.
+// 
+// Remarks:
+// 
+// - Use `"Terminate batch job (Y/N)": "Y\r"` to automatically respond to the terminate batch job prompt on Windows.
+// - The message includes escape sequences so the reply might not happen with styled text.
+// - Each reply can only happen once every second.
+// - Use `"\r"` in the reply to mean the enter key.
+// - To unset a default key, set the value to null.
+// - Restart VSCodium if new don't apply.
+"terminal.integrated.autoReplies": {},
+// The number of milliseconds to show the bell within a terminal tab when triggered.
+"terminal.integrated.bellDuration": 1000,
+// A set of command IDs whose keybindings will not be sent to the shell but instead always be handled by VSCodium. This allows keybindings that would normally be consumed by the shell to act instead the same as when the terminal is not focused, for example `Ctrl+P` to launch Quick Open.
+// 
+// &nbsp;
+// 
+// Many commands are skipped by default. To override a default and pass that command's keybinding to the shell instead, add the command prefixed with the `-` character. For example add `-workbench.action.quickOpen` to allow `Ctrl+P` to reach the shell.
+// 
+// &nbsp;
+// 
+// The following list of default skipped commands is truncated when viewed in Settings Editor. To see the full list, [open the default settings JSON](command:workbench.action.openRawDefaultSettings 'Open Default Settings (JSON)') and search for the first command from the list below.
+// 
+// &nbsp;
+// 
+// Default Skipped Commands:
+// 
+// - editor.action.accessibilityHelp
+// - editor.action.toggleTabFocusMode
+// - notification.acceptPrimaryAction
+// - notifications.hideList
+// - notifications.hideToasts
+// - runCommands
+// - workbench.action.closeQuickOpen
+// - workbench.action.debug.continue
+// - workbench.action.debug.pause
+// - workbench.action.debug.restart
+// - workbench.action.debug.run
+// - workbench.action.debug.start
+// - workbench.action.debug.stepInto
+// - workbench.action.debug.stepOut
+// - workbench.action.debug.stepOver
+// - workbench.action.debug.stop
+// - workbench.action.firstEditorInGroup
+// - workbench.action.focusActiveEditorGroup
+// - workbench.action.focusEighthEditorGroup
+// - workbench.action.focusFifthEditorGroup
+// - workbench.action.focusFirstEditorGroup
+// - workbench.action.focusFourthEditorGroup
+// - workbench.action.focusLastEditorGroup
+// - workbench.action.focusNextPart
+// - workbench.action.focusPreviousPart
+// - workbench.action.focusSecondEditorGroup
+// - workbench.action.focusSeventhEditorGroup
+// - workbench.action.focusSixthEditorGroup
+// - workbench.action.focusThirdEditorGroup
+// - workbench.action.lastEditorInGroup
+// - workbench.action.navigateDown
+// - workbench.action.navigateLeft
+// - workbench.action.navigateRight
+// - workbench.action.navigateUp
+// - workbench.action.nextEditor
+// - workbench.action.nextEditorInGroup
+// - workbench.action.nextPanelView
+// - workbench.action.nextSideBarView
+// - workbench.action.openNextRecentlyUsedEditor
+// - workbench.action.openNextRecentlyUsedEditorInGroup
+// - workbench.action.openPreviousRecentlyUsedEditor
+// - workbench.action.openPreviousRecentlyUsedEditorInGroup
+// - workbench.action.previousEditor
+// - workbench.action.previousEditorInGroup
+// - workbench.action.previousPanelView
+// - workbench.action.previousSideBarView
+// - workbench.action.quickOpen
+// - workbench.action.quickOpenLeastRecentlyUsedEditor
+// - workbench.action.quickOpenLeastRecentlyUsedEditorInGroup
+// - workbench.action.quickOpenPreviousEditor
+// - workbench.action.quickOpenPreviousRecentlyUsedEditor
+// - workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup
+// - workbench.action.quickOpenView
+// - workbench.action.showCommands
+// - workbench.action.tasks.build
+// - workbench.action.tasks.reRunTask
+// - workbench.action.tasks.restartTask
+// - workbench.action.tasks.runTask
+// - workbench.action.tasks.showLog
+// - workbench.action.tasks.showTasks
+// - workbench.action.tasks.terminate
+// - workbench.action.tasks.test
+// - workbench.action.terminal.acceptSelectedSuggestion
+// - workbench.action.terminal.acceptSelectedSuggestionEnter
+// - workbench.action.terminal.chat.cancel
+// - workbench.action.terminal.chat.close
+// - workbench.action.terminal.chat.discard
+// - workbench.action.terminal.chat.feedbackHelpful
+// - workbench.action.terminal.chat.feedbackReportIssue
+// - workbench.action.terminal.chat.feedbackUnhelpful
+// - workbench.action.terminal.chat.insertCommand
+// - workbench.action.terminal.chat.makeRequest
+// - workbench.action.terminal.chat.runCommand
+// - workbench.action.terminal.chat.start
+// - workbench.action.terminal.chat.viewInChat
+// - workbench.action.terminal.clear
+// - workbench.action.terminal.clearSelection
+// - workbench.action.terminal.clearSuggestCache
+// - workbench.action.terminal.copyAndClearSelection
+// - workbench.action.terminal.copyLastCommand
+// - workbench.action.terminal.copyLastCommandAndLastCommandOutput
+// - workbench.action.terminal.copyLastCommandOutput
+// - workbench.action.terminal.copySelection
+// - workbench.action.terminal.copySelectionAsHtml
+// - workbench.action.terminal.deleteToLineStart
+// - workbench.action.terminal.deleteWordLeft
+// - workbench.action.terminal.deleteWordRight
+// - workbench.action.terminal.findNext
+// - workbench.action.terminal.findPrevious
+// - workbench.action.terminal.focus
+// - workbench.action.terminal.focusAccessibleBuffer
+// - workbench.action.terminal.focusAtIndex1
+// - workbench.action.terminal.focusAtIndex2
+// - workbench.action.terminal.focusAtIndex3
+// - workbench.action.terminal.focusAtIndex4
+// - workbench.action.terminal.focusAtIndex5
+// - workbench.action.terminal.focusAtIndex6
+// - workbench.action.terminal.focusAtIndex7
+// - workbench.action.terminal.focusAtIndex8
+// - workbench.action.terminal.focusAtIndex9
+// - workbench.action.terminal.focusFind
+// - workbench.action.terminal.focusHover
+// - workbench.action.terminal.focusNext
+// - workbench.action.terminal.focusNextPane
+// - workbench.action.terminal.focusPrevious
+// - workbench.action.terminal.focusPreviousPane
+// - workbench.action.terminal.goToRecentDirectory
+// - workbench.action.terminal.hideFind
+// - workbench.action.terminal.hideSuggestWidget
+// - workbench.action.terminal.kill
+// - workbench.action.terminal.killEditor
+// - workbench.action.terminal.moveToEditor
+// - workbench.action.terminal.moveToLineEnd
+// - workbench.action.terminal.moveToLineStart
+// - workbench.action.terminal.moveToTerminalPanel
+// - workbench.action.terminal.new
+// - workbench.action.terminal.newInActiveWorkspace
+// - workbench.action.terminal.paste
+// - workbench.action.terminal.pasteSelection
+// - workbench.action.terminal.resizePaneDown
+// - workbench.action.terminal.resizePaneLeft
+// - workbench.action.terminal.resizePaneRight
+// - workbench.action.terminal.resizePaneUp
+// - workbench.action.terminal.runActiveFile
+// - workbench.action.terminal.runRecentCommand
+// - workbench.action.terminal.runSelectedText
+// - workbench.action.terminal.scrollDown
+// - workbench.action.terminal.scrollDownPage
+// - workbench.action.terminal.scrollToBottom
+// - workbench.action.terminal.scrollToNextCommand
+// - workbench.action.terminal.scrollToPreviousCommand
+// - workbench.action.terminal.scrollToTop
+// - workbench.action.terminal.scrollUp
+// - workbench.action.terminal.scrollUpPage
+// - workbench.action.terminal.searchWorkspace
+// - workbench.action.terminal.selectAll
+// - workbench.action.terminal.selectNextPageSuggestion
+// - workbench.action.terminal.selectNextSuggestion
+// - workbench.action.terminal.selectPrevPageSuggestion
+// - workbench.action.terminal.selectPrevSuggestion
+// - workbench.action.terminal.selectToNextCommand
+// - workbench.action.terminal.selectToNextLine
+// - workbench.action.terminal.selectToPreviousCommand
+// - workbench.action.terminal.selectToPreviousLine
+// - workbench.action.terminal.sendSequence
+// - workbench.action.terminal.sizeToContentWidth
+// - workbench.action.terminal.split
+// - workbench.action.terminal.splitInActiveWorkspace
+// - workbench.action.terminal.toggleFindCaseSensitive
+// - workbench.action.terminal.toggleFindRegex
+// - workbench.action.terminal.toggleFindWholeWord
+// - workbench.action.terminal.toggleTerminal
+// - workbench.action.toggleFullScreen
+// - workbench.action.toggleMaximizedPanel
+// - workbench.action.togglePanel
+"terminal.integrated.commandsToSkipShell": [],
+// Controls whether to confirm when the window closes if there are active terminal sessions.
+//  - never: Never confirm.
+//  - always: Always confirm if there are terminals.
+//  - hasChildProcesses: Confirm if there are any terminals that have child processes.
+"terminal.integrated.confirmOnExit": "never",
+// Controls whether to confirm killing terminals when they have child processes. When set to editor, terminals in the editor area will be marked as changed when they have child processes. Note that child process detection may not work well for shells like Git Bash which don't run their processes as child processes of the shell.
+//  - never: Never confirm.
+//  - editor: Confirm if the terminal is in the editor.
+//  - panel: Confirm if the terminal is in the panel.
+//  - always: Confirm if the terminal is either in the editor or panel.
+"terminal.integrated.confirmOnKill": "editor",
+// Controls whether text selected in the terminal will be copied to the clipboard.
+"terminal.integrated.copyOnSelection": false,
+// Controls whether the terminal cursor blinks.
+"terminal.integrated.cursorBlinking": false,
+// Controls the style of terminal cursor when the terminal is focused.
+"terminal.integrated.cursorStyle": "block",
+// Controls the style of terminal cursor when the terminal is not focused.
+"terminal.integrated.cursorStyleInactive": "outline",
+// Controls the width of the cursor when `terminal.integrated.cursorStyle` is set to `line`.
+"terminal.integrated.cursorWidth": 1,
+// Whether to draw custom glyphs for block element and box drawing characters instead of using the font, which typically yields better rendering with continuous lines. Note that this doesn't work when `terminal.integrated.gpuAcceleration` is disabled.
+"terminal.integrated.customGlyphs": true,
+// An explicit start path where the terminal will be launched, this is used as the current working directory (cwd) for the shell process. This may be particularly useful in workspace settings if the root directory is not a convenient cwd.
+"terminal.integrated.cwd": "",
+// Controls where newly created terminals will appear.
+//  - editor: Create terminals in the editor
+//  - view: Create terminals in the terminal view
+"terminal.integrated.defaultLocation": "view",
+// The default terminal profile on Linux.
+//  - null: Automatically detect the default
+//  - sh: $(terminal) sh
+// - path: /bin/sh
+//  - bash: $(terminal-bash) bash
+// - path: /sbin/bash
+//  - rbash: $(terminal) rbash
+// - path: /bin/rbash
+//  - sh (2): $(terminal) sh (2)
+// - path: /usr/bin/sh
+//  - bash (2): $(terminal) bash (2)
+// - path: /usr/bin/bash
+//  - rbash (2): $(terminal) rbash (2)
+// - path: /usr/bin/rbash
+//  - systemd-home-fallback-shell: $(terminal) systemd-home-fallback-shell
+// - path: /usr/bin/systemd-home-fallback-shell
+//  - git-shell: $(terminal) git-shell
+// - path: /usr/bin/git-shell
+//  - fish: $(terminal) fish
+// - path: /sbin/fish
+//  - fish (2): $(terminal) fish (2)
+// - path: /bin/fish
+//  - JavaScript Debug Terminal: $($(debug)) JavaScript Debug Terminal
+// - extensionIdentifier: ms-vscode.js-debug
+"terminal.integrated.defaultProfile.linux": null,
+// The default terminal profile on macOS.
+"terminal.integrated.defaultProfile.osx": null,
+// The default terminal profile on Windows.
+"terminal.integrated.defaultProfile.windows": null,
+// Controls whether to detect and set the `$LANG` environment variable to a UTF-8 compliant option since VSCodium's terminal only supports UTF-8 encoded data coming from the shell.
+//  - auto: Set the `$LANG` environment variable if the existing variable does not exist or it does not end in `'.UTF-8'`.
+//  - off: Do not set the `$LANG` environment variable.
+//  - on: Always set the `$LANG` environment variable.
+"terminal.integrated.detectLocale": "auto",
+// Controls whether bold text in the terminal will always use the "bright" ANSI color variant.
+"terminal.integrated.drawBoldTextInBrightColors": true,
+// This is now deprecated. Instead use the `terminal.integrated.enableVisualBell` and `accessibility.signals.terminalBell` settings.
+// 
+"terminal.integrated.enableBell": false,
+// Whether to enable file links in terminals. Links can be slow when working on a network drive in particular because each file link is verified against the file system. Changing this will take effect only in new terminals.
+//  - off: Always off.
+//  - on: Always on.
+//  - notRemote: Enable only when not in a remote workspace.
+"terminal.integrated.enableFileLinks": "on",
+// Enables image support in the terminal, this will only work when `terminal.integrated.gpuAcceleration` is enabled. Both sixel and iTerm's inline image protocol are supported on Linux and macOS, Windows support will light up automatically when ConPTY passes through the sequences. Images will currently not be restored between window reloads/reconnects.
+"terminal.integrated.enableImages": false,
+// Controls whether to show a warning dialog when pasting multiple lines into the terminal.
+//  - auto: Enable the warning but do not show it when:
+// 
+// - Bracketed paste mode is enabled (the shell supports multi-line paste natively)
+// - The paste is handled by the shell's readline (in the case of pwsh)
+//  - always: Always show the warning if the text contains a new line.
+//  - never: Never show the warning.
+"terminal.integrated.enableMultiLinePasteWarning": "auto",
+// Persist terminal sessions/history for the workspace across window reloads.
+"terminal.integrated.enablePersistentSessions": true,
+// Controls whether the visual terminal bell is enabled. This shows up next to the terminal's name.
+"terminal.integrated.enableVisualBell": false,
+// Object with environment variables that will be added to the VSCodium process to be used by the terminal on Linux. Set to `null` to delete the environment variable.
+"terminal.integrated.env.linux": {},
+// Object with environment variables that will be added to the VSCodium process to be used by the terminal on macOS. Set to `null` to delete the environment variable.
+"terminal.integrated.env.osx": {},
+// Object with environment variables that will be added to the VSCodium process to be used by the terminal on Windows. Set to `null` to delete the environment variable.
+"terminal.integrated.env.windows": {},
+// Whether to display the environment changes indicator on each terminal which explains whether extensions have made, or want to make changes to the terminal's environment.
+//  - off: Disable the indicator.
+//  - on: Enable the indicator.
+//  - warnonly: Only show the warning indicator when a terminal's environment is 'stale', not the information indicator that shows a terminal has had its environment modified by an extension.
+"terminal.integrated.environmentChangesIndicator": "warnonly",
+// Whether to relaunch terminals automatically if extensions want to contribute to their environment and have not been interacted with yet.
+"terminal.integrated.environmentChangesRelaunch": true,
+// Whether to use the experimental conpty.dll shipped with VSCodium, instead of the one bundled with Windows.
+"terminal.integrated.experimental.windowsUseConptyDll": false,
+// Scrolling speed multiplier when pressing `Alt`.
+"terminal.integrated.fastScrollSensitivity": 5,
+// Controls whether the terminal, accessible buffer, or neither will be focused after `Terminal: Run Selected Text In Active Terminal` has been run.
+//  - terminal: Always focus the terminal.
+//  - accessible-buffer: Always focus the accessible buffer.
+//  - none: Do nothing.
+"terminal.integrated.focusAfterRun": "none",
+// Controls the font family of the terminal. Defaults to `editor.fontFamily`'s value.
+"terminal.integrated.fontFamily": "",
+// Controls the font size in pixels of the terminal.
+"terminal.integrated.fontSize": 14,
+// The font weight to use within the terminal for non-bold text. Accepts "normal" and "bold" keywords or numbers between 1 and 1000.
+"terminal.integrated.fontWeight": "normal",
+// The font weight to use within the terminal for bold text. Accepts "normal" and "bold" keywords or numbers between 1 and 1000.
+"terminal.integrated.fontWeightBold": "bold",
+// Controls whether the terminal will leverage the GPU to do its rendering.
+//  - auto: Let VSCodium detect which renderer will give the best experience.
+//  - on: Enable GPU acceleration within the terminal.
+//  - off: Disable GPU acceleration within the terminal. The terminal will render much slower when GPU acceleration is off but it should reliably work on all systems.
+"terminal.integrated.gpuAcceleration": "auto",
+// Whether to hide the terminal view on startup, avoiding creating a terminal when there are no persistent sessions.
+//  - never: Never hide the terminal view on startup.
+//  - whenEmpty: Only hide the terminal when there are no persistent sessions restored.
+//  - always: Always hide the terminal, even when there are persistent sessions restored.
+"terminal.integrated.hideOnStartup": "never",
+// Controls whether the terminal will ignore bracketed paste mode even if the terminal was put into the mode, omitting the `\x1b[200~` and `\x1b[201~` sequences when pasting. This is useful when the shell is not respecting the mode which can happen in sub-shells for example.
+"terminal.integrated.ignoreBracketedPasteMode": false,
+// A set of process names to ignore when using the `terminal.integrated.confirmOnKill` setting.
+"terminal.integrated.ignoreProcessNames": [
+    "starship",
+    "oh-my-posh",
+    "bash",
+    "zsh"
+],
+// Whether new shells should inherit their environment from VSCodium, which may source a login shell to ensure $PATH and other development variables are initialized. This has no effect on Windows.
+"terminal.integrated.inheritEnv": true,
+// Controls if the first terminal without input will show a hint about available actions when it is focused.
+"terminal.integrated.initialHint": true,
+// Controls the letter spacing of the terminal. This is an integer value which represents the number of additional pixels to add between characters.
+"terminal.integrated.letterSpacing": 0,
+// Controls the line height of the terminal. This number is multiplied by the terminal font size to get the actual line-height in pixels.
+"terminal.integrated.lineHeight": 1.1,
+// When local echo should be enabled. This will override `terminal.integrated.localEchoLatencyThreshold`
+//  - on: Always enabled
+//  - off: Always disabled
+//  - auto: Enabled only for remote workspaces
+"terminal.integrated.localEchoEnabled": "auto",
+// Local echo will be disabled when any of these program names are found in the terminal title.
+"terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux"
+],
+// Length of network delay, in milliseconds, where local edits will be echoed on the terminal without waiting for server acknowledgement. If '0', local echo will always be on, and if '-1' it will be disabled.
+"terminal.integrated.localEchoLatencyThreshold": 30,
+// Terminal style of locally echoed text; either a font style or an RGB color.
+"terminal.integrated.localEchoStyle": "dim",
+// Controls whether to force selection when using Option+click on macOS. This will force a regular (line) selection and disallow the use of column selection mode. This enables copying and pasting using the regular terminal selection, for example, when mouse mode is enabled in tmux.
+"terminal.integrated.macOptionClickForcesSelection": false,
+// Controls whether to treat the option key as the meta key in the terminal on macOS.
+"terminal.integrated.macOptionIsMeta": false,
+// Controls how terminal reacts to middle click.
+//  - default: The platform default to focus the terminal. On Linux this will also paste the selection.
+//  - paste: Paste on middle click.
+"terminal.integrated.middleClickBehavior": "default",
+// When set, the foreground color of each cell will change to try meet the contrast ratio specified. Note that this will not apply to `powerline` characters per #146406. Example values:
+// 
+// - 1: Do nothing and use the standard theme colors.
+// - 4.5: [WCAG AA compliance (minimum)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (default).
+// - 7: [WCAG AAA compliance (enhanced)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html).
+// - 21: White on black or black on white.
+"terminal.integrated.minimumContrastRatio": 4.5,
+// A multiplier to be used on the `deltaY` of mouse wheel scroll events.
+"terminal.integrated.mouseWheelScrollSensitivity": 1,
+// Zoom the font of the terminal when using mouse wheel and holding `Ctrl`.
+"terminal.integrated.mouseWheelZoom": false,
+// When the terminal process must be shut down (for example on window or application close), this determines when the previous terminal session contents/history should be restored and processes be recreated when the workspace is next opened.
+// 
+// Caveats:
+// 
+// - Restoring of the process current working directory depends on whether it is supported by the shell.
+// - Time to persist the session during shutdown is limited, so it may be aborted when using high-latency remote connections.
+//  - onExit: Revive the processes after the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu).
+//  - onExitAndWindowClose: Revive the processes after the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu), or when the window is closed.
+//  - never: Never restore the terminal buffers or recreate the process.
+"terminal.integrated.persistentSessionReviveProcess": "onExit",
+// Controls the maximum amount of lines that will be restored when reconnecting to a persistent terminal session. Increasing this will restore more lines of scrollback at the cost of more memory and increase the time it takes to connect to terminals on start up. This setting requires a restart to take effect and should be set to a value less than or equal to `terminal.integrated.scrollback`.
+"terminal.integrated.persistentSessionScrollback": 100,
+// A set of terminal profile customizations for Linux which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
+// 
+// To override an existing profile use its profile name as the key, for example:
+// 
+// ```json
+// "terminal.integrated.profile.linux": {
+//   "bash": null
+// }
+// ```
+// 
+// [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
+"terminal.integrated.profiles.linux": {
+    "bash": {
+        "path": "bash",
+        "icon": "terminal-bash"
+    },
+    "zsh": {
+        "path": "zsh"
+    },
+    "fish": {
+        "path": "fish"
+    },
+    "tmux": {
+        "path": "tmux",
+        "icon": "terminal-tmux"
+    },
+    "pwsh": {
+        "path": "pwsh",
+        "icon": "terminal-powershell"
+    }
+},
+// A set of terminal profile customizations for Mac which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
+// 
+// To override an existing profile use its profile name as the key, for example:
+// 
+// ```json
+// "terminal.integrated.profile.osx": {
+//   "bash": null
+// }
+// ```
+// 
+// [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
+"terminal.integrated.profiles.osx": {
+    "bash": {
+        "path": "bash",
+        "args": [
+            "-l"
+        ],
+        "icon": "terminal-bash"
+    },
+    "zsh": {
+        "path": "zsh",
+        "args": [
+            "-l"
+        ]
+    },
+    "fish": {
+        "path": "fish",
+        "args": [
+            "-l"
+        ]
+    },
+    "tmux": {
+        "path": "tmux",
+        "icon": "terminal-tmux"
+    },
+    "pwsh": {
+        "path": "pwsh",
+        "icon": "terminal-powershell"
+    }
+},
+// A set of terminal profile customizations for Windows which allows adding, removing or changing how terminals are launched. Profiles are made up of a mandatory path, optional arguments and other presentation options.
+// 
+// To override an existing profile use its profile name as the key, for example:
+// 
+// ```json
+// "terminal.integrated.profile.windows": {
+//   "bash": null
+// }
+// ```
+// 
+// [Read more about configuring profiles](https://code.visualstudio.com/docs/terminal/profiles).
+"terminal.integrated.profiles.windows": {
+    "PowerShell": {
+        "source": "PowerShell",
+        "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+        "path": [
+            "${env:windir}\\Sysnative\\cmd.exe",
+            "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+        "source": "Git Bash"
+    }
+},
+// Whether to rescale glyphs horizontally that are a single cell wide but have glyphs that would overlap following cell(s). This typically happens for ambiguous width characters (eg. the roman numeral characters U+2160+) which aren't featured in monospace fonts. Emoji glyphs are never rescaled.
+"terminal.integrated.rescaleOverlappingGlyphs": true,
+// Controls how terminal reacts to right click.
+//  - default: Show the context menu.
+//  - copyPaste: Copy when there is a selection, otherwise paste.
+//  - paste: Paste on right click.
+//  - selectWord: Select the word under the cursor and show the context menu.
+//  - nothing: Do nothing and pass event to terminal.
+"terminal.integrated.rightClickBehavior": "default",
+// Controls the maximum number of lines the terminal keeps in its buffer. We pre-allocate memory based on this value in order to ensure a smooth experience. As such, as the value increases, so will the amount of memory.
+"terminal.integrated.scrollback": 1000,
+// Dispatches most keybindings to the terminal instead of the workbench, overriding `terminal.integrated.commandsToSkipShell`, which can be used alternatively for fine tuning.
+"terminal.integrated.sendKeybindingsToShell": false,
+// When shell integration is enabled, adds a decoration for each command.
+//  - both: Show decorations in the gutter (left) and overview ruler (right)
+//  - gutter: Show gutter decorations to the left of the terminal
+//  - overviewRuler: Show overview ruler decorations to the right of the terminal
+//  - never: Do not show decorations
+"terminal.integrated.shellIntegration.decorationsEnabled": "both",
+// Determines whether or not shell integration is auto-injected to support features like enhanced command tracking and current working directory detection. 
+// 
+// Shell integration works by injecting the shell with a startup script. The script gives VSCodium insight into what is happening within the terminal.
+// 
+// Supported shells:
+// 
+// - Linux/macOS: bash, fish, pwsh, zsh
+//  - Windows: pwsh, git bash
+// 
+// This setting applies only when terminals are created, so you will need to restart your terminals for it to take effect.
+// 
+//  Note that the script injection may not work if you have custom arguments defined in the terminal profile, have enabled `editor.accessibilitySupport#`, have a [complex bash `PROMPT_COMMAND`](https://code.visualstudio.com/docs/editor/integrated-terminal#_complex-bash-promptcommand), or other unsupported setup. To disable decorations, see `#terminal.integrated.shellIntegrations.decorationsEnabled`
+"terminal.integrated.shellIntegration.enabled": true,
+// Controls the number of recently used commands to keep in the terminal command history. Set to 0 to disable terminal command history.
+"terminal.integrated.shellIntegration.history": 100,
+// Whether to show the command guide when hovering over a command in the terminal.
+"terminal.integrated.shellIntegration.showCommandGuide": true,
+// Controls whether to show the alert "The terminal process terminated with exit code" when exit code is non-zero.
+"terminal.integrated.showExitAlert": true,
+// Whether to show hovers for links in the terminal output.
+"terminal.integrated.showLinkHover": true,
+// Controls whether the terminal will scroll using an animation.
+"terminal.integrated.smoothScrolling": false,
+// Controls the working directory a split terminal starts with.
+//  - workspaceRoot: A new split terminal will use the workspace root as the working directory. In a multi-root workspace a choice for which root folder to use is offered.
+//  - initial: A new split terminal will use the working directory that the parent terminal started with.
+//  - inherited: On macOS and Linux, a new split terminal will use the working directory of the parent terminal. On Windows, this behaves the same as initial.
+"terminal.integrated.splitCwd": "inherited",
+// Shows the current command at the top of the terminal.
+"terminal.integrated.stickyScroll.enabled": false,
+// Defines the maximum number of sticky lines to show. Sticky scroll lines will never exceed 40% of the viewport regardless of this setting.
+"terminal.integrated.stickyScroll.maxLineCount": 5,
+// Controls which built-in completions are activated. This setting can cause conflicts if custom shell completions are configured in the shell profile.
+"terminal.integrated.suggest.builtinCompletions": {
+    "pwshCode": true,
+    "pwshGit": true
+},
+// Enables experimental terminal Intellisense suggestions for supported shells (PowerShell v7+) when `terminal.integrated.shellIntegration.enabled` is set to `true`.
+// 
+// If shell integration is installed manually, `VSCODE_SUGGEST` needs to be set to `1` before calling the shell integration script.
+"terminal.integrated.suggest.enabled": false,
+// Controls whether suggestions should automatically show up while typing. Also be aware of the `terminal.integrated.suggest.suggestOnTriggerCharacters`-setting which controls if suggestions are triggered by special characters.
+"terminal.integrated.suggest.quickSuggestions": true,
+// Controls whether suggestions should run immediately when `Enter` (not `Tab`) is used to accept the result.
+//  - ignore: Ignore suggestions and send the enter directly to the shell without completing. This is used as the default value so the suggest widget is as unobtrusive as possible.
+//  - never: Never run on `Enter`.
+//  - exactMatch: Run on `Enter` when the suggestion is typed in its entirety.
+//  - exactMatchIgnoreExtension: Run on `Enter` when the suggestion is typed in its entirety or when a file is typed without its extension included.
+//  - always: Always run on `Enter`.
+"terminal.integrated.suggest.runOnEnter": "ignore",
+// Controls whether suggestions should automatically show up when typing trigger characters.
+"terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+// A theme color ID to associate with terminal icons by default.
+"terminal.integrated.tabs.defaultColor": null,
+// A codicon ID to associate with terminal icons by default.
+//  - add: $(add)
+//  - plus: $(plus)
+//  - gist-new: $(gist-new)
+//  - repo-create: $(repo-create)
+//  - lightbulb: $(lightbulb)
+//  - light-bulb: $(light-bulb)
+//  - repo: $(repo)
+//  - repo-delete: $(repo-delete)
+//  - gist-fork: $(gist-fork)
+//  - repo-forked: $(repo-forked)
+//  - git-pull-request: $(git-pull-request)
+//  - git-pull-request-abandoned: $(git-pull-request-abandoned)
+//  - record-keys: $(record-keys)
+//  - keyboard: $(keyboard)
+//  - tag: $(tag)
+//  - git-pull-request-label: $(git-pull-request-label)
+//  - tag-add: $(tag-add)
+//  - tag-remove: $(tag-remove)
+//  - person: $(person)
+//  - person-follow: $(person-follow)
+//  - person-outline: $(person-outline)
+//  - person-filled: $(person-filled)
+//  - git-branch: $(git-branch)
+//  - git-branch-create: $(git-branch-create)
+//  - git-branch-delete: $(git-branch-delete)
+//  - source-control: $(source-control)
+//  - mirror: $(mirror)
+//  - mirror-public: $(mirror-public)
+//  - star: $(star)
+//  - star-add: $(star-add)
+//  - star-delete: $(star-delete)
+//  - star-empty: $(star-empty)
+//  - comment: $(comment)
+//  - comment-add: $(comment-add)
+//  - alert: $(alert)
+//  - warning: $(warning)
+//  - search: $(search)
+//  - search-save: $(search-save)
+//  - log-out: $(log-out)
+//  - sign-out: $(sign-out)
+//  - log-in: $(log-in)
+//  - sign-in: $(sign-in)
+//  - eye: $(eye)
+//  - eye-unwatch: $(eye-unwatch)
+//  - eye-watch: $(eye-watch)
+//  - circle-filled: $(circle-filled)
+//  - primitive-dot: $(primitive-dot)
+//  - close-dirty: $(close-dirty)
+//  - debug-breakpoint: $(debug-breakpoint)
+//  - debug-breakpoint-disabled: $(debug-breakpoint-disabled)
+//  - debug-hint: $(debug-hint)
+//  - terminal-decoration-success: $(terminal-decoration-success)
+//  - primitive-square: $(primitive-square)
+//  - edit: $(edit)
+//  - pencil: $(pencil)
+//  - info: $(info)
+//  - issue-opened: $(issue-opened)
+//  - gist-private: $(gist-private)
+//  - git-fork-private: $(git-fork-private)
+//  - lock: $(lock)
+//  - mirror-private: $(mirror-private)
+//  - close: $(close)
+//  - remove-close: $(remove-close)
+//  - x: $(x)
+//  - repo-sync: $(repo-sync)
+//  - sync: $(sync)
+//  - clone: $(clone)
+//  - desktop-download: $(desktop-download)
+//  - beaker: $(beaker)
+//  - microscope: $(microscope)
+//  - vm: $(vm)
+//  - device-desktop: $(device-desktop)
+//  - file: $(file)
+//  - file-text: $(file-text)
+//  - more: $(more)
+//  - ellipsis: $(ellipsis)
+//  - kebab-horizontal: $(kebab-horizontal)
+//  - mail-reply: $(mail-reply)
+//  - reply: $(reply)
+//  - organization: $(organization)
+//  - organization-filled: $(organization-filled)
+//  - organization-outline: $(organization-outline)
+//  - new-file: $(new-file)
+//  - file-add: $(file-add)
+//  - new-folder: $(new-folder)
+//  - file-directory-create: $(file-directory-create)
+//  - trash: $(trash)
+//  - trashcan: $(trashcan)
+//  - history: $(history)
+//  - clock: $(clock)
+//  - folder: $(folder)
+//  - file-directory: $(file-directory)
+//  - symbol-folder: $(symbol-folder)
+//  - logo-github: $(logo-github)
+//  - mark-github: $(mark-github)
+//  - github: $(github)
+//  - terminal: $(terminal)
+//  - console: $(console)
+//  - repl: $(repl)
+//  - zap: $(zap)
+//  - symbol-event: $(symbol-event)
+//  - error: $(error)
+//  - stop: $(stop)
+//  - variable: $(variable)
+//  - symbol-variable: $(symbol-variable)
+//  - array: $(array)
+//  - symbol-array: $(symbol-array)
+//  - symbol-module: $(symbol-module)
+//  - symbol-package: $(symbol-package)
+//  - symbol-namespace: $(symbol-namespace)
+//  - symbol-object: $(symbol-object)
+//  - symbol-method: $(symbol-method)
+//  - symbol-function: $(symbol-function)
+//  - symbol-constructor: $(symbol-constructor)
+//  - symbol-boolean: $(symbol-boolean)
+//  - symbol-null: $(symbol-null)
+//  - symbol-numeric: $(symbol-numeric)
+//  - symbol-number: $(symbol-number)
+//  - symbol-structure: $(symbol-structure)
+//  - symbol-struct: $(symbol-struct)
+//  - symbol-parameter: $(symbol-parameter)
+//  - symbol-type-parameter: $(symbol-type-parameter)
+//  - symbol-key: $(symbol-key)
+//  - symbol-text: $(symbol-text)
+//  - symbol-reference: $(symbol-reference)
+//  - go-to-file: $(go-to-file)
+//  - symbol-enum: $(symbol-enum)
+//  - symbol-value: $(symbol-value)
+//  - symbol-ruler: $(symbol-ruler)
+//  - symbol-unit: $(symbol-unit)
+//  - activate-breakpoints: $(activate-breakpoints)
+//  - archive: $(archive)
+//  - arrow-both: $(arrow-both)
+//  - arrow-down: $(arrow-down)
+//  - arrow-left: $(arrow-left)
+//  - arrow-right: $(arrow-right)
+//  - arrow-small-down: $(arrow-small-down)
+//  - arrow-small-left: $(arrow-small-left)
+//  - arrow-small-right: $(arrow-small-right)
+//  - arrow-small-up: $(arrow-small-up)
+//  - arrow-up: $(arrow-up)
+//  - bell: $(bell)
+//  - bold: $(bold)
+//  - book: $(book)
+//  - bookmark: $(bookmark)
+//  - debug-breakpoint-conditional-unverified: $(debug-breakpoint-conditional-unverified)
+//  - debug-breakpoint-conditional: $(debug-breakpoint-conditional)
+//  - debug-breakpoint-conditional-disabled: $(debug-breakpoint-conditional-disabled)
+//  - debug-breakpoint-data-unverified: $(debug-breakpoint-data-unverified)
+//  - debug-breakpoint-data: $(debug-breakpoint-data)
+//  - debug-breakpoint-data-disabled: $(debug-breakpoint-data-disabled)
+//  - debug-breakpoint-log-unverified: $(debug-breakpoint-log-unverified)
+//  - debug-breakpoint-log: $(debug-breakpoint-log)
+//  - debug-breakpoint-log-disabled: $(debug-breakpoint-log-disabled)
+//  - briefcase: $(briefcase)
+//  - broadcast: $(broadcast)
+//  - browser: $(browser)
+//  - bug: $(bug)
+//  - calendar: $(calendar)
+//  - case-sensitive: $(case-sensitive)
+//  - check: $(check)
+//  - checklist: $(checklist)
+//  - chevron-down: $(chevron-down)
+//  - chevron-left: $(chevron-left)
+//  - chevron-right: $(chevron-right)
+//  - chevron-up: $(chevron-up)
+//  - chrome-close: $(chrome-close)
+//  - chrome-maximize: $(chrome-maximize)
+//  - chrome-minimize: $(chrome-minimize)
+//  - chrome-restore: $(chrome-restore)
+//  - circle-outline: $(circle-outline)
+//  - circle: $(circle)
+//  - debug-breakpoint-unverified: $(debug-breakpoint-unverified)
+//  - terminal-decoration-incomplete: $(terminal-decoration-incomplete)
+//  - circle-slash: $(circle-slash)
+//  - circuit-board: $(circuit-board)
+//  - clear-all: $(clear-all)
+//  - clippy: $(clippy)
+//  - close-all: $(close-all)
+//  - cloud-download: $(cloud-download)
+//  - cloud-upload: $(cloud-upload)
+//  - code: $(code)
+//  - collapse-all: $(collapse-all)
+//  - color-mode: $(color-mode)
+//  - comment-discussion: $(comment-discussion)
+//  - credit-card: $(credit-card)
+//  - dash: $(dash)
+//  - dashboard: $(dashboard)
+//  - database: $(database)
+//  - debug-continue: $(debug-continue)
+//  - debug-disconnect: $(debug-disconnect)
+//  - debug-pause: $(debug-pause)
+//  - debug-restart: $(debug-restart)
+//  - debug-start: $(debug-start)
+//  - debug-step-into: $(debug-step-into)
+//  - debug-step-out: $(debug-step-out)
+//  - debug-step-over: $(debug-step-over)
+//  - debug-stop: $(debug-stop)
+//  - debug: $(debug)
+//  - device-camera-video: $(device-camera-video)
+//  - device-camera: $(device-camera)
+//  - device-mobile: $(device-mobile)
+//  - diff-added: $(diff-added)
+//  - diff-ignored: $(diff-ignored)
+//  - diff-modified: $(diff-modified)
+//  - diff-removed: $(diff-removed)
+//  - diff-renamed: $(diff-renamed)
+//  - diff: $(diff)
+//  - diff-sidebyside: $(diff-sidebyside)
+//  - discard: $(discard)
+//  - editor-layout: $(editor-layout)
+//  - empty-window: $(empty-window)
+//  - exclude: $(exclude)
+//  - extensions: $(extensions)
+//  - eye-closed: $(eye-closed)
+//  - file-binary: $(file-binary)
+//  - file-code: $(file-code)
+//  - file-media: $(file-media)
+//  - file-pdf: $(file-pdf)
+//  - file-submodule: $(file-submodule)
+//  - file-symlink-directory: $(file-symlink-directory)
+//  - file-symlink-file: $(file-symlink-file)
+//  - file-zip: $(file-zip)
+//  - files: $(files)
+//  - filter: $(filter)
+//  - flame: $(flame)
+//  - fold-down: $(fold-down)
+//  - fold-up: $(fold-up)
+//  - fold: $(fold)
+//  - folder-active: $(folder-active)
+//  - folder-opened: $(folder-opened)
+//  - gear: $(gear)
+//  - gift: $(gift)
+//  - gist-secret: $(gist-secret)
+//  - gist: $(gist)
+//  - git-commit: $(git-commit)
+//  - git-compare: $(git-compare)
+//  - compare-changes: $(compare-changes)
+//  - git-merge: $(git-merge)
+//  - github-action: $(github-action)
+//  - github-alt: $(github-alt)
+//  - globe: $(globe)
+//  - grabber: $(grabber)
+//  - graph: $(graph)
+//  - gripper: $(gripper)
+//  - heart: $(heart)
+//  - home: $(home)
+//  - horizontal-rule: $(horizontal-rule)
+//  - hubot: $(hubot)
+//  - inbox: $(inbox)
+//  - issue-reopened: $(issue-reopened)
+//  - issues: $(issues)
+//  - italic: $(italic)
+//  - jersey: $(jersey)
+//  - json: $(json)
+//  - kebab-vertical: $(kebab-vertical)
+//  - key: $(key)
+//  - law: $(law)
+//  - lightbulb-autofix: $(lightbulb-autofix)
+//  - link-external: $(link-external)
+//  - link: $(link)
+//  - list-ordered: $(list-ordered)
+//  - list-unordered: $(list-unordered)
+//  - live-share: $(live-share)
+//  - loading: $(loading)
+//  - location: $(location)
+//  - mail-read: $(mail-read)
+//  - mail: $(mail)
+//  - markdown: $(markdown)
+//  - megaphone: $(megaphone)
+//  - mention: $(mention)
+//  - milestone: $(milestone)
+//  - git-pull-request-milestone: $(git-pull-request-milestone)
+//  - mortar-board: $(mortar-board)
+//  - move: $(move)
+//  - multiple-windows: $(multiple-windows)
+//  - mute: $(mute)
+//  - no-newline: $(no-newline)
+//  - note: $(note)
+//  - octoface: $(octoface)
+//  - open-preview: $(open-preview)
+//  - package: $(package)
+//  - paintcan: $(paintcan)
+//  - pin: $(pin)
+//  - play: $(play)
+//  - run: $(run)
+//  - plug: $(plug)
+//  - preserve-case: $(preserve-case)
+//  - preview: $(preview)
+//  - project: $(project)
+//  - pulse: $(pulse)
+//  - question: $(question)
+//  - quote: $(quote)
+//  - radio-tower: $(radio-tower)
+//  - reactions: $(reactions)
+//  - references: $(references)
+//  - refresh: $(refresh)
+//  - regex: $(regex)
+//  - remote-explorer: $(remote-explorer)
+//  - remote: $(remote)
+//  - remove: $(remove)
+//  - replace-all: $(replace-all)
+//  - replace: $(replace)
+//  - repo-clone: $(repo-clone)
+//  - repo-force-push: $(repo-force-push)
+//  - repo-pull: $(repo-pull)
+//  - repo-push: $(repo-push)
+//  - report: $(report)
+//  - request-changes: $(request-changes)
+//  - rocket: $(rocket)
+//  - root-folder-opened: $(root-folder-opened)
+//  - root-folder: $(root-folder)
+//  - rss: $(rss)
+//  - ruby: $(ruby)
+//  - save-all: $(save-all)
+//  - save-as: $(save-as)
+//  - save: $(save)
+//  - screen-full: $(screen-full)
+//  - screen-normal: $(screen-normal)
+//  - search-stop: $(search-stop)
+//  - server: $(server)
+//  - settings-gear: $(settings-gear)
+//  - settings: $(settings)
+//  - shield: $(shield)
+//  - smiley: $(smiley)
+//  - sort-precedence: $(sort-precedence)
+//  - split-horizontal: $(split-horizontal)
+//  - split-vertical: $(split-vertical)
+//  - squirrel: $(squirrel)
+//  - star-full: $(star-full)
+//  - star-half: $(star-half)
+//  - symbol-class: $(symbol-class)
+//  - symbol-color: $(symbol-color)
+//  - symbol-constant: $(symbol-constant)
+//  - symbol-enum-member: $(symbol-enum-member)
+//  - symbol-field: $(symbol-field)
+//  - symbol-file: $(symbol-file)
+//  - symbol-interface: $(symbol-interface)
+//  - symbol-keyword: $(symbol-keyword)
+//  - symbol-misc: $(symbol-misc)
+//  - symbol-operator: $(symbol-operator)
+//  - symbol-property: $(symbol-property)
+//  - wrench: $(wrench)
+//  - wrench-subaction: $(wrench-subaction)
+//  - symbol-snippet: $(symbol-snippet)
+//  - tasklist: $(tasklist)
+//  - telescope: $(telescope)
+//  - text-size: $(text-size)
+//  - three-bars: $(three-bars)
+//  - thumbsdown: $(thumbsdown)
+//  - thumbsup: $(thumbsup)
+//  - tools: $(tools)
+//  - triangle-down: $(triangle-down)
+//  - triangle-left: $(triangle-left)
+//  - triangle-right: $(triangle-right)
+//  - triangle-up: $(triangle-up)
+//  - twitter: $(twitter)
+//  - unfold: $(unfold)
+//  - unlock: $(unlock)
+//  - unmute: $(unmute)
+//  - unverified: $(unverified)
+//  - verified: $(verified)
+//  - versions: $(versions)
+//  - vm-active: $(vm-active)
+//  - vm-outline: $(vm-outline)
+//  - vm-running: $(vm-running)
+//  - watch: $(watch)
+//  - whitespace: $(whitespace)
+//  - whole-word: $(whole-word)
+//  - window: $(window)
+//  - word-wrap: $(word-wrap)
+//  - zoom-in: $(zoom-in)
+//  - zoom-out: $(zoom-out)
+//  - list-filter: $(list-filter)
+//  - list-flat: $(list-flat)
+//  - list-selection: $(list-selection)
+//  - selection: $(selection)
+//  - list-tree: $(list-tree)
+//  - debug-breakpoint-function-unverified: $(debug-breakpoint-function-unverified)
+//  - debug-breakpoint-function: $(debug-breakpoint-function)
+//  - debug-breakpoint-function-disabled: $(debug-breakpoint-function-disabled)
+//  - debug-stackframe-active: $(debug-stackframe-active)
+//  - circle-small-filled: $(circle-small-filled)
+//  - debug-stackframe-dot: $(debug-stackframe-dot)
+//  - terminal-decoration-mark: $(terminal-decoration-mark)
+//  - debug-stackframe: $(debug-stackframe)
+//  - debug-stackframe-focused: $(debug-stackframe-focused)
+//  - debug-breakpoint-unsupported: $(debug-breakpoint-unsupported)
+//  - symbol-string: $(symbol-string)
+//  - debug-reverse-continue: $(debug-reverse-continue)
+//  - debug-step-back: $(debug-step-back)
+//  - debug-restart-frame: $(debug-restart-frame)
+//  - debug-alt: $(debug-alt)
+//  - call-incoming: $(call-incoming)
+//  - call-outgoing: $(call-outgoing)
+//  - menu: $(menu)
+//  - expand-all: $(expand-all)
+//  - feedback: $(feedback)
+//  - git-pull-request-reviewer: $(git-pull-request-reviewer)
+//  - group-by-ref-type: $(group-by-ref-type)
+//  - ungroup-by-ref-type: $(ungroup-by-ref-type)
+//  - account: $(account)
+//  - git-pull-request-assignee: $(git-pull-request-assignee)
+//  - bell-dot: $(bell-dot)
+//  - debug-console: $(debug-console)
+//  - library: $(library)
+//  - output: $(output)
+//  - run-all: $(run-all)
+//  - sync-ignored: $(sync-ignored)
+//  - pinned: $(pinned)
+//  - github-inverted: $(github-inverted)
+//  - server-process: $(server-process)
+//  - server-environment: $(server-environment)
+//  - pass: $(pass)
+//  - issue-closed: $(issue-closed)
+//  - stop-circle: $(stop-circle)
+//  - play-circle: $(play-circle)
+//  - record: $(record)
+//  - debug-alt-small: $(debug-alt-small)
+//  - vm-connect: $(vm-connect)
+//  - cloud: $(cloud)
+//  - merge: $(merge)
+//  - export: $(export)
+//  - graph-left: $(graph-left)
+//  - magnet: $(magnet)
+//  - notebook: $(notebook)
+//  - redo: $(redo)
+//  - check-all: $(check-all)
+//  - pinned-dirty: $(pinned-dirty)
+//  - pass-filled: $(pass-filled)
+//  - circle-large-filled: $(circle-large-filled)
+//  - circle-large: $(circle-large)
+//  - circle-large-outline: $(circle-large-outline)
+//  - combine: $(combine)
+//  - gather: $(gather)
+//  - table: $(table)
+//  - variable-group: $(variable-group)
+//  - type-hierarchy: $(type-hierarchy)
+//  - type-hierarchy-sub: $(type-hierarchy-sub)
+//  - type-hierarchy-super: $(type-hierarchy-super)
+//  - git-pull-request-create: $(git-pull-request-create)
+//  - run-above: $(run-above)
+//  - run-below: $(run-below)
+//  - notebook-template: $(notebook-template)
+//  - debug-rerun: $(debug-rerun)
+//  - workspace-trusted: $(workspace-trusted)
+//  - workspace-untrusted: $(workspace-untrusted)
+//  - workspace-unknown: $(workspace-unknown)
+//  - terminal-cmd: $(terminal-cmd)
+//  - terminal-debian: $(terminal-debian)
+//  - terminal-linux: $(terminal-linux)
+//  - terminal-powershell: $(terminal-powershell)
+//  - terminal-tmux: $(terminal-tmux)
+//  - terminal-ubuntu: $(terminal-ubuntu)
+//  - terminal-bash: $(terminal-bash)
+//  - arrow-swap: $(arrow-swap)
+//  - copy: $(copy)
+//  - person-add: $(person-add)
+//  - filter-filled: $(filter-filled)
+//  - wand: $(wand)
+//  - debug-line-by-line: $(debug-line-by-line)
+//  - inspect: $(inspect)
+//  - layers: $(layers)
+//  - layers-dot: $(layers-dot)
+//  - layers-active: $(layers-active)
+//  - compass: $(compass)
+//  - compass-dot: $(compass-dot)
+//  - compass-active: $(compass-active)
+//  - azure: $(azure)
+//  - issue-draft: $(issue-draft)
+//  - git-pull-request-closed: $(git-pull-request-closed)
+//  - git-pull-request-draft: $(git-pull-request-draft)
+//  - debug-all: $(debug-all)
+//  - debug-coverage: $(debug-coverage)
+//  - run-errors: $(run-errors)
+//  - folder-library: $(folder-library)
+//  - debug-continue-small: $(debug-continue-small)
+//  - beaker-stop: $(beaker-stop)
+//  - graph-line: $(graph-line)
+//  - graph-scatter: $(graph-scatter)
+//  - pie-chart: $(pie-chart)
+//  - bracket: $(bracket)
+//  - bracket-dot: $(bracket-dot)
+//  - bracket-error: $(bracket-error)
+//  - lock-small: $(lock-small)
+//  - azure-devops: $(azure-devops)
+//  - verified-filled: $(verified-filled)
+//  - newline: $(newline)
+//  - layout: $(layout)
+//  - layout-activitybar-left: $(layout-activitybar-left)
+//  - layout-activitybar-right: $(layout-activitybar-right)
+//  - layout-panel-left: $(layout-panel-left)
+//  - layout-panel-center: $(layout-panel-center)
+//  - layout-panel-justify: $(layout-panel-justify)
+//  - layout-panel-right: $(layout-panel-right)
+//  - layout-panel: $(layout-panel)
+//  - layout-sidebar-left: $(layout-sidebar-left)
+//  - layout-sidebar-right: $(layout-sidebar-right)
+//  - layout-statusbar: $(layout-statusbar)
+//  - layout-menubar: $(layout-menubar)
+//  - layout-centered: $(layout-centered)
+//  - target: $(target)
+//  - indent: $(indent)
+//  - record-small: $(record-small)
+//  - error-small: $(error-small)
+//  - terminal-decoration-error: $(terminal-decoration-error)
+//  - arrow-circle-down: $(arrow-circle-down)
+//  - arrow-circle-left: $(arrow-circle-left)
+//  - arrow-circle-right: $(arrow-circle-right)
+//  - arrow-circle-up: $(arrow-circle-up)
+//  - layout-sidebar-right-off: $(layout-sidebar-right-off)
+//  - layout-panel-off: $(layout-panel-off)
+//  - layout-sidebar-left-off: $(layout-sidebar-left-off)
+//  - blank: $(blank)
+//  - heart-filled: $(heart-filled)
+//  - map: $(map)
+//  - map-horizontal: $(map-horizontal)
+//  - fold-horizontal: $(fold-horizontal)
+//  - map-filled: $(map-filled)
+//  - map-horizontal-filled: $(map-horizontal-filled)
+//  - fold-horizontal-filled: $(fold-horizontal-filled)
+//  - circle-small: $(circle-small)
+//  - bell-slash: $(bell-slash)
+//  - bell-slash-dot: $(bell-slash-dot)
+//  - comment-unresolved: $(comment-unresolved)
+//  - git-pull-request-go-to-changes: $(git-pull-request-go-to-changes)
+//  - git-pull-request-new-changes: $(git-pull-request-new-changes)
+//  - search-fuzzy: $(search-fuzzy)
+//  - comment-draft: $(comment-draft)
+//  - send: $(send)
+//  - sparkle: $(sparkle)
+//  - insert: $(insert)
+//  - mic: $(mic)
+//  - thumbsdown-filled: $(thumbsdown-filled)
+//  - thumbsup-filled: $(thumbsup-filled)
+//  - coffee: $(coffee)
+//  - snake: $(snake)
+//  - game: $(game)
+//  - vr: $(vr)
+//  - chip: $(chip)
+//  - piano: $(piano)
+//  - music: $(music)
+//  - mic-filled: $(mic-filled)
+//  - repo-fetch: $(repo-fetch)
+//  - copilot: $(copilot)
+//  - lightbulb-sparkle: $(lightbulb-sparkle)
+//  - robot: $(robot)
+//  - sparkle-filled: $(sparkle-filled)
+//  - diff-single: $(diff-single)
+//  - diff-multiple: $(diff-multiple)
+//  - surround-with: $(surround-with)
+//  - share: $(share)
+//  - git-stash: $(git-stash)
+//  - git-stash-apply: $(git-stash-apply)
+//  - git-stash-pop: $(git-stash-pop)
+//  - vscode: $(vscode)
+//  - vscode-insiders: $(vscode-insiders)
+//  - code-oss: $(code-oss)
+//  - run-coverage: $(run-coverage)
+//  - run-all-coverage: $(run-all-coverage)
+//  - coverage: $(coverage)
+//  - github-project: $(github-project)
+//  - map-vertical: $(map-vertical)
+//  - fold-vertical: $(fold-vertical)
+//  - map-vertical-filled: $(map-vertical-filled)
+//  - fold-vertical-filled: $(fold-vertical-filled)
+//  - go-to-search: $(go-to-search)
+//  - percentage: $(percentage)
+//  - sort-percentage: $(sort-percentage)
+//  - attach: $(attach)
+//  - dialog-error: $(dialog-error)
+//  - dialog-warning: $(dialog-warning)
+//  - dialog-info: $(dialog-info)
+//  - dialog-close: $(dialog-close)
+//  - tree-item-expanded: $(tree-item-expanded)
+//  - tree-filter-on-type-on: $(tree-filter-on-type-on)
+//  - tree-filter-on-type-off: $(tree-filter-on-type-off)
+//  - tree-filter-clear: $(tree-filter-clear)
+//  - tree-item-loading: $(tree-item-loading)
+//  - menu-selection: $(menu-selection)
+//  - menu-submenu: $(menu-submenu)
+//  - menubar-more: $(menubar-more)
+//  - scrollbar-button-left: $(scrollbar-button-left)
+//  - scrollbar-button-right: $(scrollbar-button-right)
+//  - scrollbar-button-up: $(scrollbar-button-up)
+//  - scrollbar-button-down: $(scrollbar-button-down)
+//  - toolbar-more: $(toolbar-more)
+//  - quick-input-back: $(quick-input-back)
+//  - drop-down-button: $(drop-down-button)
+//  - symbol-customcolor: $(symbol-customcolor)
+//  - export: $(export)
+//  - workspace-unspecified: $(workspace-unspecified)
+//  - newline: $(newline)
+//  - thumbsdown-filled: $(thumbsdown-filled)
+//  - thumbsup-filled: $(thumbsup-filled)
+//  - git-fetch: $(git-fetch)
+//  - lightbulb-sparkle-autofix: $(lightbulb-sparkle-autofix)
+//  - debug-breakpoint-pending: $(debug-breakpoint-pending)
+"terminal.integrated.tabs.defaultIcon": "terminal",
+// Controls the terminal description, which appears to the right of the title. Variables are substituted based on the context:
+// - `${cwd}`: the terminal's current working directory
+// - `${cwdFolder}`: the terminal's current working directory, displayed for multi-root workspaces or in a single root workspace when the value differs from the initial working directory. On Windows, this will only be displayed when shell integration is enabled.
+// - `${workspaceFolder}`: the workspace in which the terminal was launched
+// - `${workspaceFolderName}`: the `name` of the workspace in which the terminal was launched
+// - `${local}`: indicates a local terminal in a remote workspace
+// - `${process}`: the name of the terminal process
+// - `${separator}`: a conditional separator (` - `) that only shows when surrounded by variables with values or static text.
+// - `${sequence}`: the name provided to the terminal by the process
+// - `${task}`: indicates this terminal is associated with a task
+"terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
+// Controls whether terminal tab statuses support animation (eg. in progress tasks).
+"terminal.integrated.tabs.enableAnimation": true,
+// Controls whether terminal tabs display as a list to the side of the terminal. When this is disabled a dropdown will display instead.
+"terminal.integrated.tabs.enabled": true,
+// Controls whether focusing the terminal of a tab happens on double or single click.
+//  - singleClick: Focus the terminal when clicking a terminal tab
+//  - doubleClick: Focus the terminal when double-clicking a terminal tab
+"terminal.integrated.tabs.focusMode": "doubleClick",
+// Controls whether the terminal tabs view will hide under certain conditions.
+//  - never: Never hide the terminal tabs view
+//  - singleTerminal: Hide the terminal tabs view when there is only a single terminal opened
+//  - singleGroup: Hide the terminal tabs view when there is only a single terminal group opened
+"terminal.integrated.tabs.hideCondition": "singleTerminal",
+// Controls the location of the terminal tabs, either to the left or right of the actual terminal(s).
+//  - left: Show the terminal tabs view to the left of the terminal
+//  - right: Show the terminal tabs view to the right of the terminal
+"terminal.integrated.tabs.location": "right",
+// Separator used by `terminal.integrated.tabs.title#` and `#terminal.integrated.tabs.description`.
+"terminal.integrated.tabs.separator": " - ",
+// Controls whether terminal split and kill buttons are displays next to the new terminal button.
+//  - always: Always show the actions
+//  - singleTerminal: Show the actions when it is the only terminal opened
+//  - singleTerminalOrNarrow: Show the actions when it is the only terminal opened or when the tabs view is in its narrow textless state
+//  - never: Never show the actions
+"terminal.integrated.tabs.showActions": "singleTerminalOrNarrow",
+// Shows the active terminal information in the view. This is particularly useful when the title within the tabs aren't visible.
+//  - always: Always show the active terminal
+//  - singleTerminal: Show the active terminal when it is the only terminal opened
+//  - singleTerminalOrNarrow: Show the active terminal when it is the only terminal opened or when the tabs view is in its narrow textless state
+//  - never: Never show the active terminal
+"terminal.integrated.tabs.showActiveTerminal": "singleTerminalOrNarrow",
+// Controls the terminal title. Variables are substituted based on the context:
+// - `${cwd}`: the terminal's current working directory
+// - `${cwdFolder}`: the terminal's current working directory, displayed for multi-root workspaces or in a single root workspace when the value differs from the initial working directory. On Windows, this will only be displayed when shell integration is enabled.
+// - `${workspaceFolder}`: the workspace in which the terminal was launched
+// - `${workspaceFolderName}`: the `name` of the workspace in which the terminal was launched
+// - `${local}`: indicates a local terminal in a remote workspace
+// - `${process}`: the name of the terminal process
+// - `${separator}`: a conditional separator (` - `) that only shows when surrounded by variables with values or static text.
+// - `${sequence}`: the name provided to the terminal by the process
+// - `${task}`: indicates this terminal is associated with a task
+"terminal.integrated.tabs.title": "${process}",
+// The number of cells in a tab stop.
+"terminal.integrated.tabStopWidth": 8,
+// Controls what version of Unicode to use when evaluating the width of characters in the terminal. If you experience emoji or other wide characters not taking up the right amount of space or backspace either deleting too much or too little then you may want to try tweaking this setting.
+//  - 6: Version 6 of Unicode. This is an older version which should work better on older systems.
+//  - 11: Version 11 of Unicode. This version provides better support on modern systems that use modern versions of Unicode.
+"terminal.integrated.unicodeVersion": "11",
+// Controls whether or not WSL distros are shown in the terminal dropdown
+"terminal.integrated.useWslProfiles": true,
+// Whether to use ConPTY for Windows terminal process communication (requires Windows 10 build number 18309+). Winpty will be used if this is false.
+"terminal.integrated.windowsEnableConpty": true,
+// A string containing all characters to be considered word separators when double-clicking to select word and in the fallback 'word' link detection. Since this is used for link detection, including characters such as `:` that are used when detecting links will cause the line and column part of links like `file:10:5` to be ignored.
+"terminal.integrated.wordSeparators": " ()[]{}',\"`─‘’“”|",
+```

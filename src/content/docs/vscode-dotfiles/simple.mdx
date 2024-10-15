@@ -1,0 +1,635 @@
+# simple
+
+## workbench
+
+```json
+// Controls the behavior of clicking an Activity Bar icon in the workbench. This value is ignored when `workbench.activityBar.location` is not set to `default`.
+//  - toggle: Hide the Primary Side Bar if the clicked item is already visible.
+//  - focus: Focus the Primary Side Bar if the clicked item is already visible.
+"workbench.activityBar.iconClickBehavior": "toggle",
+// Controls the location of the Activity Bar relative to the Primary and Secondary Side Bars.
+//  - default: Show the Activity Bar on the side of the Primary Side Bar and on top of the Secondary Side Bar.
+//  - top: Show the Activity Bar on top of the Primary and Secondary Side Bars.
+//  - bottom: Show the Activity Bar at the bottom of the Primary and Secondary Side Bars.
+//  - hidden: Hide the Activity Bar in the Primary and Secondary Side Bars.
+"workbench.activityBar.location": "default",
+// Controls whether to automatically resume available working changes stored in the cloud for the current workspace.
+//  - onReload: Automatically resume available working changes from the cloud on window reload.
+//  - off: Never attempt to resume working changes from the cloud.
+"workbench.cloudChanges.autoResume": "onReload",
+// Controls whether to prompt the user to store working changes in the cloud when using Continue Working On.
+//  - prompt: Prompt the user to sign in to store working changes in the cloud with Continue Working On.
+//  - off: Do not store working changes in the cloud with Continue Working On unless the user has already turned on Cloud Changes.
+"workbench.cloudChanges.continueOn": "prompt",
+// Overrides colors from the currently selected color theme.
+"workbench.colorCustomizations": {},
+// Specifies the color theme used in the workbench when `window.autoDetectColorScheme` is not enabled.
+"workbench.colorTheme": "Default Dark Modern",
+// Controls where the command palette should ask chat questions.
+//  - chatView: Ask chat questions in the Chat view.
+//  - quickChat: Ask chat questions in Quick Chat.
+"workbench.commandPalette.experimental.askChatLocation": "chatView",
+// Controls whether the command palette should include similar commands. You must have an extension installed that provides Natural Language support.
+"workbench.commandPalette.experimental.enableNaturalLanguageSearch": true,
+// Controls whether the command palette should have a list of commonly used commands.
+"workbench.commandPalette.experimental.suggestCommands": false,
+// Controls the number of recently used commands to keep in history for the command palette. Set to 0 to disable command history.
+"workbench.commandPalette.history": 50,
+// Controls whether the last typed input to the command palette should be restored when opening it the next time.
+"workbench.commandPalette.preserveInput": false,
+// Controls whether to always show the editor actions, even when the editor group is not active.
+"workbench.editor.alwaysShowEditorActions": false,
+// If an editor matching one of the listed types is opened as the first in an editor group and more than one group is open, the group is automatically locked. Locked groups will only be used for opening editors when explicitly chosen by a user gesture (for example drag and drop), but not by default. Consequently, the active editor in a locked group is less likely to be replaced accidentally with a different editor.
+"workbench.editor.autoLockGroups": {
+    "default": false,
+    "workbench.editor.chatSession": false,
+    "workbench.editorinputs.searchEditorInput": false,
+    "repl": false,
+    "workbench.editors.gettingStartedInput": false,
+    "jupyter-notebook": false,
+    "imagePreview.previewEditor": false,
+    "vscode.audioPreview": false,
+    "vscode.videoPreview": false,
+    "jsProfileVisualizer.cpuprofile.table": false,
+    "jsProfileVisualizer.heapprofile.table": false,
+    "jsProfileVisualizer.heapsnapshot.table": false,
+    "terminalEditor": true,
+    "workbench.input.interactive": false,
+    "mainThreadWebview-markdown.preview": false,
+    "mainThreadWebview-simpleBrowser.view": true,
+    "mainThreadWebview-browserPreview": true
+},
+// Controls if the centered layout should automatically resize to maximum width when more than one group is open. Once only one group is open it will resize back to the original centered width.
+"workbench.editor.centeredLayoutAutoResize": true,
+// Controls whether the centered layout tries to maintain constant width when the window is resized.
+"workbench.editor.centeredLayoutFixedWidth": false,
+// Controls the behavior of empty editor groups when the last tab in the group is closed. When enabled, empty groups will automatically close. When disabled, empty groups will remain part of the grid.
+"workbench.editor.closeEmptyGroups": true,
+// Controls whether editors showing a file that was opened during the session should close automatically when getting deleted or renamed by some other process. Disabling this will keep the editor open  on such an event. Note that deleting from within the application will always close the editor and that editors with unsaved changes will never close to preserve your data.
+"workbench.editor.closeOnFileDelete": false,
+// Controls whether the custom workbench editor labels should be applied.
+"workbench.editor.customLabels.enabled": true,
+// Controls the rendering of the editor label. Each __Item__ is a pattern that matches a file path. Both relative and absolute file paths are supported. The relative path must include the WORKSPACE_FOLDER (e.g `WORKSPACE_FOLDER/src/**.tsx` or `*/src/**.tsx`). Absolute patterns must start with a `/`. In case multiple patterns match, the longest matching path will be picked. Each __Value__ is the template for the rendered editor when the __Item__ matches. Variables are substituted based on the context:
+// - `${dirname}`: name of the folder in which the file is located (e.g. `WORKSPACE_FOLDER/folder/file.txt -> folder`).
+// - `${dirname(N)}`: name of the nth parent folder in which the file is located (e.g. `N=2: WORKSPACE_FOLDER/static/folder/file.txt -> WORKSPACE_FOLDER`). Folders can be picked from the start of the path by using negative numbers (e.g. `N=-1: WORKSPACE_FOLDER/folder/file.txt -> WORKSPACE_FOLDER`). If the __Item__ is an absolute pattern path, the first folder (`N=-1`) refers to the first folder in the absolute path, otherwise it corresponds to the workspace folder.
+// - `${filename}`: name of the file without the file extension (e.g. `WORKSPACE_FOLDER/folder/file.txt -> file`).
+// - `${extname}`: the file extension (e.g. `WORKSPACE_FOLDER/folder/file.txt -> txt`).
+// - `${extname(N)}`: the nth extension of the file separated by '.' (e.g. `N=2: WORKSPACE_FOLDER/folder/file.ext1.ext2.ext3 -> ext1`). Extension can be picked from the start of the extension by using negative numbers (e.g. `N=-1: WORKSPACE_FOLDER/folder/file.ext1.ext2.ext3 -> ext2`).
+// 
+// Example: `"**/static/**/*.html": "${filename} - ${dirname} (${extname})"` will render a file `WORKSPACE_FOLDER/static/folder/file.html` as `file - folder (html)`.
+"workbench.editor.customLabels.patterns": {},
+// Controls whether editor file decorations should use badges.
+"workbench.editor.decorations.badges": true,
+// Controls whether editor file decorations should use colors.
+"workbench.editor.decorations.colors": true,
+// The default editor for files detected as binary. If undefined, the user will be presented with a picker.
+"workbench.editor.defaultBinaryEditor": "",
+// Controls how the editor group is resized when double clicking on a tab. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+//  - maximize: All other editor groups are hidden and the current editor group is maximized to take up the entire editor area.
+//  - expand: The editor group takes as much space as possible by making all other editor groups as small as possible.
+//  - off: No editor group is resized when double clicking on a tab.
+"workbench.editor.doubleClickTabToToggleEditorGroupSizes": "expand",
+// Controls if editors can be dragged out of the window to open them in a new window. Press and hold the `Alt` key while dragging to toggle this dynamically.
+"workbench.editor.dragToOpenWindow": true,
+// Controls where the editor actions are shown.
+//  - default: Show editor actions in the window title bar when `workbench.editor.showTabs` is set to `none`. Otherwise, editor actions are shown in the editor tab bar.
+//  - titleBar: Show editor actions in the window title bar. If `window.customTitleBarVisibility` is set to `never`, editor actions are hidden.
+//  - hidden: Editor actions are not shown.
+"workbench.editor.editorActionsLocation": "default",
+// Controls if the empty editor text hint should be visible in the editor.
+"workbench.editor.empty.hint": "text",
+// Controls whether preview mode is used when editors open. There is a maximum of one preview mode editor per editor group. This editor displays its filename in italics on its tab or title label and in the Open Editors view. Its contents will be replaced by the next editor opened in preview mode. Making a change in a preview mode editor will persist it, as will a double-click on its label, or the 'Keep Open' option in its label context menu. Opening a file from Explorer with a double-click persists its editor immediately.
+"workbench.editor.enablePreview": true,
+// Controls whether editors remain in preview when a code navigation is started from them. Preview editors do not stay open, and are reused until explicitly set to be kept open (via double-click or editing). This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+"workbench.editor.enablePreviewFromCodeNavigation": false,
+// Controls whether editors opened from Quick Open show as preview editors. Preview editors do not stay open, and are reused until explicitly set to be kept open (via double-click or editing). When enabled, hold Ctrl before selection to open an editor as a non-preview. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+"workbench.editor.enablePreviewFromQuickOpen": false,
+// Controls whether editors are closed in most recently used order or from left to right.
+"workbench.editor.focusRecentEditorAfterClose": true,
+// Controls whether a top border is drawn on tabs for editors that have unsaved changes. This value is ignored when `workbench.editor.showTabs` is not set to multiple.
+"workbench.editor.highlightModifiedTabs": false,
+// Enables use of editor history in language detection. This causes automatic language detection to favor languages that have been recently opened and allows for automatic language detection to operate with smaller inputs.
+"workbench.editor.historyBasedLanguageDetection": true,
+// Controls the format of the label for an editor.
+//  - default: Show the name of the file. When tabs are enabled and two files have the same name in one group the distinguishing sections of each file's path are added. When tabs are disabled, the path relative to the workspace folder is shown if the editor is active.
+//  - short: Show the name of the file followed by its directory name.
+//  - medium: Show the name of the file followed by its path relative to the workspace folder.
+//  - long: Show the name of the file followed by its absolute path.
+"workbench.editor.labelFormat": "default",
+// Controls whether the language in a text editor is automatically detected unless the language has been explicitly set by the language picker. This can also be scoped by language so you can specify which languages you do not want to be switched off of. This is useful for languages like Markdown that often contain other languages that might trick language detection into thinking it's the embedded language and not Markdown.
+"workbench.editor.languageDetection": true,
+// When enabled, shows a Status bar Quick Fix when the editor language doesn't match detected content language.
+"workbench.editor.languageDetectionHints": {
+    "untitledEditors": true,
+    "notebookEditors": true
+},
+// Controls if the number of opened editors should be limited or not. When enabled, less recently used editors will close to make space for newly opening editors.
+"workbench.editor.limit.enabled": false,
+// Controls if the maximum number of opened editors should exclude dirty editors for counting towards the configured limit.
+"workbench.editor.limit.excludeDirty": false,
+// Controls if the limit of maximum opened editors should apply per editor group or across all editor groups.
+"workbench.editor.limit.perEditorGroup": false,
+// Controls the maximum number of opened editors. Use the `workbench.editor.limit.perEditorGroup` setting to control this limit per editor group or across all groups.
+"workbench.editor.limit.value": 10,
+// Enables the use of mouse buttons four and five for commands 'Go Back' and 'Go Forward'.
+"workbench.editor.mouseBackForwardToNavigate": true,
+// Controls the scope of history navigation in editors for commands such as 'Go Back' and 'Go Forward'.
+//  - default: Navigate across all opened editors and editor groups.
+//  - editorGroup: Navigate only in editors of the active editor group.
+//  - editor: Navigate only in the active editor.
+"workbench.editor.navigationScope": "default",
+// Controls where editors open. Select `left` or `right` to open editors to the left or right of the currently active one. Select `first` or `last` to open editors independently from the currently active one.
+"workbench.editor.openPositioning": "right",
+// Controls the default direction of editors that are opened side by side (for example, from the Explorer). By default, editors will open on the right hand side of the currently active one. If changed to `down`, the editors will open below the currently active one.
+"workbench.editor.openSideBySideDirection": "right",
+// Controls the size of pinned editor tabs. Pinned tabs are sorted to the beginning of all opened tabs and typically do not close until unpinned. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+//  - normal: A pinned tab inherits the look of non pinned tabs.
+//  - compact: A pinned tab will show in a compact form with only icon or first letter of the editor name.
+//  - shrink: A pinned tab shrinks to a compact fixed size showing parts of the editor name.
+"workbench.editor.pinnedTabSizing": "normal",
+// When enabled, displays pinned tabs in a separate row above all other tabs. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+"workbench.editor.pinnedTabsOnSeparateRow": false,
+// When enabled, a language detection model that takes into account editor history will be given higher precedence.
+"workbench.editor.preferHistoryBasedLanguageDetection": false,
+// Controls whether pinned editors should close when keyboard or middle mouse click is used for closing.
+//  - keyboardAndMouse: Always prevent closing the pinned editor when using mouse middle click or keyboard.
+//  - keyboard: Prevent closing the pinned editor when using the keyboard.
+//  - mouse: Prevent closing the pinned editor when using mouse middle click.
+//  - never: Never prevent closing a pinned editor.
+"workbench.editor.preventPinnedEditorClose": "keyboardAndMouse",
+// Restores the last editor view state (such as scroll position) when re-opening editors after they have been closed. Editor view state is stored per editor group and discarded when a group closes. Use the `workbench.editor.sharedViewState` setting to use the last known view state across all editor groups in case no previous view state was found for a editor group.
+"workbench.editor.restoreViewState": true,
+// Controls whether an editor is revealed in any of the visible groups if opened. If disabled, an editor will prefer to open in the currently active editor group. If enabled, an already opened editor will be revealed instead of opened again in the currently active editor group. Note that there are some cases where this setting is ignored, such as when forcing an editor to open in a specific group or to the side of the currently active group.
+"workbench.editor.revealIfOpen": false,
+// Controls whether scrolling over tabs will open them or not. By default tabs will only reveal upon scrolling, but not open. You can press and hold the Shift-key while scrolling to change this behavior for that duration. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+"workbench.editor.scrollToSwitchTabs": false,
+// Preserves the most recent editor view state (such as scroll position) across all editor groups and restores that if no specific editor view state is found for the editor group.
+"workbench.editor.sharedViewState": false,
+// Controls whether opened editors should show with an icon or not. This requires a file icon theme to be enabled as well.
+"workbench.editor.showIcons": true,
+// Controls whether opened editors should show as individual tabs, one single large tab or if the title area should not be shown.
+//  - multiple: Each editor is displayed as a tab in the editor title area.
+//  - single: The active editor is displayed as a single large tab in the editor title area.
+//  - none: The editor title area is not displayed.
+"workbench.editor.showTabs": "multiple",
+// Controls the layout for when an editor is split in an editor group to be either vertical or horizontal.
+//  - vertical: Editors are positioned from top to bottom.
+//  - horizontal: Editors are positioned from left to right.
+"workbench.editor.splitInGroupLayout": "horizontal",
+// Controls if editor groups can be split from drag and drop operations by dropping an editor or file on the edges of the editor area.
+"workbench.editor.splitOnDragAndDrop": true,
+// Controls the size of editor groups when splitting them.
+//  - auto: Splits the active editor group to equal parts, unless all editor groups are already in equal parts. In that case, splits all the editor groups to equal parts.
+//  - distribute: Splits all the editor groups to equal parts.
+//  - split: Splits the active editor group to equal parts.
+"workbench.editor.splitSizing": "auto",
+// Controls the visibility of the tab close action button.
+"workbench.editor.tabActionCloseVisibility": true,
+// Controls the position of the editor's tabs action buttons (close, unpin). This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+"workbench.editor.tabActionLocation": "right",
+// Controls the visibility of the tab unpin action button.
+"workbench.editor.tabActionUnpinVisibility": true,
+// Controls the size of editor tabs. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.
+//  - fit: Always keep tabs large enough to show the full editor label.
+//  - shrink: Allow tabs to get smaller when the available space is not enough to show all tabs at once.
+//  - fixed: Make all tabs the same size, while allowing them to get smaller when the available space is not enough to show all tabs at once.
+"workbench.editor.tabSizing": "fit",
+// Controls the maximum width of tabs when `workbench.editor.tabSizing` size is set to `fixed`.
+"workbench.editor.tabSizingFixedMaxWidth": 160,
+// Controls the minimum width of tabs when `workbench.editor.tabSizing` size is set to `fixed`.
+"workbench.editor.tabSizingFixedMinWidth": 50,
+// Controls the height of the scrollbars used for tabs and breadcrumbs in the editor title area.
+//  - default: The default size.
+//  - large: Increases the size, so it can be grabbed more easily with the mouse.
+"workbench.editor.titleScrollbarSizing": "default",
+// Controls the format of the label for an untitled editor.
+//  - content: The name of the untitled file is derived from the contents of its first line unless it has an associated file path. It will fallback to the name in case the line is empty or contains no word characters.
+//  - name: The name of the untitled file is not derived from the contents of the file.
+"workbench.editor.untitled.labelFormat": "content",
+// Controls whether tabs should be wrapped over multiple lines when exceeding available space or whether a scrollbar should appear instead. This value is ignored when `workbench.editor.showTabs` is not set to '`multiple`'.
+"workbench.editor.wrapTabs": false,
+// Configure [glob patterns](https://aka.ms/vscode-glob-patterns) to editors (for example `"*.hex": "hexEditor.hexedit"`). These have precedence over the default behavior.
+"workbench.editorAssociations": {},
+// Controls the minimum size of a file in MB before asking for confirmation when opening in the editor. Note that this setting may not apply to all editor types and environments.
+"workbench.editorLargeFileConfirmation": 1024,
+// Fetches experiments to run from a Microsoft online service.
+"workbench.enableExperiments": true,
+// Controls whether to automatically store available working changes in the cloud for the current workspace. This setting has no effect in the web.
+//  - onShutdown: Automatically store current working changes in the cloud on window close.
+//  - off: Never attempt to automatically store working changes in the cloud.
+"workbench.experimental.cloudChanges.autoStore": "off",
+// Controls whether to surface cloud changes which partially match the current session.
+"workbench.experimental.cloudChanges.partialMatches.enabled": false,
+// Controls whether to render the Share action next to the command center when `window.commandCenter` is `true`.
+"workbench.experimental.share.enabled": false,
+// Configure the browser to use for opening http or https links externally. This can either be the name of the browser (`edge`, `chrome`, `firefox`) or an absolute path to the browser's executable. Will use the system default if not set.
+"workbench.externalBrowser": "",
+// Configure the opener to use for external URIs (http, https).
+"workbench.externalUriOpeners": {},
+// Controls the delay in milliseconds after which the hover is shown for workbench items (ex. some extension provided tree view items). Already visible items may require a refresh before reflecting this setting change.
+"workbench.hover.delay": 500,
+// Specifies the file icon theme used in the workbench or 'null' to not show any file icons.
+//  - null: No file icons
+//  - vs-minimal
+//  - vs-seti
+//  - eq-material-theme-icons
+//  - eq-material-theme-icons-darker
+//  - eq-material-theme-icons-palenight
+//  - eq-material-theme-icons-ocean
+//  - eq-material-theme-icons-light
+//  - eq-material-theme-icons-deepforest
+"workbench.iconTheme": "vs-seti",
+// Controls whether the layout control is shown in the custom title bar. This setting only has an effect when `window.customTitleBarVisibility` is not set to `never`.
+"workbench.layoutControl.enabled": true,
+// Controls whether the layout control in the custom title bar is displayed as a single menu button or with multiple UI toggles.
+//  - menu: Shows a single button with a dropdown of layout options.
+//  - toggles: Shows several buttons for toggling the visibility of the panels and side bar.
+//  - both: Shows both the dropdown and toggle buttons.
+"workbench.layoutControl.type": "both",
+// Controls the type of matching used when searching lists and trees in the workbench.
+//  - fuzzy: Use fuzzy matching when searching.
+//  - contiguous: Use contiguous matching when searching.
+"workbench.list.defaultFindMatchType": "fuzzy",
+// Controls the default find mode for lists and trees in the workbench.
+//  - highlight: Highlight elements when searching. Further up and down navigation will traverse only the highlighted elements.
+//  - filter: Filter elements when searching.
+"workbench.list.defaultFindMode": "highlight",
+// Scrolling speed multiplier when pressing `Alt`.
+"workbench.list.fastScrollSensitivity": 5,
+// Controls whether lists and trees support horizontal scrolling in the workbench. Warning: turning on this setting has a performance implication.
+"workbench.list.horizontalScrolling": false,
+// Please use 'workbench.list.defaultFindMode' and	'workbench.list.typeNavigationMode' instead.
+// Controls the keyboard navigation style for lists and trees in the workbench. Can be simple, highlight and filter.
+//  - simple: Simple keyboard navigation focuses elements which match the keyboard input. Matching is done only on prefixes.
+//  - highlight: Highlight keyboard navigation highlights elements which match the keyboard input. Further up and down navigation will traverse only the highlighted elements.
+//  - filter: Filter keyboard navigation will filter out and hide all the elements which do not match the keyboard input.
+"workbench.list.keyboardNavigation": "highlight",
+// A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events.
+"workbench.list.mouseWheelScrollSensitivity": 1,
+// The modifier to be used to add an item in trees and lists to a multi-selection with the mouse (for example in the explorer, open editors and scm view). The 'Open to Side' mouse gestures - if supported - will adapt such that they do not conflict with the multiselect modifier.
+//  - ctrlCmd: Maps to `Control` on Windows and Linux and to `Command` on macOS.
+//  - alt: Maps to `Alt` on Windows and Linux and to `Option` on macOS.
+"workbench.list.multiSelectModifier": "ctrlCmd",
+// Controls how to open items in trees and lists using the mouse (if supported). Note that some trees and lists might choose to ignore this setting if it is not applicable.
+"workbench.list.openMode": "singleClick",
+// Controls whether clicks in the scrollbar scroll page by page.
+"workbench.list.scrollByPage": false,
+// Controls whether lists and trees have smooth scrolling.
+"workbench.list.smoothScrolling": false,
+// Controls how type navigation works in lists and trees in the workbench. When set to `trigger`, type navigation begins once the `list.triggerTypeNavigation` command is run.
+"workbench.list.typeNavigationMode": "automatic",
+// Controls whether local file history is enabled. When enabled, the file contents of an editor that is saved will be stored to a backup location to be able to restore or review the contents later. Changing this setting has no effect on existing local file history entries.
+"workbench.localHistory.enabled": true,
+// Configure paths or [glob patterns](https://aka.ms/vscode-glob-patterns) for excluding files from the local file history. Glob patterns are always evaluated relative to the path of the workspace folder unless they are absolute paths. Changing this setting has no effect on existing local file history entries.
+"workbench.localHistory.exclude": {},
+// Controls the maximum number of local file history entries per file. When the number of local file history entries exceeds this number for a file, the oldest entries will be discarded.
+"workbench.localHistory.maxFileEntries": 50,
+// Controls the maximum size of a file (in KB) to be considered for local file history. Files that are larger will not be added to the local file history. Changing this setting has no effect on existing local file history entries.
+"workbench.localHistory.maxFileSize": 256,
+// Configure an interval in seconds during which the last entry in local file history is replaced with the entry that is being added. This helps reduce the overall number of entries that are added, for example when auto save is enabled. This setting is only applied to entries that have the same source of origin. Changing this setting has no effect on existing local file history entries.
+"workbench.localHistory.mergeWindow": 10,
+// Controls the default location of the panel (Terminal, Debug Console, Output, Problems) in a new workspace. It can either show at the bottom, top, right, or left of the editor area.
+"workbench.panel.defaultLocation": "bottom",
+// Controls whether the panel opens maximized. It can either always open maximized, never open maximized, or open to the last state it was in before being closed.
+//  - always: Always maximize the panel when opening it.
+//  - never: Never maximize the panel when opening it. The panel will open un-maximized.
+//  - preserve: Open the panel to the state that it was in, before it was closed.
+"workbench.panel.opensMaximized": "preserve",
+// Specifies the color theme when system color mode is dark and `window.autoDetectColorScheme` is enabled.
+"workbench.preferredDarkColorTheme": "Default Dark Modern",
+// Specifies the color theme when in high contrast dark mode and `window.autoDetectHighContrast` is enabled.
+"workbench.preferredHighContrastColorTheme": "Default High Contrast",
+// Specifies the color theme when in high contrast light mode and `window.autoDetectHighContrast` is enabled.
+"workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+// Specifies the color theme when system color mode is light and `window.autoDetectColorScheme` is enabled.
+"workbench.preferredLightColorTheme": "Default Light Modern",
+// Specifies the product icon theme used.
+//  - Default: Default
+"workbench.productIconTheme": "Default",
+// Controls whether Quick Open should close automatically once it loses focus.
+"workbench.quickOpen.closeOnFocusLost": true,
+// Controls whether the last typed input to Quick Open should be restored when opening it the next time.
+"workbench.quickOpen.preserveInput": false,
+// Controls whether the workbench should render with fewer animations.
+//  - on: Always render with reduced motion.
+//  - off: Do not render with reduced motion
+//  - auto: Render with reduced motion based on OS configuration.
+"workbench.reduceMotion": "auto",
+// When enabled, remote extensions recommendations will be shown in the Remote Indicator menu.
+"workbench.remoteIndicator.showExtensionRecommendations": true,
+// Controls the hover feedback delay in milliseconds of the dragging area in between views/editors.
+"workbench.sash.hoverDelay": 300,
+// Controls the feedback area size in pixels of the dragging area in between views/editors. Set it to a larger value if you feel it's hard to resize views using the mouse.
+"workbench.sash.size": 4,
+// Configure settings to be applied for all profiles.
+"workbench.settings.applyToAllProfiles": [],
+// Determines which settings editor to use by default.
+//  - ui: Use the settings UI editor.
+//  - json: Use the JSON file editor.
+"workbench.settings.editor": "ui",
+// Controls whether to enable the natural language search mode for settings. The natural language search is provided by a Microsoft online service.
+"workbench.settings.enableNaturalLanguageSearch": false,
+// Controls whether opening keybinding settings also opens an editor showing all default keybindings.
+"workbench.settings.openDefaultKeybindings": false,
+// Controls whether opening settings also opens an editor showing all default settings.
+"workbench.settings.openDefaultSettings": false,
+// Controls the behavior of the Settings editor Table of Contents while searching. If this setting is being changed in the Settings editor, the setting will take effect after the search query is modified.
+//  - hide: Hide the Table of Contents while searching.
+//  - filter: Filter the Table of Contents to just categories that have matching settings. Clicking on a category will filter the results to that category.
+"workbench.settings.settingsSearchTocBehavior": "filter",
+// Controls whether to use the split JSON editor when editing settings as JSON.
+"workbench.settings.useSplitJSON": false,
+// Controls the location of the primary side bar and activity bar. They can either show on the left or right of the workbench. The secondary side bar will show on the opposite side of the workbench.
+"workbench.sideBar.location": "left",
+// Controls which editor is shown at startup, if none are restored from the previous session.
+//  - none: Start without an editor.
+//  - welcomePage: Open the Welcome page, with content to aid in getting started with VSCodium and extensions.
+//  - readme: Open the README when opening a folder that contains one, fallback to 'welcomePage' otherwise. Note: This is only observed as a global configuration, it will be ignored if set in a workspace or folder configuration.
+//  - newUntitledFile: Open a new untitled text file (only applies when opening an empty window).
+//  - welcomePageInEmptyWorkbench: Open the Welcome page when opening an empty workbench.
+//  - terminal: Open a new terminal in the editor area.
+"workbench.startupEditor": "welcomePage",
+// Controls the visibility of the status bar at the bottom of the workbench.
+"workbench.statusBar.visible": true,
+// When enabled, will show the watermark tips when no editor is open.
+"workbench.tips.enabled": true,
+// Controls whether sticky scrolling is enabled in trees.
+"workbench.tree.enableStickyScroll": true,
+// Controls how tree folders are expanded when clicking the folder names. Note that some trees and lists might choose to ignore this setting if it is not applicable.
+"workbench.tree.expandMode": "singleClick",
+// Controls tree indentation in pixels.
+"workbench.tree.indent": 8,
+// Controls whether the tree should render indent guides.
+"workbench.tree.renderIndentGuides": "onHover",
+// Controls the number of sticky elements displayed in the tree when `workbench.tree.enableStickyScroll` is enabled.
+"workbench.tree.stickyScrollMaxItemCount": 7,
+// When enabled, trusted domain prompts will appear when opening links in trusted workspaces.
+"workbench.trustedDomains.promptInTrustedWorkspace": false,
+// Controls the visibility of view header actions. View header actions may either be always visible, or only visible when that view is focused or hovered over.
+"workbench.view.alwaysShowHeaderActions": false,
+// When enabled, the get started page loads additional announcements from VSCodium's repository.
+"workbench.welcomePage.extraAnnouncements": true,
+// Deprecated, use the global `workbench.reduceMotion`.
+// When enabled, reduce motion in welcome page.
+"workbench.welcomePage.preferReducedMotion": false,
+// When enabled, an extension's walkthrough will open upon install of the extension.
+"workbench.welcomePage.walkthroughs.openOnInstall": true,
+```
+
+## window
+
+```json
+// Controls the height of editor tabs. Also applies to the title control bar when `workbench.editor.showTabs` is not set to `multiple`.
+"window.density.editorTabHeight": "default",
+// If enabled, will automatically select a color theme based on the system color mode. If the system color mode is dark, `workbench.preferredDarkColorTheme#` is used, else `#workbench.preferredLightColorTheme`.
+"window.autoDetectColorScheme": false,
+// If enabled, will automatically change to high contrast theme if the OS is using a high contrast theme. The high contrast theme to use is specified by `workbench.preferredHighContrastColorTheme#` and `#workbench.preferredHighContrastLightColorTheme`.
+"window.autoDetectHighContrast": true,
+// Controls whether closing the last editor should also close the window. This setting only applies for windows that do not show folders.
+"window.closeWhenEmpty": false,
+// Show command launcher together with the window title. This setting only has an effect when `window.customTitleBarVisibility` is not set to `never`.
+"window.commandCenter": true,
+// Controls whether to show a confirmation dialog before closing a window or quitting the application.
+//  - always: Always ask for confirmation.
+//  - keyboardOnly: Only ask for confirmation if a keybinding was used.
+//  - never: Never explicitly ask for confirmation.
+"window.confirmBeforeClose": "never",
+// Controls whether a confirmation dialog shows asking to save or discard an opened untitled workspace in the window when switching to another workspace. Disabling the confirmation dialog will always discard the untitled workspace.
+"window.confirmSaveUntitledWorkspace": true,
+// Controls whether the menu bar will be focused by pressing the Alt-key. This setting has no effect on toggling the menu bar with the Alt-key.
+"window.customMenuBarAltFocus": true,
+// Adjust when the custom title bar should be shown. The custom title bar can be hidden when in full screen mode with `windowed`. The custom title bar can only be hidden in none full screen mode with `never` when `window.titleBarStyle` is set to `native`.
+//  - auto: Automatically changes custom title bar visibility.
+//  - windowed: Hide custom titlebar in full screen. When not in full screen, automatically change custom title bar visibility.
+//  - never: Hide custom titlebar when `window.titleBarStyle` is set to `native`.
+"window.customTitleBarVisibility": "never",
+// Adjust the appearance of dialog windows.
+"window.dialogStyle": "native",
+// If enabled, this setting will close the window when the application icon in the title bar is double-clicked. The window will not be able to be dragged by the icon. This setting is effective only if `window.titleBarStyle` is set to `custom`.
+"window.doubleClickIconToClose": false,
+// Controls whether the main menus can be opened via Alt-key shortcuts. Disabling mnemonics allows to bind these Alt-key shortcuts to editor commands instead.
+"window.enableMenuBarMnemonics": true,
+// Show the native window controls when `window.titleBarStyle` is set to `custom` (Linux only).
+"window.experimentalControlOverlay": true,
+// Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and a single press of the Alt key will show it. A setting of 'compact' will move the menu into the side bar.
+//  - classic: Menu is displayed at the top of the window and only hidden in full screen mode.
+//  - visible: Menu is always visible at the top of the window even in full screen mode.
+//  - toggle: Menu is hidden but can be displayed at the top of the window via the Alt key.
+//  - hidden: Menu is always hidden.
+//  - compact: Menu is displayed as a compact button in the side bar. This value is ignored when `window.titleBarStyle` is `native`.
+"window.menuBarVisibility": "classic",
+// Controls the dimensions of opening a new window when at least one window is already opened. Note that this setting does not have an impact on the first window that is opened. The first window will always restore the size and location as you left it before closing.
+//  - default: Open new windows in the center of the screen.
+//  - inherit: Open new windows with same dimension as last active one.
+//  - offset: Open new windows with same dimension as last active one with an offset position.
+//  - maximized: Open new windows maximized.
+//  - fullscreen: Open new windows in full screen mode.
+"window.newWindowDimensions": "default",
+// Specifies the profile to use when opening a new window. If a profile name is provided, the new window will use that profile. If no profile name is provided, the new window will use the profile of the active window or the Default profile if no active window exists.
+"window.newWindowProfile": null,
+// Controls whether files should open in a new window when using a command line or file dialog.
+// Note that there can still be cases where this setting is ignored (e.g. when using the `--new-window` or `--reuse-window` command line option).
+//  - on: Files will open in a new window.
+//  - off: Files will open in the window with the files' folder open or the last active window.
+//  - default: Files will open in a new window unless picked from within the application (e.g. via the File menu).
+"window.openFilesInNewWindow": "off",
+// Controls whether folders should open in a new window or replace the last active window.
+// Note that there can still be cases where this setting is ignored (e.g. when using the `--new-window` or `--reuse-window` command line option).
+//  - on: Folders will open in a new window.
+//  - off: Folders will replace the last active window.
+//  - default: Folders will open in a new window unless a folder is picked from within the application (e.g. via the File menu).
+"window.openFoldersInNewWindow": "default",
+// Controls whether a new empty window should open when starting a second instance without arguments or if the last running instance should get focus.
+// Note that there can still be cases where this setting is ignored (e.g. when using the `--new-window` or `--reuse-window` command line option).
+//  - on: Open a new empty window.
+//  - off: Focus the last active running instance.
+"window.openWithoutArgumentsInNewWindow": "on",
+// Controls whether a window should restore to full screen mode if it was exited in full screen mode.
+"window.restoreFullscreen": false,
+// Controls how windows and editors within are being restored when opening.
+//  - preserve: Always reopen all windows. If a folder or workspace is opened (e.g. from the command line) it opens as a new window unless it was opened before. If files are opened they will open in one of the restored windows together with editors that were previously opened.
+//  - all: Reopen all windows unless a folder, workspace or file is opened (e.g. from the command line). If a file is opened, it will replace any of the editors that were previously opened in a window.
+//  - folders: Reopen all windows that had folders or workspaces opened unless a folder, workspace or file is opened (e.g. from the command line). If a file is opened, it will replace any of the editors that were previously opened in a window.
+//  - one: Reopen the last active window unless a folder, workspace or file is opened (e.g. from the command line). If a file is opened, it will replace any of the editors that were previously opened in a window.
+//  - none: Never reopen a window. Unless a folder or workspace is opened (e.g. from the command line), an empty window will appear.
+"window.restoreWindows": "all",
+// Controls the window title based on the current context such as the opened workspace or active editor. Variables are substituted based on the context:
+// - `${activeEditorShort}`: the file name (e.g. myFile.txt).
+// - `${activeEditorMedium}`: the path of the file relative to the workspace folder (e.g. myFolder/myFileFolder/myFile.txt).
+// - `${activeEditorLong}`: the full path of the file (e.g. /Users/Development/myFolder/myFileFolder/myFile.txt).
+// - `${activeFolderShort}`: the name of the folder the file is contained in (e.g. myFileFolder).
+// - `${activeFolderMedium}`: the path of the folder the file is contained in, relative to the workspace folder (e.g. myFolder/myFileFolder).
+// - `${activeFolderLong}`: the full path of the folder the file is contained in (e.g. /Users/Development/myFolder/myFileFolder).
+// - `${folderName}`: name of the workspace folder the file is contained in (e.g. myFolder).
+// - `${folderPath}`: file path of the workspace folder the file is contained in (e.g. /Users/Development/myFolder).
+// - `${rootName}`: name of the workspace with optional remote name and workspace indicator if applicable (e.g. myFolder, myRemoteFolder [SSH] or myWorkspace (Workspace)).
+// - `${rootNameShort}`: shortened name of the workspace without suffixes (e.g. myFolder, myRemoteFolder or myWorkspace).
+// - `${rootPath}`: file path of the opened workspace or folder (e.g. /Users/Development/myWorkspace).
+// - `${profileName}`: name of the profile in which the workspace is opened (e.g. Data Science (Profile)). Ignored if default profile is used.
+// - `${appName}`: e.g. VSCodium.
+// - `${remoteName}`: e.g. SSH
+// - `${dirty}`: an indicator for when the active editor has unsaved changes.
+// - `${focusedView}`: the name of the view that is currently focused.
+// - `${activeRepositoryName}`: the name of the active repository (e.g. vscode).
+// - `${activeRepositoryBranchName}`: the name of the active branch in the active repository (e.g. main).
+// - `${separator}`: a conditional separator (" - ") that only shows when surrounded by variables with values or static text.
+"window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}",
+// Adjust the appearance of the window title bar to be native by the OS or custom. On Linux and Windows, this setting also affects the application and context menu appearances. Changes require a full restart to apply.
+"window.titleBarStyle": "native",
+// Separator used by `window.title`.
+"window.titleSeparator": " - ",
+// Adjust the default zoom level for all windows. Each increment above `0` (e.g. `1`) or below (e.g. `-1`) represents zooming `20%` larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity. See `window.zoomPerWindow` for configuring if the 'Zoom In' and 'Zoom Out' commands apply the zoom level to all windows or only the active window.
+"window.zoomLevel": 0,
+// Controls if the 'Zoom In' and 'Zoom Out' commands apply the zoom level to all windows or only the active window. See `window.zoomLevel` for configuring a default zoom level for all windows.
+"window.zoomPerWindow": true,
+```
+
+## Files
+
+```json
+// Configure [glob patterns](https://aka.ms/vscode-glob-patterns) of file associations to languages (for example `"*.extension": "html"`). Patterns will match on the absolute path of a file if they contain a path separator and will match on the name of the file otherwise. These have precedence over the default associations of the languages installed.
+"files.associations": {},
+// When enabled, the editor will attempt to guess the character set encoding when opening files. This setting can also be configured per language. Note, this setting is not respected by text search. Only `files.encoding` is respected.
+"files.autoGuessEncoding": false,
+// Controls [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) of editors that have unsaved changes.
+//  - off: An editor with changes is never automatically saved.
+//  - afterDelay: An editor with changes is automatically saved after the configured `files.autoSaveDelay`.
+//  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
+//  - onWindowChange: An editor with changes is automatically saved when the window loses focus.
+"files.autoSave": "off",
+// Controls the delay in milliseconds after which an editor with unsaved changes is saved automatically. Only applies when `files.autoSave` is set to `afterDelay`.
+"files.autoSaveDelay": 1000,
+// When enabled, will limit [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) of editors to files that have no errors reported in them at the time the auto save is triggered. Only applies when `files.autoSave` is enabled.
+"files.autoSaveWhenNoErrors": false,
+// When enabled, will limit [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) of editors to files that are inside the opened workspace. Only applies when `files.autoSave` is enabled.
+"files.autoSaveWorkspaceFilesOnly": false,
+// List of character set encodings that the editor should attempt to guess in the order they are listed. In case it cannot be determined, `files.encoding` is respected
+//  - utf8: UTF-8
+//  - utf16le: UTF-16 LE
+//  - utf16be: UTF-16 BE
+//  - windows1252: Western (Windows 1252)
+//  - windows1250: Central European (Windows 1250)
+//  - iso88592: Central European (ISO 8859-2)
+//  - windows1251: Cyrillic (Windows 1251)
+//  - cp866: Cyrillic (CP 866)
+//  - iso88595: Cyrillic (ISO 8859-5)
+//  - koi8r: Cyrillic (KOI8-R)
+//  - windows1253: Greek (Windows 1253)
+//  - iso88597: Greek (ISO 8859-7)
+//  - windows1255: Hebrew (Windows 1255)
+//  - iso88598: Hebrew (ISO 8859-8)
+//  - cp950: Traditional Chinese (Big5)
+//  - shiftjis: Japanese (Shift JIS)
+//  - eucjp: Japanese (EUC-JP)
+//  - euckr: Korean (EUC-KR)
+//  - gb2312: Simplified Chinese (GB 2312)
+"files.candidateGuessEncodings": [],
+// The default language identifier that is assigned to new files. If configured to `${activeEditorLanguage}`, will use the language identifier of the currently active text editor if any.
+"files.defaultLanguage": "",
+// Default path for file dialogs, overriding user's home path. Only used in the absence of a context-specific path, such as most recently opened file or folder.
+"files.dialog.defaultPath": "",
+// Moves files/folders to the OS trash (recycle bin on Windows) when deleting. Disabling this will delete files/folders permanently.
+"files.enableTrash": true,
+// The default character set encoding to use when reading and writing files. This setting can also be configured per language.
+//  - utf8: UTF-8
+//  - utf8bom: UTF-8 with BOM
+//  - utf16le: UTF-16 LE
+//  - utf16be: UTF-16 BE
+//  - windows1252: Western (Windows 1252)
+//  - iso88591: Western (ISO 8859-1)
+//  - iso88593: Western (ISO 8859-3)
+//  - iso885915: Western (ISO 8859-15)
+//  - macroman: Western (Mac Roman)
+//  - cp437: DOS (CP 437)
+//  - windows1256: Arabic (Windows 1256)
+//  - iso88596: Arabic (ISO 8859-6)
+//  - windows1257: Baltic (Windows 1257)
+//  - iso88594: Baltic (ISO 8859-4)
+//  - iso885914: Celtic (ISO 8859-14)
+//  - windows1250: Central European (Windows 1250)
+//  - iso88592: Central European (ISO 8859-2)
+//  - cp852: Central European (CP 852)
+//  - windows1251: Cyrillic (Windows 1251)
+//  - cp866: Cyrillic (CP 866)
+//  - iso88595: Cyrillic (ISO 8859-5)
+//  - koi8r: Cyrillic (KOI8-R)
+//  - koi8u: Cyrillic (KOI8-U)
+//  - iso885913: Estonian (ISO 8859-13)
+//  - windows1253: Greek (Windows 1253)
+//  - iso88597: Greek (ISO 8859-7)
+//  - windows1255: Hebrew (Windows 1255)
+//  - iso88598: Hebrew (ISO 8859-8)
+//  - iso885910: Nordic (ISO 8859-10)
+//  - iso885916: Romanian (ISO 8859-16)
+//  - windows1254: Turkish (Windows 1254)
+//  - iso88599: Turkish (ISO 8859-9)
+//  - windows1258: Vietnamese (Windows 1258)
+//  - gbk: Simplified Chinese (GBK)
+//  - gb18030: Simplified Chinese (GB18030)
+//  - cp950: Traditional Chinese (Big5)
+//  - big5hkscs: Traditional Chinese (Big5-HKSCS)
+//  - shiftjis: Japanese (Shift JIS)
+//  - eucjp: Japanese (EUC-JP)
+//  - euckr: Korean (EUC-KR)
+//  - windows874: Thai (Windows 874)
+//  - iso885911: Latin/Thai (ISO 8859-11)
+//  - koi8ru: Cyrillic (KOI8-RU)
+//  - koi8t: Tajik (KOI8-T)
+//  - gb2312: Simplified Chinese (GB 2312)
+//  - cp865: Nordic DOS (CP 865)
+//  - cp850: Western European DOS (CP 850)
+"files.encoding": "utf8",
+// The default end of line character.
+//  - \n: LF
+//  - \r\n: CRLF
+//  - auto: Uses operating system specific end of line character.
+"files.eol": "auto",
+// Configure [glob patterns](https://aka.ms/vscode-glob-patterns) for excluding files and folders. For example, the File Explorer decides which files and folders to show or hide based on this setting. Refer to the `search.exclude#` setting to define search-specific excludes. Refer to the `#explorer.excludeGitIgnore` setting for ignoring files based on your `.gitignore`.
+"files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+},
+// [Hot Exit](https://aka.ms/vscode-hot-exit) controls whether unsaved files are remembered between sessions, allowing the save prompt when exiting the editor to be skipped.
+//  - off: Disable hot exit. A prompt will show when attempting to close a window with editors that have unsaved changes.
+//  - onExit: Hot exit will be triggered when the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu). All windows without folders opened will be restored upon next launch. A list of previously opened windows with unsaved files can be accessed via `File > Open Recent > More...`
+//  - onExitAndWindowClose: Hot exit will be triggered when the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu), and also for any window with a folder opened regardless of whether it's the last window. All windows without folders opened will be restored upon next launch. A list of previously opened windows with unsaved files can be accessed via `File > Open Recent > More...`
+"files.hotExit": "onExit",
+// When enabled, insert a final new line at the end of the file when saving it.
+"files.insertFinalNewline": false,
+// Timeout in milliseconds after which file participants for create, rename, and delete are cancelled. Use `0` to disable participants.
+"files.participants.timeout": 60000,
+// Configure paths or [glob patterns](https://aka.ms/vscode-glob-patterns) to exclude from being marked as read-only if they match as a result of the `files.readonlyInclude` setting. Glob patterns are always evaluated relative to the path of the workspace folder unless they are absolute paths. Files from readonly file system providers will always be read-only independent of this setting.
+"files.readonlyExclude": {},
+// Marks files as read-only when their file permissions indicate as such. This can be overridden via `files.readonlyInclude#` and `#files.readonlyExclude` settings.
+"files.readonlyFromPermissions": false,
+// Configure paths or [glob patterns](https://aka.ms/vscode-glob-patterns) to mark as read-only. Glob patterns are always evaluated relative to the path of the workspace folder unless they are absolute paths. You can exclude matching paths via the `files.readonlyExclude` setting. Files from readonly file system providers will always be read-only independent of this setting.
+"files.readonlyInclude": {},
+// Controls if files that were part of a refactoring are saved automatically
+"files.refactoring.autoSave": true,
+// Restore the undo stack when a file is reopened.
+"files.restoreUndoStack": true,
+// A save conflict can occur when a file is saved to disk that was changed by another program in the meantime. To prevent data loss, the user is asked to compare the changes in the editor with the version on disk. This setting should only be changed if you frequently encounter save conflict errors and may result in data loss if used without caution.
+//  - askUser: Will refuse to save and ask for resolving the save conflict manually.
+//  - overwriteFileOnDisk: Will resolve the save conflict by overwriting the file on disk with the changes in the editor.
+"files.saveConflictResolution": "askUser",
+// Enables the simple file dialog for opening and saving files and folders. The simple file dialog replaces the system file dialog when enabled.
+"files.simpleDialog.enable": false,
+// When enabled, will trim all new lines after the final new line at the end of the file when saving it.
+"files.trimFinalNewlines": false,
+// When enabled, will trim trailing whitespace when saving a file.
+"files.trimTrailingWhitespace": false,
+// When enabled, trailing whitespace will be removed from multiline strings and regexes will be removed on save or when executing 'editor.action.trimTrailingWhitespace'. This can cause whitespace to not be trimmed from lines when there isn't up-to-date token information.
+"files.trimTrailingWhitespaceInRegexAndStrings": true,
+// Configure paths or [glob patterns](https://aka.ms/vscode-glob-patterns) to exclude from file watching. Paths can either be relative to the watched folder or absolute. Glob patterns are matched relative from the watched folder. When you experience the file watcher process consuming a lot of CPU, make sure to exclude large folders that are of less interest (such as build output folders).
+"files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true
+},
+// Configure extra paths to watch for changes inside the workspace. By default, all workspace folders will be watched recursively, except for folders that are symbolic links. You can explicitly add absolute or relative paths to support watching folders that are symbolic links. Relative paths will be resolved to an absolute path using the currently opened workspace.
+"files.watcherInclude": [],
+```

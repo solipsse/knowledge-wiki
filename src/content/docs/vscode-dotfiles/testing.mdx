@@ -1,0 +1,56 @@
+
+```json
+// Always reveal the executed test when `testing.followRunningTest` is on. If this setting is turned off, only failed tests will be revealed.
+"testing.alwaysRevealTestOnStateChange": false,
+// Configures when the error Peek view is automatically opened.
+//  - failureAnywhere: Open automatically no matter where the failure is.
+//  - failureInVisibleDocument: Open automatically when a test fails in a visible document.
+//  - never: Never automatically open.
+"testing.automaticallyOpenPeekView": "failureInVisibleDocument",
+// Controls whether to automatically open the Peek view during continuous run mode.
+"testing.automaticallyOpenPeekViewDuringAutoRun": false,
+// How long to wait, in milliseconds, after a test is marked as outdated and starting a new run.
+"testing.autoRun.delay": 1000,
+// Controls the count badge on the Testing icon on the Activity Bar.
+//  - failed: Show the number of failed tests
+//  - off: Disable the testing count badge
+//  - passed: Show the number of passed tests
+//  - skipped: Show the number of skipped tests
+"testing.countBadge": "failed",
+// Configures the colors used for percentages in test coverage bars.
+"testing.coverageBarThresholds": {
+    "red": 0,
+    "yellow": 60,
+    "green": 90
+},
+// Controls whether the coverage toolbar is shown in the editor.
+"testing.coverageToolbarEnabled": false,
+// Controls the action to take when left-clicking on a test decoration in the gutter.
+//  - run: Run the test.
+//  - debug: Debug the test.
+//  - runWithCoverage: Run the test with coverage.
+//  - contextMenu: Open the context menu for more options.
+"testing.defaultGutterClickAction": "run",
+// Configures what percentage is displayed by default for test coverage.
+//  - totalCoverage: A calculation of the combined statement, function, and branch coverage.
+//  - statement: The statement coverage.
+//  - minimum: The minimum of statement, function, and branch coverage.
+"testing.displayedCoveragePercent": "totalCoverage",
+// Controls whether the running test should be followed in the Test Explorer view.
+"testing.followRunningTest": true,
+// Controls whether test decorations are shown in the editor gutter.
+"testing.gutterEnabled": true,
+// Controls when the testing view should open.
+//  - neverOpen: Never automatically open the testing views
+//  - openOnTestStart: Open the test results view when tests start
+//  - openOnTestFailure: Open the test result view on any test failure
+//  - openExplorerOnTestStart: Open the test explorer when tests start
+"testing.openTesting": "openOnTestStart",
+// Control whether save all dirty editors before running a test.
+"testing.saveBeforeTest": true,
+// Controls whether to show messages from all test runs.
+"testing.showAllMessages": false,
+// Whether test coverage should be down in the File Explorer view.
+"testing.showCoverageInExplorer": true,
+
+```

@@ -1,0 +1,203 @@
+## task
+
+```json
+
+// Enable automatic tasks - note that tasks won't run in an untrusted workspace.
+//  - on: Always
+//  - off: Never
+"task.allowAutomaticTasks": "on",
+// Controls enablement of `provideTasks` for all task provider extension. If the Tasks: Run Task command is slow, disabling auto detect for task providers may help. Individual extensions may also provide settings that disable auto detection.
+"task.autoDetect": "on",
+// Configures whether to show the problem matcher prompt when running a task. Set to `true` to never prompt, or use a dictionary of task types to turn off prompting only for specific task types.
+"task.problemMatchers.neverPrompt": false,
+// Controls whether to show the task detail for tasks that have a detail in task quick picks, such as Run Task.
+"task.quickOpen.detail": true,
+// Controls the number of recent items tracked in task quick open dialog.
+"task.quickOpen.history": 30,
+// Causes the Tasks: Run Task command to use the slower "show all" behavior instead of the faster two level picker where tasks are grouped by provider.
+"task.quickOpen.showAll": false,
+// Controls whether the task quick pick is skipped when there is only one task to pick from.
+"task.quickOpen.skip": false,
+// On window reload, reconnect to tasks that have problem matchers.
+"task.reconnection": true,
+// Save all dirty editors before running a task.
+//  - always: Always saves all editors before running.
+//  - never: Never saves editors before running.
+//  - prompt: Prompts whether to save editors before running.
+"task.saveBeforeRun": "always",
+// Configures whether a warning is shown when a provider is slow
+"task.slowProviderWarning": true,
+// Enable verbose logging for tasks.
+"task.verboseLogging": false,
+
+```
+
+## problem
+
+```json
+
+
+// Controls whether Problems view should automatically reveal files when opening them.
+"problems.autoReveal": true,
+// Show Errors & Warnings on files and folder. Overwritten by `problems.visibility` when it is off.
+"problems.decorations.enabled": true,
+// Controls the default view mode of the Problems view.
+"problems.defaultViewMode": "tree",
+// When enabled shows the current problem in the status bar.
+"problems.showCurrentInStatus": false,
+// Controls the order in which problems are navigated.
+//  - severity: Navigate problems ordered by severity
+//  - position: Navigate problems ordered by position
+"problems.sortOrder": "severity",
+// Controls whether the problems are visible throughout the editor and workbench.
+"problems.visibility": true,
+```
+
+## breadcrumb
+
+```json
+
+// Enable/disable navigation breadcrumbs.
+"breadcrumbs.enabled": true,
+// Controls whether and how file paths are shown in the breadcrumbs view.
+//  - on: Show the file path in the breadcrumbs view.
+//  - off: Do not show the file path in the breadcrumbs view.
+//  - last: Only show the last element of the file path in the breadcrumbs view.
+"breadcrumbs.filePath": "on",
+// Render breadcrumb items with icons.
+"breadcrumbs.icons": true,
+// When enabled breadcrumbs show `array`-symbols.
+"breadcrumbs.showArrays": true,
+// When enabled breadcrumbs show `boolean`-symbols.
+"breadcrumbs.showBooleans": true,
+// When enabled breadcrumbs show `class`-symbols.
+"breadcrumbs.showClasses": true,
+// When enabled breadcrumbs show `constant`-symbols.
+"breadcrumbs.showConstants": true,
+// When enabled breadcrumbs show `constructor`-symbols.
+"breadcrumbs.showConstructors": true,
+// When enabled breadcrumbs show `enumMember`-symbols.
+"breadcrumbs.showEnumMembers": true,
+// When enabled breadcrumbs show `enum`-symbols.
+"breadcrumbs.showEnums": true,
+// When enabled breadcrumbs show `event`-symbols.
+"breadcrumbs.showEvents": true,
+// When enabled breadcrumbs show `field`-symbols.
+"breadcrumbs.showFields": true,
+// When enabled breadcrumbs show `file`-symbols.
+"breadcrumbs.showFiles": true,
+// When enabled breadcrumbs show `function`-symbols.
+"breadcrumbs.showFunctions": true,
+// When enabled breadcrumbs show `interface`-symbols.
+"breadcrumbs.showInterfaces": true,
+// When enabled breadcrumbs show `key`-symbols.
+"breadcrumbs.showKeys": true,
+// When enabled breadcrumbs show `method`-symbols.
+"breadcrumbs.showMethods": true,
+// When enabled breadcrumbs show `module`-symbols.
+"breadcrumbs.showModules": true,
+// When enabled breadcrumbs show `namespace`-symbols.
+"breadcrumbs.showNamespaces": true,
+// When enabled breadcrumbs show `null`-symbols.
+"breadcrumbs.showNull": true,
+// When enabled breadcrumbs show `number`-symbols.
+"breadcrumbs.showNumbers": true,
+// When enabled breadcrumbs show `object`-symbols.
+"breadcrumbs.showObjects": true,
+// When enabled breadcrumbs show `operator`-symbols.
+"breadcrumbs.showOperators": true,
+// When enabled breadcrumbs show `package`-symbols.
+"breadcrumbs.showPackages": true,
+// When enabled breadcrumbs show `property`-symbols.
+"breadcrumbs.showProperties": true,
+// When enabled breadcrumbs show `string`-symbols.
+"breadcrumbs.showStrings": true,
+// When enabled breadcrumbs show `struct`-symbols.
+"breadcrumbs.showStructs": true,
+// When enabled breadcrumbs show `typeParameter`-symbols.
+"breadcrumbs.showTypeParameters": true,
+// When enabled breadcrumbs show `variable`-symbols.
+"breadcrumbs.showVariables": true,
+// Controls whether and how symbols are shown in the breadcrumbs view.
+//  - on: Show all symbols in the breadcrumbs view.
+//  - off: Do not show symbols in the breadcrumbs view.
+//  - last: Only show the current symbol in the breadcrumbs view.
+"breadcrumbs.symbolPath": "on",
+// Controls how symbols are sorted in the breadcrumbs outline view.
+//  - position: Show symbol outline in file position order.
+//  - name: Show symbol outline in alphabetical order.
+//  - type: Show symbol outline in symbol type order.
+"breadcrumbs.symbolSortOrder": "position",
+```
+
+## outline
+
+```json
+
+// Controls whether Outline items are collapsed or expanded.
+//  - alwaysCollapse: Collapse all items.
+//  - alwaysExpand: Expand all items.
+"outline.collapseItems": "alwaysExpand",
+// Render Outline elements with icons.
+"outline.icons": true,
+// Use badges for errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.
+"outline.problems.badges": true,
+// Use colors for errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.
+"outline.problems.colors": true,
+// Show errors and warnings on Outline elements. Overwritten by `problems.visibility` when it is off.
+"outline.problems.enabled": true,
+// When enabled, Outline shows `array`-symbols.
+"outline.showArrays": true,
+// When enabled, Outline shows `boolean`-symbols.
+"outline.showBooleans": true,
+// When enabled, Outline shows `class`-symbols.
+"outline.showClasses": true,
+// When enabled, Outline shows `constant`-symbols.
+"outline.showConstants": true,
+// When enabled, Outline shows `constructor`-symbols.
+"outline.showConstructors": true,
+// When enabled, Outline shows `enumMember`-symbols.
+"outline.showEnumMembers": true,
+// When enabled, Outline shows `enum`-symbols.
+"outline.showEnums": true,
+// When enabled, Outline shows `event`-symbols.
+"outline.showEvents": true,
+// When enabled, Outline shows `field`-symbols.
+"outline.showFields": true,
+// When enabled, Outline shows `file`-symbols.
+"outline.showFiles": true,
+// When enabled, Outline shows `function`-symbols.
+"outline.showFunctions": true,
+// When enabled, Outline shows `interface`-symbols.
+"outline.showInterfaces": true,
+// When enabled, Outline shows `key`-symbols.
+"outline.showKeys": true,
+// When enabled, Outline shows `method`-symbols.
+"outline.showMethods": true,
+// When enabled, Outline shows `module`-symbols.
+"outline.showModules": true,
+// When enabled, Outline shows `namespace`-symbols.
+"outline.showNamespaces": true,
+// When enabled, Outline shows `null`-symbols.
+"outline.showNull": true,
+// When enabled, Outline shows `number`-symbols.
+"outline.showNumbers": true,
+// When enabled, Outline shows `object`-symbols.
+"outline.showObjects": true,
+// When enabled, Outline shows `operator`-symbols.
+"outline.showOperators": true,
+// When enabled, Outline shows `package`-symbols.
+"outline.showPackages": true,
+// When enabled, Outline shows `property`-symbols.
+"outline.showProperties": true,
+// When enabled, Outline shows `string`-symbols.
+"outline.showStrings": true,
+// When enabled, Outline shows `struct`-symbols.
+"outline.showStructs": true,
+// When enabled, Outline shows `typeParameter`-symbols.
+"outline.showTypeParameters": true,
+// When enabled, Outline shows `variable`-symbols.
+"outline.showVariables": true,
+```
+
+## 

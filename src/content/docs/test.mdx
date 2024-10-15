@@ -1,0 +1,235 @@
+# vscode setting
+
+# miscelleneous
+
+## screencast
+
+```json
+// Controls the font size (in pixels) of the screencast mode keyboard.
+"screencastMode.fontSize": 56,
+// Options for customizing the keyboard overlay in screencast mode.
+"screencastMode.keyboardOptions": {
+    "showKeys": true,
+    "showKeybindings": true,
+    "showCommands": true,
+    "showCommandGroups": false,
+    "showSingleEditorCursorMoves": true
+},
+// Controls how long (in milliseconds) the keyboard overlay is shown in screencast mode.
+"screencastMode.keyboardOverlayTimeout": 800,
+// Controls the color in hex (#RGB, #RGBA, #RRGGBB or #RRGGBBAA) of the mouse indicator in screencast mode.
+"screencastMode.mouseIndicatorColor": "#FF0000",
+// Controls the size (in pixels) of the mouse indicator in screencast mode.
+"screencastMode.mouseIndicatorSize": 20,
+// Controls the vertical offset of the screencast mode overlay from the bottom as a percentage of the workbench height.
+"screencastMode.verticalOffset": 20,
+```
+
+## zen mode
+```json
+// Controls whether turning on Zen Mode also centers the layout.
+"zenMode.centerLayout": true,
+// Controls whether turning on Zen Mode also puts the workbench into full screen mode.
+"zenMode.fullScreen": true,
+// Controls whether turning on Zen Mode also hides the activity bar either at the left or right of the workbench.
+"zenMode.hideActivityBar": true,
+// Controls whether turning on Zen Mode also hides the editor line numbers.
+"zenMode.hideLineNumbers": true,
+// Controls whether turning on Zen Mode also hides the status bar at the bottom of the workbench.
+"zenMode.hideStatusBar": true,
+// Controls whether a window should restore to Zen Mode if it was exited in Zen Mode.
+"zenMode.restore": true,
+// Controls whether turning on Zen Mode should show multiple editor tabs, a single editor tab, or hide the editor title area completely.
+//  - multiple: Each editor is displayed as a tab in the editor title area.
+//  - single: The active editor is displayed as a single large tab in the editor title area.
+//  - none: The editor title area is not displayed.
+"zenMode.showTabs": "multiple",
+// Controls whether notifications do not disturb mode should be enabled while in Zen Mode. If true, only error notifications will pop out.
+"zenMode.silentNotifications": true,
+```
+
+## search
+
+```json
+// Controls the positioning of the actionbar on rows in the search view.
+//  - auto: Position the actionbar to the right when the search view is narrow, and immediately after the content when the search view is wide.
+//  - right: Always position the actionbar to the right.
+"search.actionsPosition": "right",
+// Controls whether the search results will be collapsed or expanded.
+//  - auto: Files with less than 10 results are expanded. Others are collapsed.
+//  - alwaysCollapse
+//  - alwaysExpand
+"search.collapseResults": "alwaysExpand",
+// Controls whether search file decorations should use badges.
+"search.decorations.badges": true,
+// Controls whether search file decorations should use colors.
+"search.decorations.colors": true,
+// Controls the default search result view mode.
+//  - tree: Shows search results as a tree.
+//  - list: Shows search results as a list.
+"search.defaultViewMode": "list",
+// Configure [glob patterns](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options) for excluding files and folders in fulltext searches and file search in quick open. To exclude files from the recently opened list in quick open, patterns must be absolute (for example `**/node_modules/**`). Inherits all glob patterns from the `files.exclude` setting.
+"search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+},
+// Show notebook editor rich content results for closed notebooks. Please refresh your search results after changing this setting.
+"search.experimental.closedNotebookRichContentResults": false,
+// Controls whether to follow symlinks while searching.
+"search.followSymlinks": true,
+// This setting is deprecated. You can drag the search icon to a new location instead.
+// Controls whether the search will be shown as a view in the sidebar or as a panel in the panel area for more horizontal space.
+"search.location": "sidebar",
+// The search cache is kept in the extension host which never shuts down, so this setting is no longer needed.
+// When enabled, the searchService process will be kept alive instead of being shut down after an hour of inactivity. This will keep the file search cache in memory.
+"search.maintainFileSearchCache": false,
+// Controls the maximum number of search results, this can be set to `null` (empty) to return unlimited results.
+"search.maxResults": 20000,
+// Controls where new `Search: Find in Files` and `Find in Folder` operations occur: either in the search view, or in a search editor.
+//  - view: Search in the search view, either in the panel or side bars.
+//  - reuseEditor: Search in an existing search editor if present, otherwise in a new search editor.
+//  - newEditor: Search in a new search editor.
+"search.mode": "view",
+// Controls whether the last typed input to Quick Search should be restored when opening it the next time.
+"search.quickAccess.preserveInput": false,
+// Controls sorting order of editor history in quick open when filtering.
+//  - default: History entries are sorted by relevance based on the filter value used. More relevant entries appear first.
+//  - recency: History entries are sorted by recency. More recently opened entries appear first.
+"search.quickOpen.history.filterSortOrder": "default",
+// Whether to include results from recently opened files in the file results for Quick Open.
+"search.quickOpen.includeHistory": true,
+// Whether to include results from a global symbol search in the file results for Quick Open.
+"search.quickOpen.includeSymbols": false,
+// Number of threads to use for searching. When set to 0, the engine automatically determines this value.
+"search.ripgrep.maxThreads": 0,
+// The default number of surrounding context lines to use when creating new Search Editors. If using `search.searchEditor.reusePriorSearchConfiguration`, this can be set to `null` (empty) to use the prior Search Editor's configuration.
+"search.searchEditor.defaultNumberOfContextLines": 1,
+// Configure effect of double-clicking a result in a search editor.
+//  - selectWord: Double-clicking selects the word under the cursor.
+//  - goToLocation: Double-clicking opens the result in the active editor group.
+//  - openLocationToSide: Double-clicking opens the result in the editor group to the side, creating one if it does not yet exist.
+"search.searchEditor.doubleClickBehaviour": "goToLocation",
+// When a search is triggered, focus the Search Editor results instead of the Search Editor input.
+"search.searchEditor.focusResultsOnSearch": false,
+// When enabled, new Search Editors will reuse the includes, excludes, and flags of the previously opened Search Editor.
+"search.searchEditor.reusePriorSearchConfiguration": false,
+// Configure effect of single-clicking a result in a search editor.
+//  - default: Single-clicking does nothing.
+//  - peekDefinition: Single-clicking opens a Peek Definition window.
+"search.searchEditor.singleClickBehaviour": "default",
+// Search all files as you type.
+"search.searchOnType": true,
+// When `search.searchOnType#` is enabled, controls the timeout in milliseconds between a character being typed and the search starting. Has no effect when `#search.searchOnType` is disabled.
+"search.searchOnTypeDebouncePeriod": 300,
+// Update the search query to the editor's selected text when focusing the search view. This happens either on click or when triggering the `workbench.views.search.focus` command.
+"search.seedOnFocus": false,
+// Enable seeding search from the word nearest the cursor when the active editor has no selection.
+"search.seedWithNearestWord": false,
+// Controls whether to show line numbers for search results.
+"search.showLineNumbers": false,
+// Search case-insensitively if the pattern is all lowercase, otherwise, search case-sensitively.
+"search.smartCase": false,
+// Controls sorting order of search results.
+//  - default: Results are sorted by folder and file names, in alphabetical order.
+//  - fileNames: Results are sorted by file names ignoring folder order, in alphabetical order.
+//  - type: Results are sorted by file extensions, in alphabetical order.
+//  - modified: Results are sorted by file last modified date, in descending order.
+//  - countDescending: Results are sorted by count per file, in descending order.
+//  - countAscending: Results are sorted by count per file, in ascending order.
+"search.sortOrder": "default",
+// Controls whether to use your global gitignore file (for example, from `$HOME/.config/git/ignore`) when searching for files. Requires `search.useIgnoreFiles` to be enabled.
+"search.useGlobalIgnoreFiles": false,
+// Controls whether to use `.gitignore` and `.ignore` files when searching for files.
+"search.useIgnoreFiles": true,
+// Controls whether to use `.gitignore` and `.ignore` files in parent directories when searching for files. Requires `search.useIgnoreFiles` to be enabled.
+"search.useParentIgnoreFiles": false,
+// Deprecated. PCRE2 will be used automatically when using regex features that are only supported by PCRE2.
+// Whether to use the PCRE2 regex engine in text search. This enables using some advanced regex features like lookahead and backreferences. However, not all PCRE2 features are supported - only features that are also supported by JavaScript.
+"search.usePCRE2": false,
+// Controls whether to open Replace Preview when selecting or replacing a match.
+"search.useReplacePreview": true,
+// Deprecated. Consider "search.usePCRE2" for advanced regex feature support.
+// This setting is deprecated and now falls back on "search.usePCRE2".
+"search.useRipgrep": true,
+// Controls whether use of Electron's fetch implementation instead of Node.js' should be enabled. All local extensions will get Electron's fetch implementation for the global fetch API.
+```
+
+
+## http
+
+```json
+"http.electronFetch": false,
+// Controls whether experimental loading of CA certificates from the OS should be enabled. This uses a more general approach than the default implemenation.
+"http.experimental.systemCertificatesV2": false,
+// Specifies domain names for which proxy settings should be ignored for HTTP/HTTPS requests.
+"http.noProxy": [],
+// The proxy setting to use. If not set, will be inherited from the `http_proxy` and `https_proxy` environment variables.
+"http.proxy": "",
+// The value to send as the `Proxy-Authorization` header for every network request.
+"http.proxyAuthorization": null,
+// Overrides the principal service name for Kerberos authentication with the HTTP proxy. A default based on the proxy hostname is used when this is not set.
+"http.proxyKerberosServicePrincipal": "",
+// Controls whether the proxy server certificate should be verified against the list of supplied CAs.
+"http.proxyStrictSSL": true,
+// Use the proxy support for extensions.
+//  - off: Disable proxy support for extensions.
+//  - on: Enable proxy support for extensions.
+//  - fallback: Enable proxy support for extensions, fall back to request options, when no proxy found.
+//  - override: Enable proxy support for extensions, override request options.
+"http.proxySupport": "override",
+// Controls whether CA certificates should be loaded from the OS. (On Windows and macOS, a reload of the window is required after turning this off.)
+"http.systemCertificates": true,
+```
+
+## keyboard dispatch
+```json
+// Controls the dispatching logic for key presses to use either `code` (recommended) or `keyCode`.
+"keyboard.dispatch": "code",
+```
+
+## Update
+```json
+// This setting is deprecated, please use 'update.mode' instead.
+// Configure whether you receive automatic updates. Requires a restart after change. The updates are fetched from a Microsoft online service.
+"update.channel": "default",
+// Configure whether you receive automatic updates. Requires a restart after change. The updates are fetched from a Microsoft online service.
+//  - none: Disable updates.
+//  - manual: Disable automatic background update checks. Updates will be available if you manually check for updates.
+//  - start: Check for updates only on startup. Disable automatic background update checks.
+//  - default: Enable automatic update checks. Code will check for updates automatically and periodically.
+"update.mode": "default",
+// Show Release Notes after an update. The Release Notes are fetched from a Microsoft online service.
+"update.showReleaseNotes": true,
+```
+
+## comment
+
+```json
+// Controls whether the comment thread should collapse when the thread is resolved.
+"comments.collapseOnResolve": true,
+// Controls whether the comments widget scrolls or expands.
+"comments.maxHeight": true,
+// This setting is deprecated in favor of `comments.openView`.
+// Controls when the comments panel should open.
+"comments.openPanel": "openOnSessionStartWithComments",
+// Controls when the comments view should open.
+//  - never: The comments view will never be opened.
+//  - file: The comments view will open when a file with comments is active.
+//  - firstFile: If the comments view has not been opened yet during this session it will open the first time during a session that a file with comments is active.
+//  - firstFileUnresolved: If the comments view has not been opened yet during this session and the comment is not resolved, it will open the first time during a session that a file with comments is active.
+"comments.openView": "firstFile",
+// Determines if relative time will be used in comment timestamps (ex. '1 day ago').
+"comments.useRelativeTime": true,
+// Controls the visibility of the comments bar and comment threads in editors that have commenting ranges and comments. Comments are still accessible via the Comments view and will cause commenting to be toggled on in the same way running the command "Comments: Toggle Editor Commenting" toggles comments.
+"comments.visible": true,
+```
+
+## application 
+```json
+
+// When enabled slow renderers are automatically profiled
+"application.experimental.rendererProfiling": false,
+// Controls the timeout in seconds before giving up resolving the shell environment when the application is not already launched from a terminal. See our [documentation](https://go.microsoft.com/fwlink/?linkid=2149667) for more information.
+"application.shellEnvironmentResolutionTimeout": 10,
+```

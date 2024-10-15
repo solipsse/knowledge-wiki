@@ -1,0 +1,94 @@
+# explorer
+```json
+
+// Controls whether the Explorer should automatically open a file when it is dropped into the explorer
+"explorer.autoOpenDroppedFile": true,
+// Controls whether the Explorer should automatically reveal and select files when opening them.
+//  - true: Files will be revealed and selected.
+//  - false: Files will not be revealed and selected.
+//  - focusNoScroll: Files will not be scrolled into view, but will still be focused.
+"explorer.autoReveal": true,
+// Configure paths or [glob patterns](https://aka.ms/vscode-glob-patterns) for excluding files and folders from being revealed and selected in the Explorer when they are opened. Glob patterns are always evaluated relative to the path of the workspace folder unless they are absolute paths.
+"explorer.autoRevealExclude": {
+    "**/node_modules": true,
+    "**/bower_components": true
+},
+// Controls whether the Explorer should render folders in a compact form. In such a form, single child folders will be compressed in a combined tree element. Useful for Java package structures, for example.
+"explorer.compactFolders": true,
+// Controls whether the Explorer should ask for confirmation when deleting a file via the trash.
+"explorer.confirmDelete": true,
+// Controls whether the Explorer should ask for confirmation to move files and folders via drag and drop.
+"explorer.confirmDragAndDrop": true,
+// Controls whether the Explorer should ask for confirmation when pasting native files and folders.
+"explorer.confirmPasteNative": true,
+// Controls whether the Explorer should ask for confirmation when undoing.
+//  - verbose: Explorer will prompt before all undo operations.
+//  - default: Explorer will prompt before destructive undo operations.
+//  - light: Explorer will not prompt before undo operations when focused.
+"explorer.confirmUndo": "default",
+// The path separation character used when copying relative file paths.
+//  - /: Use slash as path separation character.
+//  - \: Use backslash as path separation character.
+//  - auto: Uses operating system specific path separation character.
+"explorer.copyRelativePathSeparator": "auto",
+// Controls whether file decorations should use badges.
+"explorer.decorations.badges": true,
+// Controls whether file decorations should use colors.
+"explorer.decorations.colors": true,
+// Controls whether the Explorer should allow to move files and folders via drag and drop. This setting only effects drag and drop from inside the Explorer.
+"explorer.enableDragAndDrop": true,
+// Controls whether the Explorer should support undoing file and folder operations.
+"explorer.enableUndo": true,
+// Controls whether entries in .gitignore should be parsed and excluded from the Explorer. Similar to `files.exclude`.
+"explorer.excludeGitIgnore": false,
+// Controls whether the Explorer should expand multi-root workspaces containing only one folder during initialization
+"explorer.expandSingleFolderWorkspaces": true,
+// Controls whether file nesting is enabled in the Explorer. File nesting allows for related files in a directory to be visually grouped together under a single parent file.
+"explorer.fileNesting.enabled": false,
+// Controls whether file nests are automatically expanded. `explorer.fileNesting.enabled` must be set for this to take effect.
+"explorer.fileNesting.expand": true,
+// Controls nesting of files in the Explorer. `explorer.fileNesting.enabled` must be set for this to take effect. Each __Item__ represents a parent pattern and may contain a single `*` character that matches any string. Each __Value__ represents a comma separated list of the child patterns that should be shown nested under a given parent. Child patterns may contain several special tokens:
+// - `${capture}`: Matches the resolved value of the `*` from the parent pattern
+// - `${basename}`: Matches the parent file's basename, the `file` in `file.ts`
+// - `${extname}`: Matches the parent file's extension, the `ts` in `file.ts`
+// - `${dirname}`: Matches the parent file's directory name, the `src` in `src/file.ts`
+// - `*`:  Matches any string, may only be used once per child pattern
+"explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb"
+},
+// Controls which naming strategy to use when giving a new name to a duplicated Explorer item on paste.
+//  - simple: Appends the word "copy" at the end of the duplicated name potentially followed by a number.
+//  - smart: Adds a number at the end of the duplicated name. If some number is already part of the name, tries to increase that number.
+//  - disabled: Disables incremental naming. If two files with the same name exist you will be prompted to overwrite the existing file.
+"explorer.incrementalNaming": "simple",
+// The minimum number of editor slots pre-allocated in the Open Editors pane. If set to 0 the Open Editors pane will dynamically resize based on the number of editors.
+"explorer.openEditors.minVisible": 0,
+// Controls the sorting order of editors in the Open Editors pane.
+//  - editorOrder: Editors are ordered in the same order editor tabs are shown.
+//  - alphabetical: Editors are ordered alphabetically by tab name inside each editor group.
+//  - fullPath: Editors are ordered alphabetically by full path inside each editor group.
+"explorer.openEditors.sortOrder": "editorOrder",
+// The initial maximum number of editors shown in the Open Editors pane. Exceeding this limit will show a scroll bar and allow resizing the pane to display more items.
+"explorer.openEditors.visible": 9,
+// Controls the property-based sorting of files and folders in the Explorer. When `explorer.fileNesting.enabled` is enabled, also controls sorting of nested files.
+//  - default: Files and folders are sorted by their names. Folders are displayed before files.
+//  - mixed: Files and folders are sorted by their names. Files are interwoven with folders.
+//  - filesFirst: Files and folders are sorted by their names. Files are displayed before folders.
+//  - type: Files and folders are grouped by extension type then sorted by their names. Folders are displayed before files.
+//  - modified: Files and folders are sorted by last modified date in descending order. Folders are displayed before files.
+//  - foldersNestsFiles: Files and folders are sorted by their names. Folders are displayed before files. Files with nested children are displayed before other files.
+"explorer.sortOrder": "default",
+// Controls the lexicographic sorting of file and folder names in the Explorer.
+//  - default: Uppercase and lowercase names are mixed together.
+//  - upper: Uppercase names are grouped together before lowercase names.
+//  - lower: Lowercase names are grouped together before uppercase names.
+//  - unicode: Names are sorted in Unicode order.
+"explorer.sortOrderLexicographicOptions": "default",
+// Controls whether the file and folder sort order, should be reversed.
+"explorer.sortOrderReverse": false,
+```

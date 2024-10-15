@@ -1,0 +1,304 @@
+## telementary
+```json
+"telemetry.enableCrashReporter": false,
+"telemetry.enableTelemetry": false,
+"telemetry.telemetryLevel": "off",
+```
+
+## codelens and diffing
+```json
+// Controls whether the editor shows CodeLens.
+"diffEditor.codeLens": false,
+//  - legacy: Uses the legacy diffing algorithm.
+//  - advanced: Uses the advanced diffing algorithm.
+"diffEditor.diffAlgorithm": "advanced",
+// Controls whether the diff editor shows empty decorations to see where characters got inserted or deleted.
+"diffEditor.experimental.showEmptyDecorations": true,
+// Controls whether the diff editor should show detected code moves.
+"diffEditor.experimental.showMoves": false,
+// If enabled and the editor uses the inline view, word changes are rendered inline.
+"diffEditor.experimental.useTrueInlineView": false,
+// Controls how many lines are used as context when comparing unchanged regions.
+"diffEditor.hideUnchangedRegions.contextLineCount": 3,
+// Controls whether the diff editor shows unchanged regions.
+"diffEditor.hideUnchangedRegions.enabled": false,
+// Controls how many lines are used as a minimum for unchanged regions.
+"diffEditor.hideUnchangedRegions.minimumLineCount": 3,
+// Controls how many lines are used for unchanged regions.
+"diffEditor.hideUnchangedRegions.revealLineCount": 20,
+// When enabled, the diff editor ignores changes in leading or trailing whitespace.
+"diffEditor.ignoreTrimWhitespace": true,
+// Timeout in milliseconds after which diff computation is cancelled. Use 0 for no timeout.
+"diffEditor.maxComputationTime": 5000,
+// Maximum file size in MB for which to compute diffs. Use 0 for no limit.
+"diffEditor.maxFileSize": 50,
+// When enabled, the diff editor shows a special gutter for revert and stage actions.
+"diffEditor.renderGutterMenu": true,
+// Controls whether the diff editor shows +/- indicators for added/removed changes.
+"diffEditor.renderIndicators": true,
+// When enabled, the diff editor shows arrows in its glyph margin to revert changes.
+"diffEditor.renderMarginRevertIcon": true,
+// Controls whether the diff editor shows the diff side by side or inline.
+"diffEditor.renderSideBySide": true,
+// If the diff editor width is smaller than this value, the inline view is used.
+"diffEditor.renderSideBySideInlineBreakpoint": 900,
+// If enabled and the editor width is too small, the inline view is used.
+"diffEditor.useInlineViewWhenSpaceIsLimited": true,
+//  - off: Lines will never wrap.
+//  - on: Lines will wrap at the viewport width.
+//  - inherit: Lines will wrap according to the `editor.wordWrap` setting.
+"diffEditor.wordWrap": "inherit",
+```
+
+## inline chat
+
+```json
+// Whether pending inline chat sessions prevent saving.
+"inlineChat.acceptedOrDiscardBeforeSave": true,
+// Whether the inline chat also renders an accessible diff viewer for its changes.
+//  - auto: The accessible diff viewer is based on screen reader mode being enabled.
+//  - on: The accessible diff viewer is always enabled.
+//  - off: The accessible diff viewer is never enabled.
+"inlineChat.accessibleDiffView": "auto",
+// Whether to show a toolbar to accept or reject changes in the inline chat changes view.
+"inlineChat.experimental.enableZoneToolbar": false,
+// Whether to finish an inline chat session when typing outside of changed regions.
+"inlineChat.finishOnType": false,
+// Whether holding the inline chat keybinding will automatically enable speech recognition.
+"inlineChat.holdToSpeech": true,
+// Configure if changes crafted with inline chat are applied directly to the document or are previewed first.
+//  - live: Changes are applied directly to the document, can be highlighted via inline diffs, and accepted/discarded by hunks. Ending a session will keep the changes.
+//  - preview: Changes are previewed only and need to be accepted via the apply button. Ending a session will discard the changes.
+"inlineChat.mode": "live",
+```
+
+## notebook
+```json
+// Run a series of Code Actions for a notebook on save. Code Actions must be specified, the file must not be saved after delay, and the editor must not be shutting down. Example: `"notebook.source.organizeImports": "explicit"`
+"notebook.codeActionsOnSave": {},
+```
+
+## security
+
+```json
+// If enabled, a dialog will ask for confirmation whenever a local file or workspace is about to open through a protocol handler.
+"security.promptForLocalFileProtocolHandling": true,
+// If enabled, a dialog will ask for confirmation whenever a remote file or workspace is about to open through a protocol handler.
+"security.promptForRemoteFileProtocolHandling": true,
+// Controls when the restricted mode banner is shown.
+//  - always: Show the banner every time an untrusted workspace is open.
+//  - untilDismissed: Show the banner when an untrusted workspace is opened until dismissed.
+//  - never: Do not show the banner when an untrusted workspace is open.
+"security.workspace.trust.banner": "untilDismissed",
+// Controls whether or not the empty window is trusted by default within VSCodium. When used with `security.workspace.trust.untrustedFiles`, you can enable the full functionality of VSCodium without prompting in an empty window.
+"security.workspace.trust.emptyWindow": true,
+// Controls whether or not Workspace Trust is enabled within VSCodium.
+"security.workspace.trust.enabled": true,
+// Controls when the startup prompt to trust a workspace is shown.
+//  - always: Ask for trust every time an untrusted workspace is opened.
+//  - once: Ask for trust the first time an untrusted workspace is opened.
+//  - never: Do not ask for trust when an untrusted workspace is opened.
+"security.workspace.trust.startupPrompt": "once",
+// Controls how to handle opening untrusted files in a trusted workspace. This setting also applies to opening files in an empty window which is trusted via `security.workspace.trust.emptyWindow`.
+//  - prompt: Ask how to handle untrusted files for each workspace. Once untrusted files are introduced to a trusted workspace, you will not be prompted again.
+//  - open: Always allow untrusted files to be introduced to a trusted workspace without prompting.
+//  - newWindow: Always open untrusted files in a separate window in restricted mode without prompting.
+"security.workspace.trust.untrustedFiles": "prompt",
+```
+
+## accessibility
+
+```json
+// Whether to dim unfocused editors and terminals, which makes it more clear where typed input will go to. This works with the majority of editors with the notable exceptions of those that utilize iframes like notebooks and extension webview editors.
+"accessibility.dimUnfocused.enabled": false,
+// The opacity fraction (0.2 to 1.0) to use for unfocused editors and terminals. This will only take effect when `accessibility.dimUnfocused.enabled` is enabled.
+"accessibility.dimUnfocused.opacity": 0.75,
+// Controls whether the Accessible View is hidden.
+"accessibility.hideAccessibleView": false,
+
+
+// On keypress, close the Accessible View and focus the element from which it was invoked.
+"accessibility.accessibleView.closeOnKeyPress": true,
+// Controls whether variable changes should be announced in the debug watch view.
+"accessibility.debugWatchVariableAnnouncements": true,
+// Whether or not position changes should be debounced
+"accessibility.signalOptions.debouncePositionChanges": false,
+// 
+"accessibility.signalOptions.experimental.delays.errorAtPosition": {},
+// Delays for all signals besides error and warning at position
+"accessibility.signalOptions.experimental.delays.general": {},
+// 
+"accessibility.signalOptions.experimental.delays.warningAtPosition": {},
+// The volume of the sounds in percent (0-100).
+"accessibility.signalOptions.volume": 70,
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a chat request is made.
+"accessibility.signals.chatRequestSent": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a sound / audio cue when the response has been received.
+"accessibility.signals.chatResponseReceived": {
+    "sound": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a feature is cleared (for example, the terminal, Debug Console, or Output channel).
+"accessibility.signals.clear": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a sound / audio cue when the focus moves to an deleted line in Accessible Diff Viewer mode or to the next/previous change.
+"accessibility.signals.diffLineDeleted": {
+    "sound": "auto"
+},
+// Plays a sound / audio cue when the focus moves to an inserted line in Accessible Diff Viewer mode or to the next/previous change.
+"accessibility.signals.diffLineInserted": {
+    "sound": "auto"
+},
+// Plays a sound / audio cue when the focus moves to an modified line in Accessible Diff Viewer mode or to the next/previous change.
+"accessibility.signals.diffLineModified": {
+    "sound": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a file or notebook is formatted.
+"accessibility.signals.format": {
+    "sound": "never",
+    "announcement": "never"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the active line has a breakpoint.
+"accessibility.signals.lineHasBreakpoint": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the active line has an error.
+"accessibility.signals.lineHasError": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - the active line has a folded area that can be unfolded.
+"accessibility.signals.lineHasFoldedArea": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a sound / audio cue when the active line has an inline suggestion.
+"accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the active line has a warning.
+"accessibility.signals.lineHasWarning": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when trying to read a line with inlay hints that has no inlay hints.
+"accessibility.signals.noInlayHints": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a notebook cell execution is successfully completed.
+"accessibility.signals.notebookCellCompleted": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a notebook cell execution fails.
+"accessibility.signals.notebookCellFailed": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the debugger stopped on a breakpoint.
+"accessibility.signals.onDebugBreak": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the active line has a warning.
+"accessibility.signals.positionHasError": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the active line has a warning.
+"accessibility.signals.positionHasWarning": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - on loop while progress is occurring.
+"accessibility.signals.progress": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a file is saved.
+"accessibility.signals.save": {
+    "sound": "never",
+    "announcement": "never"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a task is completed.
+"accessibility.signals.taskCompleted": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a task fails (non-zero exit code).
+"accessibility.signals.taskFailed": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when the terminal bell is ringing.
+"accessibility.signals.terminalBell": {
+    "sound": "off",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a terminal command fails (non-zero exit code) or when a command with such an exit code is navigated to in the accessible view.
+"accessibility.signals.terminalCommandFailed": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when a terminal command succeeds (zero exit code) or when a command with such an exit code is navigated to in the accessible view.
+"accessibility.signals.terminalCommandSucceeded": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a signal - sound (audio cue) and/or announcement (alert) - when terminal Quick Fixes are available.
+"accessibility.signals.terminalQuickFix": {
+    "sound": "auto",
+    "announcement": "auto"
+},
+// Plays a sound / audio cue when the voice recording has started.
+"accessibility.signals.voiceRecordingStarted": {
+    "sound": "on"
+},
+// Plays a sound / audio cue when the voice recording has stopped.
+"accessibility.signals.voiceRecordingStopped": {
+    "sound": "auto"
+},
+// Controls whether links should be underlined in the workbench.
+"accessibility.underlineLinks": false,
+// Provide information about actions that can be taken in the comment widget or in a file which contains comments.
+"accessibility.verbosity.comments": true,
+// Provide information about how to access the debug console accessibility help dialog when the debug console or run and debug viewlet is focused. Note that a reload of the window is required for this to take effect.
+"accessibility.verbosity.debug": true,
+// Provide information about how to navigate changes in the diff editor when it is focused.
+"accessibility.verbosity.diffEditor": true,
+// Indicate when a diff editor becomes the active editor.
+"accessibility.verbosity.diffEditorActive": true,
+// Provide information about relevant actions in an empty text editor.
+"accessibility.verbosity.emptyEditorHint": true,
+// Provide information about how to open the hover in an Accessible View.
+"accessibility.verbosity.hover": true,
+// Provide information about how to access the inline editor chat accessibility help menu and alert with hints that describe how to use the feature when the input is focused.
+"accessibility.verbosity.inlineChat": true,
+// Provide information about how to access the inline completions hover and Accessible View.
+"accessibility.verbosity.inlineCompletions": true,
+// Provide information about how to change a keybinding in the keybindings editor when a row is focused.
+"accessibility.verbosity.keybindingsEditor": true,
+// Provide information about how to focus the cell container or inner editor when a notebook cell is focused.
+"accessibility.verbosity.notebook": true,
+// Provide information about how to open the notification in an Accessible View.
+"accessibility.verbosity.notification": true,
+// Provide information about how to access the chat help menu when the chat input is focused.
+"accessibility.verbosity.panelChat": true,
+// Provide information about relevant actions For the Repl input.
+"accessibility.verbosity.replInputHint": true,
+// Provide information about how to access the terminal accessibility help menu when the terminal is focused.
+"accessibility.verbosity.terminal": true,
+// Provide information about how to open the walkthrough in an Accessible View.
+"accessibility.verbosity.walkthrough": true,
+// The name under which the remote tunnel access is registered. If not set, the host name is used.
+"remote.tunnels.access.hostNameOverride": "",
+// Prevent this computer from sleeping when remote tunnel access is turned on.
+"remote.tunnels.access.preventSleep": false,
+```
+

@@ -1,0 +1,34 @@
+```json
+
+// An array of languages where Emmet abbreviations should not be expanded.
+"emmet.excludeLanguages": [
+    "markdown"
+],
+// An array of paths, where each path can contain Emmet syntaxProfiles and/or snippet files.
+// In case of conflicts, the profiles/snippets of later paths will override those of earlier paths.
+// See https://code.visualstudio.com/docs/editor/emmet for more information and an example snippet file.
+"emmet.extensionsPath": [],
+// Enable Emmet abbreviations in languages that are not supported by default. Add a mapping here between the language and Emmet supported language.
+//  For example: `{"vue-html": "html", "javascript": "javascriptreact"}`
+"emmet.includeLanguages": {},
+// When set to `false`, the whole file is parsed to determine if current position is valid for expanding Emmet abbreviations. When set to `true`, only the content around the current position in CSS/SCSS/Less files is parsed.
+"emmet.optimizeStylesheetParsing": true,
+// Preferences used to modify behavior of some actions and resolvers of Emmet.
+"emmet.preferences": {},
+// Shows possible Emmet abbreviations as suggestions. Not applicable in stylesheets or when emmet.showExpandedAbbreviation is set to `"never"`.
+"emmet.showAbbreviationSuggestions": true,
+// Shows expanded Emmet abbreviations as suggestions.
+// The option `"inMarkupAndStylesheetFilesOnly"` applies to html, haml, jade, slim, xml, xsl, css, scss, sass, less and stylus.
+// The option `"always"` applies to all parts of the file regardless of markup/css.
+"emmet.showExpandedAbbreviation": "always",
+// If `true`, then Emmet suggestions will show up as snippets allowing you to order them as per `editor.snippetSuggestions` setting.
+"emmet.showSuggestionsAsSnippets": false,
+// Define profile for specified syntax or use your own profile with specific rules.
+"emmet.syntaxProfiles": {},
+// When enabled, Emmet abbreviations are expanded when pressing TAB, even when completions do not show up. When disabled, completions that show up can still be accepted by pressing TAB.
+"emmet.triggerExpansionOnTab": false,
+// If `true`, Emmet will use inline completions to suggest expansions. To prevent the non-inline completion item provider from showing up as often while this setting is `true`, turn `editor.quickSuggestions` to `inline` or `off` for the `other` item.
+"emmet.useInlineCompletions": false,
+// Variables to be used in Emmet snippets.
+"emmet.variables": {},
+```

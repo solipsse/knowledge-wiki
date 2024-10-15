@@ -1,0 +1,57 @@
+{
+	"folders": [
+		{
+			"path": "/run/media/solipsse/drive/project/starlight"
+		}
+	],
+	"settings": {
+		"workbench.editor.enablePreview": false,
+		"window.nativeFullScreen": true,
+		"window.newWindowDimensions": "inherit",
+		"breadcrumbs.enabled": false,
+		"workbench.editor.showTabs": "none",
+		"workbench.tips.enabled": false,
+		"git.decorations.enabled": false,
+		"problems.decorations.enabled": false,
+		"workbench.editor.enablePreviewFromQuickOpen": false,
+		"terminal.integrated.lineHeight": 1.5,
+		"terminal.integrated.fontSize": 16,
+		"notebook.output.wordWrap": true,
+		"workbench.activityBar.location": "hidden",
+		"workbench.statusBar.visible": false,
+		"security.workspace.trust.untrustedFiles": "open",
+		"editor.tokenColorCustomizations": {
+			"textMateRules": [
+				{
+					"scope": [
+						"comment",
+						"keyword",
+						"variable.language",
+						"entity.other.attribute-name.html",
+						"entity.other.attribute-name",
+						"keyword.control",
+						"storage.type",
+						"comment",
+						"comment.block",
+						"comment.line"
+					],
+					"settings": {
+						"fontStyle": ""
+					}
+				}
+			]
+		},
+		"material-icon-theme.saturation": 0,
+		"vscode_custom_css.imports": [
+			"file:///Users/glennraya/custom-vscode.css",
+			"file:///Users/glennraya/vscode-script.js"
+		],
+		"workbench.colorTheme": "Catppuccin Frappé",
+		"workbench.iconTheme": "eq-material-theme-icons-light",
+		"workbench.sideBar.location": "right",
+		"material-icon-theme.files.color": "#42a5f5",
+		"workbench.tree.enableStickyScroll": false,
+		"explorer.confirmDelete": false,
+		"chat.editor.wordWrap": "on"
+	}
+}

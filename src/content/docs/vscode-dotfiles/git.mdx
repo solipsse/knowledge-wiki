@@ -1,0 +1,272 @@
+```json
+
+// Controls whether force push (with or without lease) is enabled.
+"git.allowForcePush": false,
+// Controls whether commits without running pre-commit and commit-msg hooks are allowed.
+"git.allowNoVerifyCommit": false,
+// Always show the Staged Changes resource group.
+"git.alwaysShowStagedChangesResourceGroup": false,
+// Controls the signoff flag for all commits.
+"git.alwaysSignOff": false,
+// When set to true, commits will automatically be fetched from the default remote of the current Git repository. Setting to `all` will fetch from all remotes.
+"git.autofetch": false,
+// Duration in seconds between each automatic git fetch, when `git.autofetch` is enabled.
+"git.autofetchPeriod": 180,
+// Whether auto refreshing is enabled.
+"git.autorefresh": true,
+// Configures when repositories should be automatically detected.
+//  - true: Scan for both subfolders of the current opened folder and parent folders of open files.
+//  - false: Disable automatic repository scanning.
+//  - subFolders: Scan for subfolders of the currently opened folder.
+//  - openEditors: Scan for parent folders of open files.
+"git.autoRepositoryDetection": true,
+// Stash any changes before pulling and restore them after successful pull.
+"git.autoStash": false,
+// Prefix used when creating a new branch.
+"git.branchPrefix": "",
+// List of protected branches. By default, a prompt is shown before changes are committed to a protected branch. The prompt can be controlled using the `git.branchProtectionPrompt`  setting.
+"git.branchProtection": [],
+// Controls whether a prompt is being shown before changes are committed to a protected branch.
+//  - alwaysCommit: Always commit changes to the protected branch.
+//  - alwaysCommitToNewBranch: Always commit changes to a new branch.
+//  - alwaysPrompt: Always prompt before changes are committed to a protected branch.
+"git.branchProtectionPrompt": "alwaysPrompt",
+// List of dictionaries used for the randomly generated branch name. Each value represents the dictionary used to generate the segment of the branch name. Supported dictionaries: `adjectives`, `animals`, `colors` and `numbers`.
+//  - adjectives: A random adjective
+//  - animals: A random animal name
+//  - colors: A random color name
+//  - numbers: A random number between 100 and 999
+"git.branchRandomName.dictionary": [
+    "adjectives",
+    "animals"
+],
+// Controls whether a random name is generated when creating a new branch.
+"git.branchRandomName.enable": false,
+// Controls the sort order for branches.
+"git.branchSortOrder": "committerdate",
+// A regular expression to validate new branch names.
+"git.branchValidationRegex": "",
+// The character to replace whitespace in new branch names, and to separate segments of a randomly generated branch name.
+"git.branchWhitespaceChar": "-",
+// Controls what type of Git refs are listed when running `Checkout to...`.
+//  - local: Local branches
+//  - tags: Tags
+//  - remote: Remote branches
+"git.checkoutType": [
+    "local",
+    "remote",
+    "tags"
+],
+// Controls whether the diff editor should be automatically closed when changes are stashed, committed, discarded, staged, or unstaged.
+"git.closeDiffOnOperation": false,
+// List of git commands (ex: commit, push) that would have their `stdout` logged to the [git output](command:git.showOutput). If the git command has a client-side hook configured, the client-side hook's `stdout` will also be logged to the [git output](command:git.showOutput).
+"git.commandsToLog": [],
+// Always confirm the creation of empty commits for the 'Git: Commit Empty' command.
+"git.confirmEmptyCommits": true,
+// Controls whether to ask for confirmation before force-pushing.
+"git.confirmForcePush": true,
+// Controls whether to ask for confirmation before committing without verification.
+"git.confirmNoVerifyCommit": true,
+// Confirm before synchronizing Git repositories.
+"git.confirmSync": true,
+// Controls the Git count badge.
+//  - all: Count all changes.
+//  - tracked: Count only tracked changes.
+//  - off: Turn off counter.
+"git.countBadge": "all",
+// Controls whether Git contributes colors and badges to the Explorer and the Open Editors view.
+"git.decorations.enabled": true,
+// The name of the default branch (example: main, trunk, development) when initializing a new Git repository. When set to empty, the default branch name configured in Git will be used. **Note:** Requires Git version `2.28.0` or later.
+"git.defaultBranchName": "main",
+// The default location to clone a Git repository.
+"git.defaultCloneDirectory": null,
+// Controls whether to automatically detect Git submodules.
+"git.detectSubmodules": true,
+// Controls the limit of Git submodules detected.
+"git.detectSubmodulesLimit": 10,
+// Enables commit signing with GPG, X.509, or SSH.
+"git.enableCommitSigning": false,
+// Whether Git is enabled.
+"git.enabled": true,
+// Commit all changes when there are no staged changes.
+"git.enableSmartCommit": false,
+// Controls whether the Git Sync command appears in the status bar.
+"git.enableStatusBarSync": true,
+// When enabled, fetch all branches when pulling. Otherwise, fetch just the current one.
+"git.fetchOnPull": false,
+// Push all annotated tags when running the sync command.
+"git.followTagsWhenSync": false,
+// This setting is now deprecated, please use `github.gitAuthentication` instead.
+// 
+"git.githubAuthentication": null,
+// List of Git repositories to ignore.
+"git.ignoredRepositories": [],
+// Ignores the legacy Git warning.
+"git.ignoreLegacyWarning": false,
+// Ignores the warning when there are too many changes in a repository.
+"git.ignoreLimitWarning": false,
+// Ignores the warning when Git is missing.
+"git.ignoreMissingGitWarning": false,
+// Ignores the warning when it looks like the branch might have been rebased when pulling.
+"git.ignoreRebaseWarning": false,
+// Ignore modifications to submodules in the file tree.
+"git.ignoreSubmodules": false,
+// Ignores the warning when Git 2.25 - 2.26 is installed on Windows.
+"git.ignoreWindowsGit27Warning": false,
+// Controls whether to show commit message input validation diagnostics.
+"git.inputValidation": false,
+// Controls the commit message length threshold for showing a warning.
+"git.inputValidationLength": 72,
+// Controls the commit message subject length threshold for showing a warning. Unset it to inherit the value of `git.inputValidationLength`.
+"git.inputValidationSubjectLength": 50,
+// Open the merge editor for files that are currently under conflict.
+"git.mergeEditor": false,
+// Controls whether to open a repository automatically after cloning.
+//  - always: Always open in current window.
+//  - alwaysNewWindow: Always open in a new window.
+//  - whenNoFolderOpen: Only open in current window when no folder is opened.
+//  - prompt: Always prompt for action.
+"git.openAfterClone": "prompt",
+// Controls whether the diff editor should be opened when clicking a change. Otherwise the regular editor will be opened.
+"git.openDiffOnClick": true,
+// Control whether a repository in parent folders of workspaces or open files should be opened.
+//  - always: Always open a repository in parent folders of workspaces or open files.
+//  - never: Never open a repository in parent folders of workspaces or open files.
+//  - prompt: Prompt before opening a repository the parent folders of workspaces or open files.
+"git.openRepositoryInParentFolders": "prompt",
+// Controls whether to optimistically update the state of the Source Control view after running git commands.
+"git.optimisticUpdate": true,
+// Path and filename of the git executable, e.g. `C:\Program Files\Git\bin\git.exe` (Windows). This can also be an array of string values containing multiple paths to look up.
+"git.path": null,
+// Run a git command after a successful commit.
+//  - none: Don't run any command after a commit.
+//  - push: Run 'git push' after a successful commit.
+//  - sync: Run 'git pull' and 'git push' after a successful commit.
+"git.postCommitCommand": "none",
+// Controls whether Git should check for unsaved files before committing.
+//  - always: Check for any unsaved files.
+//  - staged: Check only for unsaved staged files.
+//  - never: Disable this check.
+"git.promptToSaveFilesBeforeCommit": "always",
+// Controls whether Git should check for unsaved files before stashing changes.
+//  - always: Check for any unsaved files.
+//  - staged: Check only for unsaved staged files.
+//  - never: Disable this check.
+"git.promptToSaveFilesBeforeStash": "always",
+// Prune when fetching.
+"git.pruneOnFetch": false,
+// Controls whether a branch that does not have outgoing commits is fast-forwarded before it is checked out.
+"git.pullBeforeCheckout": false,
+// Fetch all tags when pulling.
+"git.pullTags": true,
+// Force Git to use rebase when running the sync command.
+"git.rebaseWhenSync": false,
+// Remember the last git command that ran after a commit.
+"git.rememberPostCommitCommand": false,
+// Automatically replace the local tags with the remote tags in case of a conflict when running the pull command.
+"git.replaceTagsWhenPull": false,
+// List of folders that are ignored while scanning for Git repositories when `git.autoRepositoryDetection` is set to `true` or `subFolders`.
+"git.repositoryScanIgnoredFolders": [
+    "node_modules"
+],
+// Controls the depth used when scanning workspace folders for Git repositories when `git.autoRepositoryDetection` is set to `true` or `subFolders`. Can be set to `-1` for no limit.
+"git.repositoryScanMaxDepth": 1,
+// Controls whether to require explicit Git user configuration or allow Git to guess if missing.
+"git.requireGitUserConfig": true,
+// List of paths to search for Git repositories in.
+"git.scanRepositories": [],
+// Controls whether an action button is shown in the Source Control view.
+"git.showActionButton": {
+    "commit": true,
+    "publish": true,
+    "sync": true
+},
+// Controls whether to show the commit input in the Git source control panel.
+"git.showCommitInput": true,
+// Controls whether to show an inline Open File action in the Git changes view.
+"git.showInlineOpenFileAction": true,
+// Controls whether Git actions should show progress.
+"git.showProgress": true,
+// Controls whether to show a notification when a push is successful.
+"git.showPushSuccessNotification": false,
+// Controls the threshold of the similarity index (the amount of additions/deletions compared to the file's size) for changes in a pair of added/deleted files to be considered a rename. **Note:** Requires Git version `2.18.0` or later.
+"git.similarityThreshold": 50,
+// Control which changes are automatically staged by Smart Commit.
+//  - all: Automatically stage all changes.
+//  - tracked: Automatically stage tracked changes only.
+"git.smartCommitChanges": "all",
+// Controls how to limit the number of changes that can be parsed from Git status command. Can be set to 0 for no limit.
+"git.statusLimit": 10000,
+// Suggests to enable smart commit (commit all changes when there are no staged changes).
+"git.suggestSmartCommit": true,
+// Controls whether a notification comes up when running the Sync action, which allows the user to cancel the operation.
+"git.supportCancellation": false,
+// Controls whether to enable VSCodium to be the authentication handler for Git processes spawned in the Integrated Terminal. Note: Terminals need to be restarted to pick up a change in this setting.
+"git.terminalAuthentication": true,
+// Controls whether to enable VSCodium to be the Git editor for Git processes spawned in the integrated terminal. Note: Terminals need to be restarted to pick up a change in this setting.
+"git.terminalGitEditor": false,
+// Controls which date to use for items in the Timeline view.
+//  - committed: Use the committed date
+//  - authored: Use the authored date
+"git.timeline.date": "committed",
+// Controls whether to show the commit author in the Timeline view.
+"git.timeline.showAuthor": true,
+// Controls whether to show uncommitted changes in the Timeline view.
+"git.timeline.showUncommitted": false,
+// Controls how untracked changes behave.
+//  - mixed: All changes, tracked and untracked, appear together and behave equally.
+//  - separate: Untracked changes appear separately in the Source Control view. They are also excluded from several actions.
+//  - hidden: Untracked changes are hidden and excluded from several actions.
+"git.untrackedChanges": "mixed",
+// Controls whether to use the message from the commit input box as the default stash message.
+"git.useCommitInputAsStashMessage": false,
+// Controls whether a full text editor will be used to author commit messages, whenever no message is provided in the commit input box.
+"git.useEditorAsCommitInput": true,
+// Controls whether force pushing uses the safer force-if-includes variant. Note: This setting requires the `git.useForcePushWithLease` setting to be enabled, and Git version `2.30.0` or later.
+"git.useForcePushIfIncludes": true,
+// Controls whether force pushing uses the safer force-with-lease variant.
+"git.useForcePushWithLease": true,
+// Controls whether GIT_ASKPASS should be overwritten to use the integrated version.
+"git.useIntegratedAskPass": true,
+// Enable verbose output when `git.useEditorAsCommitInput` is enabled.
+"git.verboseCommit": false,
+// Controls whether to query repository rules for GitHub repositories
+"github.branchProtection": true,
+// Controls whether to enable automatic GitHub authentication for git commands within VSCodium.
+"github.gitAuthentication": true,
+// Controls which protocol is used to clone a GitHub repository
+"github.gitProtocol": "https",
+// GitHub Enterprise Server URI
+"github-enterprise.uri": "",
+// Experimental support for multiple GitHub accounts
+"github.experimental.multipleAccounts": false,
+// Controls enablement of Grunt task detection. Grunt task detection can cause files in any open workspace to be executed.
+"grunt.autoDetect": "off",
+// Controls enablement of Gulp task detection. Gulp task detection can cause files in any open workspace to be executed.
+"gulp.autoDetect": "off",
+// Experimental feature to serialize the Jupyter notebook in a worker thread. Not supported when the Extension host is running as a web worker.
+"ipynb.experimental.serialization": false,
+// Enable/disable pasting of images into Markdown cells in ipynb notebook files. Pasted images are inserted as attachments to the cell.
+"ipynb.pasteImagesAsAttachments.enabled": true,
+// Controls enablement of Jake task detection. Jake task detection can cause files in any open workspace to be executed.
+"jake.autoDetect": "off",
+// Enable/disable rendering math in the built-in Markdown preview.
+"markdown.math.enabled": true,
+// A collection of custom macros. Each macro is a key-value pair where the key is a new command name and the value is the expansion of the macro.
+"markdown.math.macros": {},
+// Start playing videos on mute automatically.
+"mediaPreview.video.autoPlay": false,
+// Loop videos over again automatically.
+"mediaPreview.video.loop": false,
+// Whether to automatically navigate to the next merge conflict after resolving a merge conflict.
+"merge-conflict.autoNavigateNextConflict.enabled": false,
+// Create a CodeLens for merge conflict blocks within editor.
+"merge-conflict.codeLens.enabled": true,
+// Create decorators for merge conflict blocks within editor.
+"merge-conflict.decorators.enabled": true,
+// Controls where the diff view should be opened when comparing changes in merge conflicts.
+//  - Current: Open the diff view in the current editor group.
+//  - Beside: Open the diff view next to the current editor group.
+//  - Below: Open the diff view below the current editor group.
+"merge-conflict.diffViewPosition": "Current",
+```

@@ -1,0 +1,14 @@
+## what is this
+
+```json
+
+// The custom configuration for the Sovereign Cloud to use with the Microsoft Sovereign Cloud authentication provider. This along with setting `microsoft-sovereign-cloud.environment` to `custom` is required to use this feature.
+"microsoft-sovereign-cloud.customEnvironment": {},
+// The Sovereign Cloud to use for authentication. If you select `custom`, you must also set the `microsoft-sovereign-cloud.customEnvironment` setting.
+//  - ChinaCloud: Azure China
+//  - USGovernment: Azure US Government
+//  - custom: A custom Microsoft Sovereign Cloud
+"microsoft-sovereign-cloud.environment": "",
+// Use the Microsoft Authentication Library (MSAL) to sign in with a Microsoft account.
+"microsoft.useMsal": false,
+```

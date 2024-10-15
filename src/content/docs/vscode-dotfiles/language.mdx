@@ -1,0 +1,939 @@
+# language
+
+## json
+
+```json
+
+// The setting `json.colorDecorators.enable` has been deprecated in favor of `editor.colorDecorators`.
+// Enables or disables color decorators
+"json.colorDecorators.enable": true,
+// Enable/disable default JSON formatter
+"json.format.enable": true,
+// Keep all existing new lines when formatting.
+"json.format.keepLines": false,
+// The maximum number of outline symbols and folding regions computed (limited for performance reasons).
+"json.maxItemsComputed": 5000,
+// When enabled, JSON schemas can be fetched from http and https locations.
+"json.schemaDownload.enable": true,
+// Associate schemas to JSON files in the current project.
+"json.schemas": [],
+// Traces the communication between VSCodium and the JSON language server.
+"json.trace.server": "off",
+// Enable/disable JSON validation.
+"json.validate.enable": true,
+
+```
+
+## md
+```json
+// Configures the path and file name of files created by copy/paste or drag and drop. This is a map of globs that match against a Markdown document path to the destination path where the new file should be created.
+// 
+// The destination path may use the following variables:
+// 
+// - `${documentDirName}` — Absolute parent directory path of the Markdown document, e.g. `/Users/me/myProject/docs`.
+// - `${documentRelativeDirName}` — Relative parent directory path of the Markdown document, e.g. `docs`. This is the same as `${documentDirName}` if the file is not part of a workspace.
+// - `${documentFileName}` — The full filename of the Markdown document, e.g. `README.md`.
+// - `${documentBaseName}` — The basename of the Markdown document, e.g. `README`.
+// - `${documentExtName}` — The extension of the Markdown document, e.g. `md`.
+// - `${documentFilePath}` — Absolute path of the Markdown document, e.g. `/Users/me/myProject/docs/README.md`.
+// - `${documentRelativeFilePath}` — Relative path of the Markdown document, e.g. `docs/README.md`. This is the same as `${documentFilePath}` if the file is not part of a workspace.
+// - `${documentWorkspaceFolder}` — The workspace folder for the Markdown document, e.g. `/Users/me/myProject`. This is the same as `${documentDirName}` if the file is not part of a workspace.
+// - `${fileName}` — The file name of the dropped file, e.g. `image.png`.
+// - `${fileExtName}` — The extension of the dropped file, e.g. `png`.
+"markdown.copyFiles.destination": {},
+// Controls if files created by drop or paste should overwrite existing files.
+//  - nameIncrementally: If a file with the same name already exists, append a number to the file name, for example: `image.png` becomes `image-1.png`.
+//  - overwrite: If a file with the same name already exists, overwrite it.
+"markdown.copyFiles.overwriteBehavior": "nameIncrementally",
+// Controls if files outside of the workspace that are dropped into a Markdown editor should be copied into the workspace.
+// 
+// Use `markdown.copyFiles.destination` to configure where copied dropped files should be created
+//  - mediaFiles: Try to copy external image and video files into the workspace.
+//  - never: Do not copy external files into the workspace.
+"markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+// Enable dropping files into a Markdown editor while holding Shift. Requires enabling `editor.dropIntoEditor.enabled`.
+//  - always: Always insert Markdown links.
+//  - smart: Smartly create Markdown links by default when not dropping into a code block or other special element. Use the drop widget to switch between pasting as plain text or as Markdown links.
+//  - never: Never create Markdown links.
+"markdown.editor.drop.enabled": "smart",
+// Snippet used when adding audio to Markdown. This snippet can use the following variables:
+// - `${src}` — The resolved path of the audio  file.
+// - `${title}` — The title used for the audio. A snippet placeholder will automatically be created for this variable.
+"markdown.editor.filePaste.audioSnippet": "<audio controls src=\"${src}\" title=\"${title}\"></audio>",
+// Controls if files outside of the workspace that are pasted into a Markdown editor should be copied into the workspace.
+// 
+// Use `markdown.copyFiles.destination` to configure where copied files should be created.
+//  - mediaFiles: Try to copy external image and video files into the workspace.
+//  - never: Do not copy external files into the workspace.
+"markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+// Enable pasting files into a Markdown editor to create Markdown links. Requires enabling `editor.pasteAs.enabled`.
+//  - always: Always insert Markdown links.
+//  - smart: Smartly create Markdown links by default when not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.
+//  - never: Never create Markdown links.
+"markdown.editor.filePaste.enabled": "smart",
+// Snippet used when adding videos to Markdown. This snippet can use the following variables:
+// - `${src}` — The resolved path of the video file.
+// - `${title}` — The title used for the video. A snippet placeholder will automatically be created for this variable.
+"markdown.editor.filePaste.videoSnippet": "<video controls src=\"${src}\" title=\"${title}\"></video>",
+// Controls if Markdown links are created when URLs are pasted into a Markdown editor. Requires enabling `editor.pasteAs.enabled`.
+//  - always: Always insert Markdown links.
+//  - smart: Smartly create Markdown links by default when not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.
+//  - smartWithSelection: Smartly create Markdown links by default when you have selected text and are not pasting into a code block or other special element. Use the paste widget to switch between pasting as plain text or as Markdown links.
+//  - never: Never create Markdown links.
+"markdown.editor.pasteUrlAsFormattedLink.enabled": "smartWithSelection",
+// Enable/disable a paste option that updates links and reference in text that is copied and pasted between Markdown editors.
+// 
+// To use this feature, after pasting text that contains updatable links, just click on the Paste Widget and select `Paste and update pasted links`.
+"markdown.editor.updateLinksOnPaste.enabled": true,
+// Controls where links in Markdown files should be opened.
+//  - currentGroup: Open links in the active editor group.
+//  - beside: Open links beside the active editor.
+"markdown.links.openLocation": "currentGroup",
+// Enable highlighting link occurrences in the current document.
+"markdown.occurrencesHighlight.enabled": false,
+// Controls if file extensions (for example `.md`) are added or not for links to Markdown files. This setting is used when file paths are added by tooling such as path completions or file renames.
+//  - auto: For existing paths, try to maintain the file extension style. For new paths, add file extensions.
+//  - includeExtension: Prefer including the file extension. For example, path completions to a file named `file.md` will insert `file.md`.
+//  - removeExtension: Prefer removing the file extension. For example, path completions to a file named `file.md` will insert `file` without the `.md`.
+"markdown.preferredMdPathExtensionStyle": "auto",
+// Sets how line-breaks are rendered in the Markdown preview. Setting it to `true` creates a `<br>` for newlines inside paragraphs.
+"markdown.preview.breaks": false,
+// Double-click in the Markdown preview to switch to the editor.
+"markdown.preview.doubleClickToSwitchToEditor": true,
+// Controls the font family used in the Markdown preview.
+"markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+// Controls the font size in pixels used in the Markdown preview.
+"markdown.preview.fontSize": 14,
+// Controls the line height used in the Markdown preview. This number is relative to the font size.
+"markdown.preview.lineHeight": 1.6,
+// Convert URL-like text to links in the Markdown preview.
+"markdown.preview.linkify": true,
+// Mark the current editor selection in the Markdown preview.
+"markdown.preview.markEditorSelection": true,
+// Controls how links to other Markdown files in the Markdown preview should be opened.
+//  - inPreview: Try to open links in the Markdown preview.
+//  - inEditor: Try to open links in the editor.
+"markdown.preview.openMarkdownLinks": "inPreview",
+// When a Markdown preview is scrolled, update the view of the editor.
+"markdown.preview.scrollEditorWithPreview": true,
+// When a Markdown editor is scrolled, update the view of the preview.
+"markdown.preview.scrollPreviewWithEditor": true,
+// Enable some language-neutral replacement and quotes beautification in the Markdown preview.
+"markdown.preview.typographer": false,
+// Controls the logging level of the Markdown language server.
+"markdown.server.log": "off",
+// A list of URLs or local paths to CSS style sheets to use from the Markdown preview. Relative paths are interpreted relative to the folder open in the Explorer. If there is no open folder, they are interpreted relative to the location of the Markdown file. All '\' need to be written as '\\'.
+"markdown.styles": [],
+// Enable path suggestions while writing links in Markdown files.
+"markdown.suggest.paths.enabled": true,
+// Enable suggestions for headers in other Markdown files in the current workspace. Accepting one of these suggestions inserts the full path to header in that file, for example: `[link text](/path/to/file.md#header)`.
+//  - never: Disable workspace header suggestions.
+//  - onDoubleHash: Enable workspace header suggestions after typing `#` in a path, for example: `[link text](#`.
+//  - onSingleOrDoubleHash: Enable workspace header suggestions after typing either `#` or `#` in a path, for example: `[link text](#` or `[link text](#`.
+"markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onDoubleHash",
+// Enable debug logging for the Markdown extension.
+"markdown.trace.extension": "off",
+// Traces the communication between VSCodium and the Markdown language server.
+"markdown.trace.server": "off",
+// Try to update links in Markdown files when a file is renamed/moved in the workspace. Use `markdown.updateLinksOnFileMove.include` to configure which files trigger link updates.
+//  - prompt: Prompt on each file move.
+//  - always: Always update links automatically.
+//  - never: Never try to update link and don't prompt.
+"markdown.updateLinksOnFileMove.enabled": "never",
+// Enable updating links when a directory is moved or renamed in the workspace.
+"markdown.updateLinksOnFileMove.enableForDirectories": true,
+// Glob patterns that specifies files that trigger automatic link updates. See `markdown.updateLinksOnFileMove.enabled` for details about this feature.
+"markdown.updateLinksOnFileMove.include": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
+],
+// Validate duplicated definitions in the current file.
+"markdown.validate.duplicateLinkDefinitions.enabled": "warning",
+// Enable all error reporting in Markdown files.
+"markdown.validate.enabled": false,
+// Validate links to other files in Markdown files, for example `[link](/path/to/file.md)`. This checks that the target files exists. Requires enabling `markdown.validate.enabled`.
+"markdown.validate.fileLinks.enabled": "warning",
+// Validate the fragment part of links to headers in other files in Markdown files, for example: `[link](/path/to/file.md#header)`. Inherits the setting value from `markdown.validate.fragmentLinks.enabled` by default.
+"markdown.validate.fileLinks.markdownFragmentLinks": "inherit",
+// Validate fragment links to headers in the current Markdown file, for example: `[link](#header)`. Requires enabling `markdown.validate.enabled`.
+"markdown.validate.fragmentLinks.enabled": "warning",
+// Configure links that should not be validated. For example adding `/about` would not validate the link `[about](/about)`, while the glob `/assets/**/*.svg` would let you skip validation for any link to `.svg` files under the `assets` directory.
+"markdown.validate.ignoredLinks": [],
+// Validate reference links in Markdown files, for example: `[link][ref]`. Requires enabling `markdown.validate.enabled`.
+"markdown.validate.referenceLinks.enabled": "warning",
+// Validate link definitions that are unused in the current file.
+"markdown.validate.unusedLinkDefinitions.enabled": "hint",
+```
+
+## html
+
+```json
+
+// Global debug launch configuration. Should be used as an alternative to 'launch.json' that is shared across workspaces.
+"launch": {
+    "configurations": [],
+    "compounds": []
+},
+// Enable/disable autoclosing of HTML tags.
+"html.autoClosingTags": true,
+// Enable/disable auto creation of quotes for HTML attribute assignment. The type of quotes can be configured by `html.completion.attributeDefaultValue`.
+"html.autoCreateQuotes": true,
+// Controls the default value for attributes when completion is accepted.
+//  - doublequotes: Attribute value is set to "".
+//  - singlequotes: Attribute value is set to ''.
+//  - empty: Attribute value is not set.
+"html.completion.attributeDefaultValue": "doublequotes",
+// A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-html-languageservice/blob/master/docs/customData.md).
+// 
+// VSCodium loads custom data on startup to enhance its HTML support for the custom HTML tags, attributes and attribute values you specify in the JSON files.
+// 
+// The file paths are relative to workspace and only workspace folder settings are considered.
+"html.customData": [],
+// List of tags, comma separated, where the content shouldn't be reformatted. `null` defaults to the `pre` tag.
+"html.format.contentUnformatted": "pre,code,textarea",
+// Enable/disable default HTML formatter.
+"html.format.enable": true,
+// List of tags, comma separated, that should have an extra newline before them. `null` defaults to `"head, body, /html"`.
+"html.format.extraLiners": "head, body, /html",
+// Format and indent `{{#foo}}` and `{{/foo}}`.
+"html.format.indentHandlebars": false,
+// Indent `<head>` and `<body>` sections.
+"html.format.indentInnerHtml": false,
+// Maximum number of line breaks to be preserved in one chunk. Use `null` for unlimited.
+"html.format.maxPreserveNewLines": null,
+// Controls whether existing line breaks before elements should be preserved. Only works before elements, not inside tags or for text.
+"html.format.preserveNewLines": true,
+// Honor django, erb, handlebars and php templating language tags.
+"html.format.templating": false,
+// List of tags, comma separated, that shouldn't be reformatted. `null` defaults to all tags listed at https://www.w3.org/TR/html5/dom.html#phrasing-content.
+"html.format.unformatted": "wbr",
+// Keep text content together between this string.
+"html.format.unformattedContentDelimiter": "",
+// Wrap attributes.
+//  - auto: Wrap attributes only when line length is exceeded.
+//  - force: Wrap each attribute except first.
+//  - force-aligned: Wrap each attribute except first and keep aligned.
+//  - force-expand-multiline: Wrap each attribute.
+//  - aligned-multiple: Wrap when line length is exceeded, align attributes vertically.
+//  - preserve: Preserve wrapping of attributes.
+//  - preserve-aligned: Preserve wrapping of attributes but align.
+"html.format.wrapAttributes": "auto",
+// Indent wrapped attributes to after N characters. Use `null` to use the default indent size. Ignored if `html.format.wrapAttributes` is set to `aligned`.
+"html.format.wrapAttributesIndentSize": null,
+// Maximum amount of characters per line (0 = disable).
+"html.format.wrapLineLength": 120,
+// Show tag and attribute documentation in hover.
+"html.hover.documentation": true,
+// Show references to MDN in hover.
+"html.hover.references": true,
+// Deprecated in favor of `editor.linkedEditing`
+// Enable/disable mirroring cursor on matching HTML tag.
+"html.mirrorCursorOnMatchingTag": false,
+// Controls whether the built-in HTML language support suggests HTML5 tags, properties and values.
+"html.suggest.html5": true,
+// Traces the communication between VSCodium and the HTML language server.
+"html.trace.server": "off",
+// Controls whether the built-in HTML language support validates embedded scripts.
+"html.validate.scripts": true,
+// Controls whether the built-in HTML language support validates embedded styles.
+"html.validate.styles": true,
+```
+
+## js
+```json
+
+// Enable/disable automatic closing of JSX tags.
+"javascript.autoClosingTags": true,
+// Automatically update imports when pasting code. Requires TypeScript 5.6+.
+"javascript.experimental.updateImportsOnPaste": false,
+// Enable/disable default JavaScript formatter.
+"javascript.format.enable": true,
+// Defines space handling after a comma delimiter.
+"javascript.format.insertSpaceAfterCommaDelimiter": true,
+// Defines space handling after the constructor keyword.
+"javascript.format.insertSpaceAfterConstructor": false,
+// Defines space handling after function keyword for anonymous functions.
+"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+// Defines space handling after keywords in a control flow statement.
+"javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+// Defines space handling after opening and before closing empty braces.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+// Defines space handling after opening and before closing JSX expression braces.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+// Defines space handling after opening and before closing non-empty braces.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+// Defines space handling after opening and before closing non-empty brackets.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+// Defines space handling after opening and before closing non-empty parenthesis.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+// Defines space handling after opening and before closing template string braces.
+"javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+// Defines space handling after a semicolon in a for statement.
+"javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+// Defines space handling after a binary operator.
+"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+// Defines space handling before function argument parentheses.
+"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+// Defines whether an open brace is put onto a new line for control blocks or not.
+"javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+// Defines whether an open brace is put onto a new line for functions or not.
+"javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+// Defines handling of optional semicolons.
+//  - ignore: Don't insert or remove any semicolons.
+//  - insert: Insert semicolons at statement ends.
+//  - remove: Remove unnecessary semicolons.
+"javascript.format.semicolons": "ignore",
+// This setting has been deprecated in favor of `js/ts.implicitProjectConfig.checkJs`.
+// Enable/disable semantic checking of JavaScript files. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"javascript.implicitProjectConfig.checkJs": false,
+// This setting has been deprecated in favor of `js/ts.implicitProjectConfig.experimentalDecorators`.
+// Enable/disable `experimentalDecorators` in JavaScript files that are not part of a project. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"javascript.implicitProjectConfig.experimentalDecorators": false,
+// Enable/disable inlay hints for member values in enum declarations:
+// ```typescript
+// 
+// enum MyValue {
+// 	A /* = 0 */;
+// 	B /* = 1 */;
+// }
+//  
+// ```
+"javascript.inlayHints.enumMemberValues.enabled": false,
+// Enable/disable inlay hints for implicit return types on function signatures:
+// ```typescript
+// 
+// function foo() /* :number */ {
+// 	return Date.now();
+// } 
+//  
+// ```
+"javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+// Enable/disable inlay hints for parameter names:
+// ```typescript
+// 
+// parseInt(/* str: */ '123', /* radix: */ 8)
+//  
+// ```
+//  - none: Disable parameter name hints.
+//  - literals: Enable parameter name hints only for literal arguments.
+//  - all: Enable parameter name hints for literal and non-literal arguments.
+"javascript.inlayHints.parameterNames.enabled": "none",
+// Suppress parameter name hints on arguments whose text is identical to the parameter name.
+"javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+// Enable/disable inlay hints for implicit parameter types:
+// ```typescript
+// 
+// el.addEventListener('click', e /* :MouseEvent */ => ...)
+//  
+// ```
+"javascript.inlayHints.parameterTypes.enabled": false,
+// Enable/disable inlay hints for implicit types on property declarations:
+// ```typescript
+// 
+// class Foo {
+// 	prop /* :number */ = Date.now();
+// }
+//  
+// ```
+"javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+// Enable/disable inlay hints for implicit variable types:
+// ```typescript
+// 
+// const foo /* :number */ = Date.now();
+//  
+// ```
+"javascript.inlayHints.variableTypes.enabled": false,
+// Suppress type hints on variables whose name is identical to the type name.
+"javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
+// Specify glob patterns of files to exclude from auto imports. Relative paths are resolved relative to the workspace root. Patterns are evaluated using tsconfig.json [`exclude`](https://www.typescriptlang.org/tsconfig#exclude) semantics.
+"javascript.preferences.autoImportFileExcludePatterns": [],
+// Specify regular expressions to exclude auto imports with matching import specifiers. Examples:
+// 
+// - `^node:`
+// - `lib/internal` (slashes don't need to be escaped...)
+// - `/lib\/internal/i` (...unless including surrounding slashes for `i` or `u` flags)
+// - `^lodash$` (only allow subpath imports from lodash)
+"javascript.preferences.autoImportSpecifierExcludeRegexes": [],
+// Preferred path style for auto imports.
+//  - shortest: Prefers a non-relative import only if one is available that has fewer path segments than a relative import.
+//  - relative: Prefers a relative path to the imported file location.
+//  - non-relative: Prefers a non-relative import based on the `baseUrl` or `paths` configured in your `jsconfig.json` / `tsconfig.json`.
+//  - project-relative: Prefers a non-relative import only if the relative import path would leave the package or project directory.
+"javascript.preferences.importModuleSpecifier": "shortest",
+// Preferred path ending for auto imports.
+//  - auto: Use project settings to select a default.
+//  - minimal: Shorten `./component/index.js` to `./component`.
+//  - index: Shorten `./component/index.js` to `./component/index`.
+//  - js: Do not shorten path endings; include the `.js` or `.ts` extension.
+"javascript.preferences.importModuleSpecifierEnding": "auto",
+// Preferred style for JSX attribute completions.
+//  - auto: Insert `={}` or `=""` after attribute names based on the prop type. See `javascript.preferences.quoteStyle` to control the type of quotes used for string attributes.
+//  - braces: Insert `={}` after attribute names.
+//  - none: Only insert attribute names.
+"javascript.preferences.jsxAttributeCompletionStyle": "auto",
+// Advanced preferences that control how imports are ordered.
+"javascript.preferences.organizeImports": {},
+// Preferred quote style to use for Quick Fixes.
+//  - auto: Infer quote type from existing code
+//  - single: Always use single quotes: `'`
+//  - double: Always use double quotes: `"`
+"javascript.preferences.quoteStyle": "auto",
+// When on a JSX tag, try to rename the matching tag instead of renaming the symbol. Requires using TypeScript 5.1+ in the workspace.
+"javascript.preferences.renameMatchingJsxTags": true,
+// The setting 'typescript.preferences.renameShorthandProperties' has been deprecated in favor of 'typescript.preferences.useAliasesForRenames'
+// Enable/disable introducing aliases for object shorthand properties during renames.
+"javascript.preferences.renameShorthandProperties": true,
+// Enable/disable introducing aliases for object shorthand properties during renames.
+"javascript.preferences.useAliasesForRenames": true,
+// Makes Go to Definition avoid type declaration files when possible by triggering Go to Source Definition instead. This allows Go to Source Definition to be triggered with the mouse gesture.
+"javascript.preferGoToSourceDefinition": false,
+// Enable/disable references CodeLens in JavaScript files.
+"javascript.referencesCodeLens.enabled": false,
+// Enable/disable references CodeLens on all functions in JavaScript files.
+"javascript.referencesCodeLens.showOnAllFunctions": false,
+// Enable/disable auto import suggestions.
+"javascript.suggest.autoImports": true,
+// Enable/disable snippet completions for class members.
+"javascript.suggest.classMemberSnippets.enabled": true,
+// Complete functions with their parameter signature.
+"javascript.suggest.completeFunctionCalls": false,
+// Enable/disable suggestion to complete JSDoc comments.
+"javascript.suggest.completeJSDocs": true,
+// Enabled/disable autocomplete suggestions.
+"javascript.suggest.enabled": true,
+// Enable/disable showing completions on potentially undefined values that insert an optional chain call. Requires strict null checks to be enabled.
+"javascript.suggest.includeAutomaticOptionalChainCompletions": true,
+// Enable/disable auto-import-style completions on partially-typed import statements.
+"javascript.suggest.includeCompletionsForImportStatements": true,
+// Enable/disable generating `@returns` annotations for JSDoc templates.
+"javascript.suggest.jsdoc.generateReturns": true,
+// Enable/disable including unique names from the file in JavaScript suggestions. Note that name suggestions are always disabled in JavaScript code that is semantically checked using `@ts-check` or `checkJs`.
+"javascript.suggest.names": true,
+// Enable/disable suggestions for paths in import statements and require calls.
+"javascript.suggest.paths": true,
+// Enable/disable suggestion diagnostics for JavaScript files in the editor.
+"javascript.suggestionActions.enabled": true,
+// Enable/disable automatic updating of import paths when you rename or move a file in VSCodium.
+//  - prompt: Prompt on each rename.
+//  - always: Always update paths automatically.
+//  - never: Never rename paths and don't prompt.
+"javascript.updateImportsOnFileMove.enabled": "prompt",
+// Enable/disable JavaScript validation.
+"javascript.validate.enable": true,
+```
+
+## js/ts
+```json
+
+// Enable/disable semantic checking of JavaScript files. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"js/ts.implicitProjectConfig.checkJs": false,
+// Enable/disable `experimentalDecorators` in JavaScript files that are not part of a project. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"js/ts.implicitProjectConfig.experimentalDecorators": false,
+// Sets the module system for the program. See more: https://www.typescriptlang.org/tsconfig#module.
+"js/ts.implicitProjectConfig.module": "ESNext",
+// Enable/disable [strict function types](https://www.typescriptlang.org/tsconfig#strictFunctionTypes) in JavaScript and TypeScript files that are not part of a project. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"js/ts.implicitProjectConfig.strictFunctionTypes": true,
+// Enable/disable [strict null checks](https://www.typescriptlang.org/tsconfig#strictNullChecks) in JavaScript and TypeScript files that are not part of a project. Existing `jsconfig.json` or `tsconfig.json` files override this setting.
+"js/ts.implicitProjectConfig.strictNullChecks": true,
+// Set target JavaScript language version for emitted JavaScript and include library declarations. See more: https://www.typescriptlang.org/tsconfig#target.
+"js/ts.implicitProjectConfig.target": "ES2022",
+```
+
+## typescript
+```json
+
+// Enable/disable automatic closing of JSX tags.
+"typescript.autoClosingTags": true,
+// Check if npm is installed for [Automatic Type Acquisition](https://code.visualstudio.com/docs/nodejs/working-with-javascript#_typings-and-automatic-type-acquisition).
+"typescript.check.npmIsInstalled": true,
+// Disables [automatic type acquisition](https://code.visualstudio.com/docs/nodejs/working-with-javascript#_typings-and-automatic-type-acquisition). Automatic type acquisition fetches `@types` packages from npm to improve IntelliSense for external libraries.
+"typescript.disableAutomaticTypeAcquisition": false,
+// Enables prompting of users to use the TypeScript version configured in the workspace for Intellisense.
+"typescript.enablePromptUseWorkspaceTsdk": false,
+// (Experimental) Enable/disable expanding on hover.
+"typescript.experimental.expandableHover": false,
+// Automatically update imports when pasting code. Requires TypeScript 5.6+.
+"typescript.experimental.updateImportsOnPaste": false,
+// Enable/disable default TypeScript formatter.
+"typescript.format.enable": true,
+// Indent case clauses in switch statements. Requires using TypeScript 5.1+ in the workspace.
+"typescript.format.indentSwitchCase": true,
+// Defines space handling after a comma delimiter.
+"typescript.format.insertSpaceAfterCommaDelimiter": true,
+// Defines space handling after the constructor keyword.
+"typescript.format.insertSpaceAfterConstructor": false,
+// Defines space handling after function keyword for anonymous functions.
+"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+// Defines space handling after keywords in a control flow statement.
+"typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+// Defines space handling after opening and before closing empty braces.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+// Defines space handling after opening and before closing JSX expression braces.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+// Defines space handling after opening and before closing non-empty braces.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+// Defines space handling after opening and before closing non-empty brackets.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+// Defines space handling after opening and before closing non-empty parenthesis.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+// Defines space handling after opening and before closing template string braces.
+"typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+// Defines space handling after a semicolon in a for statement.
+"typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+// Defines space handling after type assertions in TypeScript.
+"typescript.format.insertSpaceAfterTypeAssertion": false,
+// Defines space handling after a binary operator.
+"typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+// Defines space handling before function argument parentheses.
+"typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+// Defines whether an open brace is put onto a new line for control blocks or not.
+"typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+// Defines whether an open brace is put onto a new line for functions or not.
+"typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+// Defines handling of optional semicolons.
+//  - ignore: Don't insert or remove any semicolons.
+//  - insert: Insert semicolons at statement ends.
+//  - remove: Remove unnecessary semicolons.
+"typescript.format.semicolons": "ignore",
+// Enable/disable implementations CodeLens. This CodeLens shows the implementers of an interface.
+"typescript.implementationsCodeLens.enabled": false,
+// Enable/disable implementations CodeLens on interface methods.
+"typescript.implementationsCodeLens.showOnInterfaceMethods": false,
+// Enable/disable inlay hints for member values in enum declarations:
+// ```typescript
+// 
+// enum MyValue {
+// 	A /* = 0 */;
+// 	B /* = 1 */;
+// }
+//  
+// ```
+"typescript.inlayHints.enumMemberValues.enabled": false,
+// Enable/disable inlay hints for implicit return types on function signatures:
+// ```typescript
+// 
+// function foo() /* :number */ {
+// 	return Date.now();
+// } 
+//  
+// ```
+"typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+// Enable/disable inlay hints for parameter names:
+// ```typescript
+// 
+// parseInt(/* str: */ '123', /* radix: */ 8)
+//  
+// ```
+//  - none: Disable parameter name hints.
+//  - literals: Enable parameter name hints only for literal arguments.
+//  - all: Enable parameter name hints for literal and non-literal arguments.
+"typescript.inlayHints.parameterNames.enabled": "none",
+// Suppress parameter name hints on arguments whose text is identical to the parameter name.
+"typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+// Enable/disable inlay hints for implicit parameter types:
+// ```typescript
+// 
+// el.addEventListener('click', e /* :MouseEvent */ => ...)
+//  
+// ```
+"typescript.inlayHints.parameterTypes.enabled": false,
+// Enable/disable inlay hints for implicit types on property declarations:
+// ```typescript
+// 
+// class Foo {
+// 	prop /* :number */ = Date.now();
+// }
+//  
+// ```
+"typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+// Enable/disable inlay hints for implicit variable types:
+// ```typescript
+// 
+// const foo /* :number */ = Date.now();
+//  
+// ```
+"typescript.inlayHints.variableTypes.enabled": false,
+// Suppress type hints on variables whose name is identical to the type name.
+"typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
+// Sets the locale used to report JavaScript and TypeScript errors. Defaults to use VSCodium's locale.
+//  - auto: Use VSCodium's configured display language
+//  - de: Deutsch
+//  - es: español
+//  - en: English
+//  - fr: français
+//  - it: italiano
+//  - ja: 日本語
+//  - ko: 한국어
+//  - ru: русский
+//  - zh-CN: 中文(简体)
+//  - zh-TW: 中文(繁體)
+"typescript.locale": "auto",
+// Specifies the path to the npm executable used for [Automatic Type Acquisition](https://code.visualstudio.com/docs/nodejs/working-with-javascript#_typings-and-automatic-type-acquisition).
+"typescript.npm": "",
+// Specify glob patterns of files to exclude from auto imports. Relative paths are resolved relative to the workspace root. Patterns are evaluated using tsconfig.json [`exclude`](https://www.typescriptlang.org/tsconfig#exclude) semantics.
+"typescript.preferences.autoImportFileExcludePatterns": [],
+// Specify regular expressions to exclude auto imports with matching import specifiers. Examples:
+// 
+// - `^node:`
+// - `lib/internal` (slashes don't need to be escaped...)
+// - `/lib\/internal/i` (...unless including surrounding slashes for `i` or `u` flags)
+// - `^lodash$` (only allow subpath imports from lodash)
+"typescript.preferences.autoImportSpecifierExcludeRegexes": [],
+// Preferred path style for auto imports.
+//  - shortest: Prefers a non-relative import only if one is available that has fewer path segments than a relative import.
+//  - relative: Prefers a relative path to the imported file location.
+//  - non-relative: Prefers a non-relative import based on the `baseUrl` or `paths` configured in your `jsconfig.json` / `tsconfig.json`.
+//  - project-relative: Prefers a non-relative import only if the relative import path would leave the package or project directory.
+"typescript.preferences.importModuleSpecifier": "shortest",
+// Preferred path ending for auto imports.
+//  - auto: Use project settings to select a default.
+//  - minimal: Shorten `./component/index.js` to `./component`.
+//  - index: Shorten `./component/index.js` to `./component/index`.
+//  - js: Do not shorten path endings; include the `.js` or `.ts` extension.
+"typescript.preferences.importModuleSpecifierEnding": "auto",
+// Enable/disable searching `package.json` dependencies for available auto imports.
+//  - auto: Search dependencies based on estimated performance impact.
+//  - on: Always search dependencies.
+//  - off: Never search dependencies.
+"typescript.preferences.includePackageJsonAutoImports": "auto",
+// Preferred style for JSX attribute completions.
+//  - auto: Insert `={}` or `=""` after attribute names based on the prop type. See `typescript.preferences.quoteStyle` to control the type of quotes used for string attributes.
+//  - braces: Insert `={}` after attribute names.
+//  - none: Only insert attribute names.
+"typescript.preferences.jsxAttributeCompletionStyle": "auto",
+// Advanced preferences that control how imports are ordered.
+"typescript.preferences.organizeImports": {},
+// Include the `type` keyword in auto-imports whenever possible. Requires using TypeScript 5.3+ in the workspace.
+"typescript.preferences.preferTypeOnlyAutoImports": false,
+// Preferred quote style to use for Quick Fixes.
+//  - auto: Infer quote type from existing code
+//  - single: Always use single quotes: `'`
+//  - double: Always use double quotes: `"`
+"typescript.preferences.quoteStyle": "auto",
+// When on a JSX tag, try to rename the matching tag instead of renaming the symbol. Requires using TypeScript 5.1+ in the workspace.
+"typescript.preferences.renameMatchingJsxTags": true,
+// The setting 'typescript.preferences.renameShorthandProperties' has been deprecated in favor of 'typescript.preferences.useAliasesForRenames'
+// Enable/disable introducing aliases for object shorthand properties during renames.
+"typescript.preferences.renameShorthandProperties": true,
+// Enable/disable introducing aliases for object shorthand properties during renames.
+"typescript.preferences.useAliasesForRenames": true,
+// Makes Go to Definition avoid type declaration files when possible by triggering Go to Source Definition instead. This allows Go to Source Definition to be triggered with the mouse gesture.
+"typescript.preferGoToSourceDefinition": false,
+// Enable/disable references CodeLens in TypeScript files.
+"typescript.referencesCodeLens.enabled": false,
+// Enable/disable references CodeLens on all functions in TypeScript files.
+"typescript.referencesCodeLens.showOnAllFunctions": false,
+// Report style checks as warnings.
+"typescript.reportStyleChecksAsWarnings": true,
+// Enable/disable auto import suggestions.
+"typescript.suggest.autoImports": true,
+// Enable/disable snippet completions for class members.
+"typescript.suggest.classMemberSnippets.enabled": true,
+// Complete functions with their parameter signature.
+"typescript.suggest.completeFunctionCalls": false,
+// Enable/disable suggestion to complete JSDoc comments.
+"typescript.suggest.completeJSDocs": true,
+// Enabled/disable autocomplete suggestions.
+"typescript.suggest.enabled": true,
+// Enable/disable showing completions on potentially undefined values that insert an optional chain call. Requires strict null checks to be enabled.
+"typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+// Enable/disable auto-import-style completions on partially-typed import statements.
+"typescript.suggest.includeCompletionsForImportStatements": true,
+// Enable/disable generating `@returns` annotations for JSDoc templates.
+"typescript.suggest.jsdoc.generateReturns": true,
+// Enable/disable snippet completions for methods in object literals.
+"typescript.suggest.objectLiteralMethodSnippets.enabled": true,
+// Enable/disable suggestions for paths in import statements and require calls.
+"typescript.suggest.paths": true,
+// Enable/disable suggestion diagnostics for TypeScript files in the editor.
+"typescript.suggestionActions.enabled": true,
+// Enabled/disable occasional surveys that help us improve VSCodium's JavaScript and TypeScript support.
+"typescript.surveys.enabled": true,
+// Controls auto detection of tsc tasks.
+//  - on: Create both build and watch tasks.
+//  - off: Disable this feature.
+//  - build: Only create single run compile tasks.
+//  - watch: Only create compile and watch tasks.
+"typescript.tsc.autoDetect": "on",
+// Specifies the folder path to the tsserver and `lib*.d.ts` files under a TypeScript install to use for IntelliSense, for example: `./node_modules/typescript/lib`.
+// 
+// - When specified as a user setting, the TypeScript version from `typescript.tsdk` automatically replaces the built-in TypeScript version.
+// - When specified as a workspace setting, `typescript.tsdk` allows you to switch to use that workspace version of TypeScript for IntelliSense with the `TypeScript: Select TypeScript version` command.
+// 
+// See the [TypeScript documentation](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-newer-typescript-versions) for more detail about managing TypeScript versions.
+"typescript.tsdk": "",
+// Enables region-based diagnostics in TypeScript. Requires using TypeScript 5.6+ in the workspace.
+"typescript.tsserver.enableRegionDiagnostics": true,
+// Enables tracing TS server performance to a directory. These trace files can be used to diagnose TS Server performance issues. The log may contain file paths, source code, and other potentially sensitive information from your project.
+"typescript.tsserver.enableTracing": false,
+// (Experimental) Enables project wide error reporting.
+"typescript.tsserver.experimental.enableProjectDiagnostics": false,
+// Use VSCodium's file watchers instead of TypeScript's. Requires using TypeScript 5.4+ in the workspace.
+"typescript.tsserver.experimental.useVsCodeWatcher": true,
+// Enables logging of the TS server to a file. This log can be used to diagnose TS Server issues. The log may contain file paths, source code, and other potentially sensitive information from your project.
+"typescript.tsserver.log": "off",
+// The maximum amount of memory (in MB) to allocate to the TypeScript server process. To use a memory limit greater than 4 GB, use `typescript.tsserver.nodePath` to run TS Server with a custom Node installation.
+"typescript.tsserver.maxTsServerMemory": 3072,
+// Run TS Server on a custom Node installation. This can be a path to a Node executable, or 'node' if you want VSCodium to detect a Node installation.
+"typescript.tsserver.nodePath": "",
+// Additional paths to discover TypeScript Language Service plugins.
+"typescript.tsserver.pluginPaths": [],
+// This setting has been deprecated in favor of `typescript.tsserver.useSyntaxServer`.
+// Enable/disable spawning a separate TypeScript server that can more quickly respond to syntax related operations, such as calculating folding or computing document symbols.
+"typescript.tsserver.useSeparateSyntaxServer": true,
+// Controls if TypeScript launches a dedicated server to more quickly handle syntax related operations, such as computing code folding.
+//  - always: Use a lighter weight syntax server to handle all IntelliSense operations. This syntax server can only provide IntelliSense for opened files.
+//  - never: Don't use a dedicated syntax server. Use a single server to handle all IntelliSense operations.
+//  - auto: Spawn both a full server and a lighter weight server dedicated to syntax operations. The syntax server is used to speed up syntax operations and provide IntelliSense while projects are loading.
+"typescript.tsserver.useSyntaxServer": "auto",
+// Configure which watching strategies should be used to keep track of files and directories.
+"typescript.tsserver.watchOptions": {},
+// Enable/disable project-wide IntelliSense on web. Requires that VSCodium is running in a trusted context.
+"typescript.tsserver.web.projectWideIntellisense.enabled": true,
+// Suppresses semantic errors on web even when project wide IntelliSense is enabled. This is always on when project wide IntelliSense is not enabled or available. See `typescript.tsserver.web.projectWideIntellisense.enabled`
+"typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false,
+// Enable/disable package acquisition on the web. This enables IntelliSense for imported packages. Requires `typescript.tsserver.web.projectWideIntellisense.enabled`. Currently not supported for Safari.
+"typescript.tsserver.web.typeAcquisition.enabled": true,
+// Enable/disable automatic updating of import paths when you rename or move a file in VSCodium.
+//  - prompt: Prompt on each rename.
+//  - always: Always update paths automatically.
+//  - never: Never rename paths and don't prompt.
+"typescript.updateImportsOnFileMove.enabled": "prompt",
+// Enable/disable TypeScript validation.
+"typescript.validate.enable": true,
+// Exclude symbols that come from library files in Go to Symbol in Workspace results. Requires using TypeScript 5.3+ in the workspace.
+"typescript.workspaceSymbols.excludeLibrarySymbols": true,
+// Controls which files are searched by [Go to Symbol in Workspace](https://code.visualstudio.com/docs/editor/editingevolved#_open-symbol-by-name).
+//  - allOpenProjects: Search all open JavaScript or TypeScript projects for symbols.
+//  - currentProject: Only search for symbols in the current JavaScript or TypeScript project.
+"typescript.workspaceSymbols.scope": "allOpenProjects",
+```
+
+## CSS
+```json
+
+// Insert semicolon at end of line when completing CSS properties.
+"css.completion.completePropertyWithSemicolon": true,
+// By default, VSCodium triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.
+"css.completion.triggerPropertyValueCompletion": true,
+// A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-css-languageservice/blob/master/docs/customData.md).
+// 
+// VSCodium loads custom data on startup to enhance its CSS support for CSS custom properties (variables), at-rules, pseudo-classes, and pseudo-elements you specify in the JSON files.
+// 
+// The file paths are relative to workspace and only workspace folder settings are considered.
+"css.customData": [],
+// Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).
+"css.format.braceStyle": "collapse",
+// Enable/disable default CSS formatter.
+"css.format.enable": true,
+// Maximum number of line breaks to be preserved in one chunk, when `css.format.preserveNewLines` is enabled.
+"css.format.maxPreserveNewLines": null,
+// Separate rulesets by a blank line.
+"css.format.newlineBetweenRules": true,
+// Separate selectors with a new line.
+"css.format.newlineBetweenSelectors": true,
+// Whether existing line breaks before elements should be preserved.
+"css.format.preserveNewLines": true,
+// Ensure a space character around selector separators '>', '+', '~' (e.g. `a > b`).
+"css.format.spaceAroundSelectorSeparator": false,
+// Show property and value documentation in CSS hovers.
+"css.hover.documentation": true,
+// Show references to MDN in CSS hovers.
+"css.hover.references": true,
+// Invalid number of parameters.
+"css.lint.argumentsInColorFunction": "error",
+// Do not use `width` or `height` when using `padding` or `border`.
+"css.lint.boxModel": "ignore",
+// When using a vendor-specific prefix make sure to also include all other vendor-specific properties.
+"css.lint.compatibleVendorPrefixes": "ignore",
+// Do not use duplicate style definitions.
+"css.lint.duplicateProperties": "ignore",
+// Do not use empty rulesets.
+"css.lint.emptyRules": "warning",
+// Avoid using `float`. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+"css.lint.float": "ignore",
+// `@font-face` rule must define `src` and `font-family` properties.
+"css.lint.fontFaceProperties": "warning",
+// Hex colors must consist of 3, 4, 6 or 8 hex numbers.
+"css.lint.hexColorLength": "error",
+// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+"css.lint.idSelector": "ignore",
+// IE hacks are only necessary when supporting IE7 and older.
+"css.lint.ieHack": "ignore",
+// Avoid using `!important`. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+"css.lint.important": "ignore",
+// Import statements do not load in parallel.
+"css.lint.importStatement": "ignore",
+// Property is ignored due to the display. E.g. with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect.
+"css.lint.propertyIgnoredDueToDisplay": "warning",
+// The universal selector (`*`) is known to be slow.
+"css.lint.universalSelector": "ignore",
+// Unknown at-rule.
+"css.lint.unknownAtRules": "warning",
+// Unknown property.
+"css.lint.unknownProperties": "warning",
+// Unknown vendor specific property.
+"css.lint.unknownVendorSpecificProperties": "ignore",
+// A list of properties that are not validated against the `unknownProperties` rule.
+"css.lint.validProperties": [],
+// When using a vendor-specific prefix, also include the standard property.
+"css.lint.vendorPrefix": "warning",
+// No unit for zero needed.
+"css.lint.zeroUnits": "ignore",
+// Traces the communication between VSCodium and the CSS language server.
+"css.trace.server": "off",
+// Enables or disables all validations.
+"css.validate": true,
+```
+
+## less
+
+```json
+// Insert semicolon at end of line when completing CSS properties.
+"less.completion.completePropertyWithSemicolon": true,
+// By default, VSCodium triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.
+"less.completion.triggerPropertyValueCompletion": true,
+// Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).
+"less.format.braceStyle": "collapse",
+// Enable/disable default LESS formatter.
+"less.format.enable": true,
+// Maximum number of line breaks to be preserved in one chunk, when `less.format.preserveNewLines` is enabled.
+"less.format.maxPreserveNewLines": null,
+// Separate rulesets by a blank line.
+"less.format.newlineBetweenRules": true,
+// Separate selectors with a new line.
+"less.format.newlineBetweenSelectors": true,
+// Whether existing line breaks before elements should be preserved.
+"less.format.preserveNewLines": true,
+// Ensure a space character around selector separators '>', '+', '~' (e.g. `a > b`).
+"less.format.spaceAroundSelectorSeparator": false,
+// Show property and value documentation in LESS hovers.
+"less.hover.documentation": true,
+// Show references to MDN in LESS hovers.
+"less.hover.references": true,
+// Invalid number of parameters.
+"less.lint.argumentsInColorFunction": "error",
+// Do not use `width` or `height` when using `padding` or `border`.
+"less.lint.boxModel": "ignore",
+// When using a vendor-specific prefix make sure to also include all other vendor-specific properties.
+"less.lint.compatibleVendorPrefixes": "ignore",
+// Do not use duplicate style definitions.
+"less.lint.duplicateProperties": "ignore",
+// Do not use empty rulesets.
+"less.lint.emptyRules": "warning",
+// Avoid using `float`. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+"less.lint.float": "ignore",
+// `@font-face` rule must define `src` and `font-family` properties.
+"less.lint.fontFaceProperties": "warning",
+// Hex colors must consist of 3, 4, 6 or 8 hex numbers.
+"less.lint.hexColorLength": "error",
+// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+"less.lint.idSelector": "ignore",
+// IE hacks are only necessary when supporting IE7 and older.
+"less.lint.ieHack": "ignore",
+// Avoid using `!important`. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+"less.lint.important": "ignore",
+// Import statements do not load in parallel.
+"less.lint.importStatement": "ignore",
+// Property is ignored due to the display. E.g. with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect.
+"less.lint.propertyIgnoredDueToDisplay": "warning",
+// The universal selector (`*`) is known to be slow.
+"less.lint.universalSelector": "ignore",
+// Unknown at-rule.
+"less.lint.unknownAtRules": "warning",
+// Unknown property.
+"less.lint.unknownProperties": "warning",
+// Unknown vendor specific property.
+"less.lint.unknownVendorSpecificProperties": "ignore",
+// A list of properties that are not validated against the `unknownProperties` rule.
+"less.lint.validProperties": [],
+// When using a vendor-specific prefix, also include the standard property.
+"less.lint.vendorPrefix": "warning",
+// No unit for zero needed.
+"less.lint.zeroUnits": "ignore",
+// Enables or disables all validations.
+"less.validate": true,
+```
+
+## scss
+```json
+
+// Insert semicolon at end of line when completing CSS properties.
+"scss.completion.completePropertyWithSemicolon": true,
+// By default, VSCodium triggers property value completion after selecting a CSS property. Use this setting to disable this behavior.
+"scss.completion.triggerPropertyValueCompletion": true,
+// Put braces on the same line as rules (`collapse`) or put braces on own line (`expand`).
+"scss.format.braceStyle": "collapse",
+// Enable/disable default SCSS formatter.
+"scss.format.enable": true,
+// Maximum number of line breaks to be preserved in one chunk, when `scss.format.preserveNewLines` is enabled.
+"scss.format.maxPreserveNewLines": null,
+// Separate rulesets by a blank line.
+"scss.format.newlineBetweenRules": true,
+// Separate selectors with a new line.
+"scss.format.newlineBetweenSelectors": true,
+// Whether existing line breaks before elements should be preserved.
+"scss.format.preserveNewLines": true,
+// Ensure a space character around selector separators '>', '+', '~' (e.g. `a > b`).
+"scss.format.spaceAroundSelectorSeparator": false,
+// Show property and value documentation in SCSS hovers.
+"scss.hover.documentation": true,
+// Show references to MDN in SCSS hovers.
+"scss.hover.references": true,
+// Invalid number of parameters.
+"scss.lint.argumentsInColorFunction": "error",
+// Do not use `width` or `height` when using `padding` or `border`.
+"scss.lint.boxModel": "ignore",
+// When using a vendor-specific prefix make sure to also include all other vendor-specific properties.
+"scss.lint.compatibleVendorPrefixes": "ignore",
+// Do not use duplicate style definitions.
+"scss.lint.duplicateProperties": "ignore",
+// Do not use empty rulesets.
+"scss.lint.emptyRules": "warning",
+// Avoid using `float`. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+"scss.lint.float": "ignore",
+// `@font-face` rule must define `src` and `font-family` properties.
+"scss.lint.fontFaceProperties": "warning",
+// Hex colors must consist of 3, 4, 6 or 8 hex numbers.
+"scss.lint.hexColorLength": "error",
+// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+"scss.lint.idSelector": "ignore",
+// IE hacks are only necessary when supporting IE7 and older.
+"scss.lint.ieHack": "ignore",
+// Avoid using `!important`. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+"scss.lint.important": "ignore",
+// Import statements do not load in parallel.
+"scss.lint.importStatement": "ignore",
+// Property is ignored due to the display. E.g. with `display: inline`, the `width`, `height`, `margin-top`, `margin-bottom`, and `float` properties have no effect.
+"scss.lint.propertyIgnoredDueToDisplay": "warning",
+// The universal selector (`*`) is known to be slow.
+"scss.lint.universalSelector": "ignore",
+// Unknown at-rule.
+"scss.lint.unknownAtRules": "warning",
+// Unknown property.
+"scss.lint.unknownProperties": "warning",
+// Unknown vendor specific property.
+"scss.lint.unknownVendorSpecificProperties": "ignore",
+// A list of properties that are not validated against the `unknownProperties` rule.
+"scss.lint.validProperties": [],
+// When using a vendor-specific prefix, also include the standard property.
+"scss.lint.vendorPrefix": "warning",
+// No unit for zero needed.
+"scss.lint.zeroUnits": "ignore",
+// Enables or disables all validations.
+"scss.validate": true,
+```
+
+## php
+```json
+
+// Controls whether the built-in PHP language suggestions are enabled. The support suggests PHP globals and variables.
+"php.suggest.basic": true,
+// Enable/disable built-in PHP validation.
+"php.validate.enable": true,
+// Points to the PHP executable.
+"php.validate.executablePath": null,
+// Whether the linter is run on save or on type.
+"php.validate.run": "onSave",
+
+```

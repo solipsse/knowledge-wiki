@@ -1,0 +1,92 @@
+
+# scm (source control manager)
+
+``` json
+// Controls whether inline actions are always visible in the Source Control view.
+"scm.alwaysShowActions": false,
+// Controls whether repositories should always be visible in the Source Control view.
+"scm.alwaysShowRepositories": false,
+// Controls whether the Source Control view should automatically reveal and select files when opening them.
+"scm.autoReveal": true,
+// Controls whether the Source Control view should render folders in a compact form. In such a form, single child folders will be compressed in a combined tree element.
+"scm.compactFolders": true,
+// Controls the count badge on the Source Control icon on the Activity Bar.
+//  - all: Show the sum of all Source Control Provider count badges.
+//  - focused: Show the count badge of the focused Source Control Provider.
+//  - off: Disable the Source Control count badge.
+"scm.countBadge": "all",
+// Controls the default Source Control repository view mode.
+//  - tree: Show the repository changes as a tree.
+//  - list: Show the repository changes as a list.
+"scm.defaultViewMode": "list",
+// Controls the default Source Control repository changes sort order when viewed as a list.
+//  - name: Sort the repository changes by file name.
+//  - path: Sort the repository changes by path.
+//  - status: Sort the repository changes by Source Control status.
+"scm.defaultViewSortKey": "path",
+// Controls diff decorations in the editor.
+//  - all: Show the diff decorations in all available locations.
+//  - gutter: Show the diff decorations only in the editor gutter.
+//  - overview: Show the diff decorations only in the overview ruler.
+//  - minimap: Show the diff decorations only in the minimap.
+//  - none: Do not show the diff decorations.
+"scm.diffDecorations": "all",
+// Controls the behavior of Source Control diff gutter decorations.
+//  - diff: Show the inline diff Peek view on click.
+//  - none: Do nothing.
+"scm.diffDecorationsGutterAction": "diff",
+// Controls whether a pattern is used for the diff decorations in gutter.
+"scm.diffDecorationsGutterPattern": {
+    "added": false,
+    "modified": true
+},
+// Controls the visibility of the Source Control diff decorator in the gutter.
+//  - always: Show the diff decorator in the gutter at all times.
+//  - hover: Show the diff decorator in the gutter only on hover.
+"scm.diffDecorationsGutterVisibility": "always",
+// Controls the width(px) of diff decorations in gutter (added & modified).
+"scm.diffDecorationsGutterWidth": 3,
+// Controls whether leading and trailing whitespace is ignored in Source Control diff gutter decorations.
+//  - true: Ignore leading and trailing whitespace.
+//  - false: Do not ignore leading and trailing whitespace.
+//  - inherit: Inherit from `diffEditor.ignoreTrimWhitespace`.
+"scm.diffDecorationsIgnoreTrimWhitespace": "false",
+// Controls which badges are shown in the Source Control Graph view. The badges are shown on the right side of the graph indicating the names of history item groups.
+//  - all: Show badges of all history item groups in the Source Control Graph view.
+//  - filter: Show only the badges of history item groups used as a filter in the Source Control Graph view.
+"scm.graph.badges": "filter",
+// Controls whether the Source Control Graph view will load the next page of items when you scroll to the end of the list.
+"scm.graph.pageOnScroll": true,
+// The number of items to show in the Source Control Graph view by default and when loading more items.
+"scm.graph.pageSize": 50,
+// Controls the font for the input message. Use `default` for the workbench user interface font family, `editor` for the `editor.fontFamily`'s value, or a custom font family.
+"scm.inputFontFamily": "default",
+// Controls the font size for the input message in pixels.
+"scm.inputFontSize": 13,
+// Controls the maximum number of lines that the input will auto-grow to.
+"scm.inputMaxLineCount": 10,
+// Controls the minimum number of lines that the input will auto-grow from.
+"scm.inputMinLineCount": 1,
+// Controls the count badges on Source Control Provider headers. These headers appear in the Source Control view when there is more than one provider or when the `scm.alwaysShowRepositories` setting is enabled, and in the Source Control Repositories view.
+//  - hidden: Hide Source Control Provider count badges.
+//  - auto: Only show count badge for Source Control Provider when non-zero.
+//  - visible: Show Source Control Provider count badges.
+"scm.providerCountBadge": "hidden",
+// Controls the sort order of the repositories in the source control repositories view.
+//  - discovery time: Repositories in the Source Control Repositories view are sorted by discovery time. Repositories in the Source Control view are sorted in the order that they were selected.
+//  - name: Repositories in the Source Control Repositories and Source Control views are sorted by repository name.
+//  - path: Repositories in the Source Control Repositories and Source Control views are sorted by repository path.
+"scm.repositories.sortOrder": "discovery time",
+// Controls how many repositories are visible in the Source Control Repositories section. Set to 0, to be able to manually resize the view.
+"scm.repositories.visible": 10,
+// Controls whether an action button can be shown in the Source Control view.
+"scm.showActionButton": true,
+// Controls whether an action button can be shown in the Source Control input.
+"scm.showInputActionButton": true,
+// Controls the default working set to use when switching to a source control history item group that does not have a working set.
+//  - empty: Use an empty working set when switching to a source control history item group that does not have a working set.
+//  - current: Use the current working set when switching to a source control history item group that does not have a working set.
+"scm.workingSets.default": "current",
+// Controls whether to store editor working sets when switching between source control history item groups.
+"scm.workingSets.enabled": false,
+```

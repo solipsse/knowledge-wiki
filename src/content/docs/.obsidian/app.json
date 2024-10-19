@@ -1,0 +1,14 @@
+{
+  "focusNewTab": true,
+  "showIndentGuide": true,
+  "rightToLeft": false,
+  "showLineNumber": true,
+  "vimMode": true,
+  "autoConvertHtml": true,
+  "tabSize": 4,
+  "showInlineTitle": true,
+  "showRibbon": false,
+  "spellcheck": false,
+  "alwaysUpdateLinks": true,
+  "trashOption": "none"
+}

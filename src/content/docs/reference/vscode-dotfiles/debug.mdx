@@ -1,0 +1,94 @@
+---
+title: debug
+description: just a test
+---
+```json
+// Allow setting breakpoints in any file.
+"debug.allowBreakpointsEverywhere": false,
+// Controls whether variables that are lazily resolved, such as getters, are automatically resolved and expanded by the debugger.
+//  - auto: When in screen reader optimized mode, automatically expand lazy variables.
+//  - on: Always automatically expand lazy variables.
+//  - off: Never automatically expand lazy variables.
+"debug.autoExpandLazyVariables": "auto",
+// At the end of a debug session, all the read-only tabs associated with that session will be closed
+"debug.closeReadonlyTabsOnEnd": false,
+// Controls whether to confirm when the window closes if there are active debug sessions.
+//  - never: Never confirm.
+//  - always: Always confirm if there are debug sessions.
+"debug.confirmOnExit": "never",
+// Controls whether suggestions should be accepted on Enter in the Debug Console. Enter is also used to evaluate whatever is typed in the Debug Console.
+"debug.console.acceptSuggestionOnEnter": "off",
+// Controls if the Debug Console should be automatically closed when the debug session ends.
+"debug.console.closeOnEnd": false,
+// Controls if the Debug Console should collapse identical lines and show a number of occurrences with a badge.
+"debug.console.collapseIdenticalLines": true,
+// Controls the font family in the Debug Console.
+"debug.console.fontFamily": "default",
+// Controls the font size in pixels in the Debug Console.
+"debug.console.fontSize": 14,
+// Controls if the Debug Console should suggest previously typed input.
+"debug.console.historySuggestions": true,
+// Controls the line height in pixels in the Debug Console. Use 0 to compute the line height from the font size.
+"debug.console.lineHeight": 0,
+// Controls if the lines should wrap in the Debug Console.
+"debug.console.wordWrap": true,
+// Show Source Code in Disassembly View.
+"debug.disassemblyView.showSourceCode": true,
+// Color of the Status bar when debugger is active.
+"debug.enableStatusBarColor": true,
+// Controls whether the editor should be focused when the debugger breaks.
+"debug.focusEditorOnBreak": true,
+// Controls whether the workbench window should be focused when the debugger breaks.
+"debug.focusWindowOnBreak": true,
+// Controls the action to perform when clicking the editor gutter with the middle mouse button.
+//  - logpoint: Add Logpoint.
+//  - conditionalBreakpoint: Add Conditional Breakpoint.
+//  - triggeredBreakpoint: Add Triggered Breakpoint.
+//  - none: Don't perform any action.
+"debug.gutterMiddleClickAction": "logpoint",
+// Hide 'Start Debugging' control in title bar of 'Run and Debug' view while debugging is active. Only relevant when `debug.toolBarLocation` is not `docked`.
+"debug.hideLauncherWhileDebugging": false,
+// Show variable values inline in editor while debugging.
+//  - on: Always show variable values inline in editor while debugging.
+//  - off: Never show variable values inline in editor while debugging.
+//  - auto: Show variable values inline in editor while debugging when the language supports inline value locations.
+"debug.inlineValues": "auto",
+// Controls when the internal Debug Console should open.
+"debug.internalConsoleOptions": "openOnFirstSessionStart",
+// Controls what to do when errors are encountered after running a preLaunchTask.
+//  - debugAnyway: Ignore task errors and start debugging.
+//  - showErrors: Show the Problems view and do not start debugging.
+//  - prompt: Prompt user.
+//  - abort: Cancel debugging.
+"debug.onTaskErrors": "prompt",
+// Controls when the debug view should open.
+"debug.openDebug": "openOnDebugBreak",
+// Automatically open the explorer view at the end of a debug session.
+"debug.openExplorerOnEnd": false,
+// Controls what editors to save before starting a debug session.
+//  - allEditorsInActiveGroup: Save all editors in the active group before starting a debug session.
+//  - nonUntitledEditorsInActiveGroup: Save all editors in the active group except untitled ones before starting a debug session.
+//  - none: Don't save any editors before starting a debug session.
+"debug.saveBeforeStart": "allEditorsInActiveGroup",
+// Controls whether breakpoints should be shown in the overview ruler.
+"debug.showBreakpointsInOverviewRuler": false,
+// Controls whether inline breakpoints candidate decorations should be shown in the editor while debugging.
+"debug.showInlineBreakpointCandidates": true,
+// Controls when the debug Status bar should be visible.
+//  - never: Never show debug in Status bar
+//  - always: Always show debug in Status bar
+//  - onFirstSessionStart: Show debug in Status bar only after debug was started for the first time
+"debug.showInStatusBar": "onFirstSessionStart",
+// Controls whether the debug sub-sessions are shown in the debug tool bar. When this setting is false the stop command on a sub-session will also stop the parent session.
+"debug.showSubSessionsInToolBar": false,
+// Show variable type in variable pane during debug session
+"debug.showVariableTypes": false,
+// Before starting a new debug session in an integrated or external terminal, clear the terminal.
+"debug.terminal.clearBeforeReusing": false,
+// Controls the location of the debug toolbar. Either `floating` in all views, `docked` in the debug view, `commandCenter` (requires `window.commandCenter`), or `hidden`.
+//  - floating: Show debug toolbar in all views.
+//  - docked: Show debug toolbar only in debug views.
+//  - commandCenter: `(Experimental)` Show debug toolbar in the command center.
+//  - hidden: Do not show debug toolbar.
+"debug.toolBarLocation": "floating",
+```

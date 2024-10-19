@@ -1,0 +1,33 @@
+---
+title: Test space
+---
+```markdoc
+{% card title="Check this out" %}
+Interesting content you want to highlight.
+{% /card %}
+```
+
+$$
+\begin{align}
+ & \hat{r}\triangleq\begin{pmatrix}\cos \theta \\ \sin \theta\end{pmatrix} \> \quad \hat{t}\triangleq \begin{pmatrix}-\sin \theta \\ \cos \theta \end{pmatrix} \\ \\
+\text{notice}:\quad & \dot{\hat{r}} = \omega\overbrace {\begin{pmatrix}-\sin \theta \\ \cos \theta \end{pmatrix}}^{\hat{t}} \quad \dot{\hat{t}}=\omega\overbrace{\begin{pmatrix}-\cos \theta \\ -\sin \theta \end{pmatrix}}^{-\hat{r}}\\ \\
+\Rightarrow \quad & \vec{s}  \triangleq r\hat{r} \\
+ & \vec{v} =\omega r \hat{t} \\
+ & \vec{a}= -\omega^{2}r\hat{r} +\alpha r\hat{t} \\ \\
+\therefore \quad  & s =r \quad v=\omega r \quad a_{r} = \omega^{2}r \quad a_{t} = \alpha r
+\end{align}
+$$
+
+---
+
+$$
+\begin{align}
+ & \alpha = 0 , \ a_{t}=0 & \Rightarrow   & \quad  v = k   & \quad \text{uniform}\\
+ & \alpha = k , \ a_{t}=k & \Rightarrow  & \quad  v = u + (\alpha r)t &  \quad  \text{non-uniform} \\
+ & \text{otherwise} & \Rightarrow  & \quad v = v_{i} + \int (\alpha r) \ dt  & \quad \text{non-uniform}
+\end{align}
+$$
+
+```python
+print("test")
+```
